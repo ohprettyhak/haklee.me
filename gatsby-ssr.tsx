@@ -2,8 +2,8 @@ import React from 'react';
 import { GatsbySSR } from 'gatsby';
 
 export const onRenderBody: GatsbySSR['onRenderBody'] = ({
-  setHeadComponents,
-}) => {
+                                                          setHeadComponents,
+                                                        }) => {
   setHeadComponents([
     <link rel="preconnect" href="https://fonts.googleapis.com" />,
     <link

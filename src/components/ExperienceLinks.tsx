@@ -3,11 +3,13 @@ import React, { ReactElement } from 'react';
 import { CommonAttributes } from '@/constants/_types';
 import * as styles from '@/styles/app.css';
 
+interface ExperienceLinksProps {
+  links: CommonAttributes['links'];
+}
+
 const ExperienceLinks = ({
   links,
-}: {
-  links: CommonAttributes['links'];
-}): ReactElement | null => {
+}: ExperienceLinksProps): ReactElement | null => {
   const { website, application, github } = links;
 
   if (!website && !github && !application) return null;
