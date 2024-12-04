@@ -49,13 +49,11 @@ export const metadata: Metadata = {
 const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
   return (
     <html lang="ko" suppressHydrationWarning>
-    <head>
-      <script dangerouslySetInnerHTML={{ __html: colorThemeScript }} />
-      <title>haklee</title>
-    </head>
-    <body>
-    {children}
-    </body>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: colorThemeScript }} />
+        <title>haklee</title>
+      </head>
+      <body>{children}</body>
     </html>
   );
 };

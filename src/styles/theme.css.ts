@@ -3,8 +3,9 @@ import { createGlobalTheme, createTheme, createThemeContract } from '@vanilla-ex
 import { rem } from './pxto';
 
 const sizes = {
-  appWidth: rem(1512),
-  appInlineSpace: rem(108),
+  app: rem(960),
+  appSpace: rem(24),
+  headerWidth: rem(560),
 };
 
 const fonts = {
@@ -55,15 +56,13 @@ const layouts = {
 
 const zIndices = {
   overlay: '100',
-  headerContainer: '150',
+  header: '150',
   modal: '200',
 };
 
-const modeColors = createThemeContract({});
-
-export const lightModeColors = createTheme(modeColors, {});
-
-export const darkModeColors = createTheme(modeColors, {});
+const modeColors = createThemeContract({
+  background: '--hakui-background',
+});
 
 const colors = {
   gray0: '#FFFFFF',
@@ -93,6 +92,14 @@ const colors = {
 
   ...modeColors,
 };
+
+export const lightModeColors = createTheme(modeColors, {
+  background: colors.gray0,
+});
+
+export const darkModeColors = createTheme(modeColors, {
+  background: colors.gray950,
+});
 
 export const theme = createGlobalTheme(':root', {
   colors,

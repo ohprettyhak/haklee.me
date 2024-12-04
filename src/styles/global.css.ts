@@ -8,6 +8,7 @@ globalStyle('body', {
   paddingBottom: 'env(safe-area-inset-bottom)',
   overflowX: 'hidden',
   fontFamily: theme.fonts.sans,
+  backgroundColor: theme.colors.background,
 });
 
 globalStyle('[data-theme="dark"]', {
