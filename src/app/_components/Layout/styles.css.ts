@@ -12,6 +12,5 @@ export const root = style({
 
 export const main = style({
   ...theme.layouts.column,
-  paddingTop: `calc(16px * 2 + 52px)`,
   flex: 1,
 });
