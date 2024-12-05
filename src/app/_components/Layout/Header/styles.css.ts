@@ -39,3 +39,10 @@ globalStyle(`${social} > a`, {
 globalStyle(`${social} > a:hover`, {
   opacity: 0.7,
 });
+
+export const divider = style({
+  height: rem(22),
+  width: rem(1),
+  backgroundColor: theme.colors.border,
+  transition: 'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+});
