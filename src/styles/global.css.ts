@@ -1,5 +1,4 @@
 import './reset.css';
-import './animation.css';
 
 import { globalStyle } from '@vanilla-extract/css';
 
@@ -10,6 +9,7 @@ globalStyle('body', {
   overflowX: 'hidden',
   fontFamily: theme.fonts.sans,
   backgroundColor: theme.colors.background,
+  transition: 'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
 });
 
 globalStyle('[data-theme="dark"]', {
@@ -29,7 +29,7 @@ globalStyle('.gradient', {
   backgroundClip: 'text',
   backgroundSize: '200% 100%',
   backgroundPosition: '100%',
-  transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
+  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
 });
 
 globalStyle('.gradient:hover', {

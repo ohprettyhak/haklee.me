@@ -65,6 +65,7 @@ const modeColors = createThemeContract({
   menuActiveBackground: '--hakui-menu-active-background',
 
   text: '--hakui-text',
+  border: '--hakui-border',
 });
 
 const colors = {
@@ -102,6 +103,7 @@ export const lightModeColors = createTheme(modeColors, {
   menuActiveBackground: 'rgba(28, 27, 31, 0.1)',
 
   text: colors.gray950,
+  border: colors.gray100,
 });
 
 export const darkModeColors = createTheme(modeColors, {
@@ -110,6 +112,7 @@ export const darkModeColors = createTheme(modeColors, {
   menuActiveBackground: 'rgba(36, 36, 36, 0.8)',
 
   text: colors.gray0,
+  border: colors.gray800,
 });
 
 export const theme = createGlobalTheme(':root', {

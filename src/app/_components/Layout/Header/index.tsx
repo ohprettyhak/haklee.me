@@ -9,12 +9,20 @@ import {
   GithubIcon,
   InstagramIcon,
   LinkedInIcon,
+  MoonIcon,
+  SunIcon,
 } from '@/components/icons';
+import { useIsClient } from '@/hooks/useIsClient';
+import { useTheme } from '@/hooks/useTheme';
 import { theme } from '@/styles';
 
 import * as styles from './styles.css';
 
 const Header: FC = (): ReactElement | null => {
+  const { theme: currentTheme, toggleTheme } = useTheme();
+
+  if (!useIsClient()) return null;
+
   return (
     <div className={styles.root}>
       <Link href="/">
@@ -42,7 +50,12 @@ const Header: FC = (): ReactElement | null => {
             }}
             transition={{ type: 'spring', stiffness: 100, damping: 16 }}
           >
-            <SunglassesIcon height={10} width={24} fill={theme.colors.gray950} />
+            <SunglassesIcon
+              height={10}
+              width={24}
+              fill={theme.colors.gray950}
+              stroke={theme.colors.gray950}
+            />
           </motion.div>
         </motion.div>
       </Link>
@@ -57,6 +70,24 @@ const Header: FC = (): ReactElement | null => {
         <a href="https://instagram.com/ohprettyhak" target="_blank" rel="noopener noreferrer">
           <InstagramIcon height={22} width={22} stroke={theme.colors.text} />
         </a>
+
+        <div className={styles.divider} />
+
+        <button onClick={toggleTheme}>
+          <motion.div
+            key={currentTheme}
+            initial={{ opacity: 0, scale: 0.8, rotate: -45 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            exit={{ opacity: 0, scale: 0.8, rotate: 45 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
+            {currentTheme === 'light' ? (
+              <MoonIcon height={22} width={22} stroke={'#000'} />
+            ) : (
+              <SunIcon height={22} width={22} stroke={'#fff'} />
+            )}
+          </motion.div>
+        </button>
       </div>
     </div>
   );
