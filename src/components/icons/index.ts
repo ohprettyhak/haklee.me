@@ -12,3 +12,4 @@ export * from './components/StorageIcon';
 export * from './components/ToiletIcon';
 export * from './components/SunIcon';
 export * from './components/MoonIcon';
+export * from './components/CircleDashIcon';

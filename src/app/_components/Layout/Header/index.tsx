@@ -11,6 +11,7 @@ import {
   LinkedInIcon,
   MoonIcon,
   SunIcon,
+  CircleDashIcon,
 } from '@/components/icons';
 import { useIsClient } from '@/hooks/useIsClient';
 import { useTheme } from '@/hooks/useTheme';
@@ -20,8 +21,6 @@ import * as styles from './styles.css';
 
 const Header: FC = (): ReactElement | null => {
   const { theme: currentTheme, toggleTheme } = useTheme();
-
-  if (!useIsClient()) return null;
 
   return (
     <div className={styles.root}>
@@ -81,10 +80,12 @@ const Header: FC = (): ReactElement | null => {
             exit={{ opacity: 0, scale: 0.8, rotate: 45 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            {currentTheme === 'light' ? (
-              <MoonIcon height={22} width={22} stroke={'#000'} />
+            {!useIsClient() ? (
+              <CircleDashIcon height={22} width={22} stroke={theme.colors.text} />
+            ) : currentTheme === 'light' ? (
+              <MoonIcon height={22} width={22} stroke={theme.colors.text} />
             ) : (
-              <SunIcon height={22} width={22} stroke={'#fff'} />
+              <SunIcon height={22} width={22} stroke={theme.colors.text} />
             )}
           </motion.div>
         </button>

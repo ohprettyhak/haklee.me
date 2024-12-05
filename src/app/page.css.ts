@@ -24,3 +24,15 @@ globalStyle(`${introduce} > li::before`, {
   left: 0,
   fontSize: rem(16),
 });
+
+export const section = style({
+  marginTop: `calc(${theme.sizes.appSpace} * 2)`,
+  paddingInline: theme.sizes.appSpace,
+});
+
+globalStyle(`${section} h2`, {
+  color: theme.colors.text,
+  fontSize: rem(20),
+  fontWeight: 600,
+  marginBottom: rem(16),
+});
