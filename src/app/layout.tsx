@@ -6,7 +6,6 @@ import React, { FC, PropsWithChildren, ReactElement } from 'react';
 
 import { darkModeColors, lightModeColors } from '@/styles';
 
-import Header from './_components/Header';
 import Layout from './_components/Layout';
 import NavigationMenu from './_components/NavigationMenu';
 
