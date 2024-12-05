@@ -1,0 +1,65 @@
+'use client';
+import { motion } from 'motion/react';
+import Link from 'next/link';
+import { FC, ReactElement } from 'react';
+
+import {
+  BrandIcon,
+  SunglassesIcon,
+  GithubIcon,
+  InstagramIcon,
+  LinkedInIcon,
+} from '@/components/icons';
+import { theme } from '@/styles';
+
+import * as styles from './styles.css';
+
+const Header: FC = (): ReactElement | null => {
+  return (
+    <div className={styles.root}>
+      <Link href="/">
+        <motion.div className={styles.branding} whileHover="hover" initial="initial">
+          <motion.div
+            variants={{
+              initial: { scale: 1, rotateX: 0, rotateY: 0, z: 0 },
+              hover: { scale: 1.2, rotateX: -16, rotateY: -16, z: 20 },
+            }}
+            transition={{ type: 'spring', stiffness: 100, damping: 16 }}
+          >
+            <BrandIcon
+              height={36}
+              width={30}
+              fill={theme.colors.gray950}
+              stroke={theme.colors.gray950}
+            />
+          </motion.div>
+
+          <motion.div
+            className={styles.sunglasses}
+            variants={{
+              initial: { opacity: 0, rotateX: 0, rotateY: 0, translateY: 0 },
+              hover: { opacity: 1, rotateX: -16, rotateY: -16, translateY: 12 },
+            }}
+            transition={{ type: 'spring', stiffness: 100, damping: 16 }}
+          >
+            <SunglassesIcon height={10} width={24} fill={theme.colors.gray950} />
+          </motion.div>
+        </motion.div>
+      </Link>
+
+      <div className={styles.social}>
+        <a href="https://github.com/ohprettyhak" target="_blank" rel="noopener noreferrer">
+          <GithubIcon height={22} width={22} stroke={theme.colors.text} />
+        </a>
+        <a href="https://linkedin.com/in/hak-lee" target="_blank" rel="noopener noreferrer">
+          <LinkedInIcon height={22} width={22} stroke={theme.colors.text} />
+        </a>
+        <a href="https://instagram.com/ohprettyhak" target="_blank" rel="noopener noreferrer">
+          <InstagramIcon height={22} width={22} stroke={theme.colors.text} />
+        </a>
+      </div>
+    </div>
+  );
+};
+
+export default Header;

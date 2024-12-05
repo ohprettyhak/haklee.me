@@ -6,6 +6,9 @@ import React, { FC, PropsWithChildren, ReactElement } from 'react';
 
 import { darkModeColors, lightModeColors } from '@/styles';
 
+import Layout from './_components/Layout';
+import NavigationMenu from './_components/NavigationMenu';
+
 const suit = localFont({
   src: './_fonts/SUIT-Variable.woff2',
   display: 'swap',
@@ -43,7 +46,7 @@ const colorThemeScript = `
 `;
 
 export const metadata: Metadata = {
-  description: 'Resume and portfolio of Hak Lee.',
+  description: "A website featuring Hak Lee's resume and portfolio.",
 };
 
 const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
@@ -53,7 +56,10 @@ const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
         <script dangerouslySetInnerHTML={{ __html: colorThemeScript }} />
         <title>haklee</title>
       </head>
-      <body>{children}</body>
+      <body>
+        <Layout>{children}</Layout>
+        <NavigationMenu />
+      </body>
     </html>
   );
 };

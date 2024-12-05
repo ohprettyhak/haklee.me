@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
-import { ComponentProps, FC, ReactElement, ReactNode } from 'react';
+import React, { ComponentProps, FC, ReactElement, ReactNode } from 'react';
 
-import Header from './Header';
+import Header from '../Header';
 import * as styles from './styles.css';
 
 type LayoutProps = ComponentProps<'div'> & {
@@ -13,7 +13,7 @@ const Layout: FC<LayoutProps> = ({ className, children, ...props }): ReactElemen
   return (
     <div className={styles.root}>
       <Header />
-      <main className={clsx(styles.main, className)} {...props}>
+      <main className={clsx(styles.main, className)} data-animate={true} {...props}>
         {children}
       </main>
     </div>
