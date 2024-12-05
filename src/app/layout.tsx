@@ -58,10 +58,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
         <title>haklee</title>
       </head>
       <body>
-        <Layout>
-          <Header />
-          {children}
-        </Layout>
+        <Layout>{children}</Layout>
         <NavigationMenu />
       </body>
     </html>

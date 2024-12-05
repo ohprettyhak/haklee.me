@@ -13,4 +13,5 @@ export const root = style({
 export const main = style({
   ...theme.layouts.column,
   flex: 1,
+  marginTop: `calc(${theme.sizes.appSpace} * 2)`,
 });

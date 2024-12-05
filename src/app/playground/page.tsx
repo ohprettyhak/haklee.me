@@ -1,7 +1,11 @@
 import { FC, ReactElement } from 'react';
 
 const Projects: FC = (): ReactElement => {
-  return <>Projects</>;
+  return (
+    <>
+      <p>playground</p>
+    </>
+  );
 };
 
 export default Projects;

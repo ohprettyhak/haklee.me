@@ -4,7 +4,6 @@ import { rem, theme } from '@/styles';
 
 export const introduce = style({
   ...theme.layouts.column,
-  marginTop: `calc(${theme.sizes.appSpace} * 2)`,
   paddingInline: theme.sizes.appSpace,
   gap: rem(6),
 });
