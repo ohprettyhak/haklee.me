@@ -16,7 +16,19 @@ const Home: FC = (): ReactElement => {
       </ul>
 
       <section className={styles.section}>
-        <h2>Education</h2>
+        <h2 id="#education">Education.</h2>
+        <ul className={styles.timeline}>
+          <li className={styles.item}>
+            <div className={styles.line} />
+            <div className={styles.dot} />
+            <h3>2019.03 - 2025.02 (예정)</h3>
+
+            <div className={styles.card}>
+              <h4>한국외국어대학교 글로벌캠퍼스</h4>
+              <p>컴퓨터.전자시스템공학부, 이중전공: Language&AI</p>
+            </div>
+          </li>
+        </ul>
       </section>
     </Fragment>
   );

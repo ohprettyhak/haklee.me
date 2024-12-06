@@ -1,6 +1,6 @@
 # haklee.me
 
-Resume and portfolio of Hak Lee.
+A website featuring Hak Lee's resume and portfolio.
 
 #### inspired by
 

@@ -13,9 +13,6 @@ export const root = style({
 export const container = style({
   display: 'flex',
   justifyContent: 'center',
-  backdropFilter: `blur(${rem(50)})`,
-  willChange: 'backdrop-filter',
-  transform: 'translateZ(0)',
 });
 
 export const menu = style({
@@ -26,13 +23,17 @@ export const menu = style({
 });
 
 export const menuItem = style({
-  alignItems: 'center',
-  backgroundColor: 'rgba(28, 27, 31, 0.03)',
-  borderRadius: rem(16),
-  color: theme.colors.gray950,
   display: 'flex',
   height: rem(48),
+  alignItems: 'center',
+  color: theme.colors.gray950,
   userSelect: 'none',
+  transform: 'translateZ(0)',
+  border: `${rem(1)} solid ${theme.colors.menuBorder}`,
+  borderRadius: rem(16),
+  backgroundColor: 'rgba(28, 27, 31, 0.03)',
+  backdropFilter: `blur(${rem(4)})`,
+  willChange: 'backdrop-filter',
 });
 
 export const menuItemActive = style({

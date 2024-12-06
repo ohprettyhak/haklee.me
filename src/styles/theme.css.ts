@@ -61,11 +61,17 @@ const zIndices = {
 
 const modeColors = createThemeContract({
   background: '--hakui-background',
+  menuBorder: '--hakui-menu-border',
   menuBackground: '--hakui-menu-background',
   menuActiveBackground: '--hakui-menu-active-background',
 
+  cardBorder: '--hakui-card-border',
+  cardBackground: '--hakui-card-background',
+
   text: '--hakui-text',
+  textSecondary: '--hakui-text-secondary',
   border: '--hakui-border',
+  line: '--hakui-line',
 });
 
 const colors = {
@@ -99,20 +105,32 @@ const colors = {
 
 export const lightModeColors = createTheme(modeColors, {
   background: colors.gray0,
+  menuBorder: 'rgba(28, 27, 31, 0.02)',
   menuBackground: 'rgba(28, 27, 31, 0.03)',
   menuActiveBackground: 'rgba(28, 27, 31, 0.1)',
 
+  cardBorder: 'rgba(28, 27, 31, 0.04)',
+  cardBackground: 'rgba(28, 27, 31, 0.01)',
+
   text: colors.gray950,
+  textSecondary: colors.gray700,
   border: colors.gray100,
+  line: colors.gray50,
 });
 
 export const darkModeColors = createTheme(modeColors, {
   background: 'rgba(10, 10, 10)',
+  menuBorder: 'rgba(36, 36, 36, 0.4)',
   menuBackground: 'rgba(26, 26, 26, 0.5)',
   menuActiveBackground: 'rgba(36, 36, 36, 0.8)',
 
+  cardBorder: 'rgba(36, 36, 36, 0.6)',
+  cardBackground: 'rgba(26, 26, 26, 0.3)',
+
   text: colors.gray0,
+  textSecondary: colors.gray400,
   border: colors.gray800,
+  line: colors.gray800,
 });
 
 export const theme = createGlobalTheme(':root', {
