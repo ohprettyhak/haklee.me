@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { FC, ReactElement } from 'react';
 
 import {
-  BrandIcon,
+  BrandLogo,
   SunglassesIcon,
   GithubIcon,
   InstagramIcon,
@@ -33,7 +33,7 @@ const Header: FC = (): ReactElement | null => {
             }}
             transition={{ type: 'spring', stiffness: 100, damping: 16 }}
           >
-            <BrandIcon
+            <BrandLogo
               height={36}
               width={30}
               fill={theme.colors.gray950}

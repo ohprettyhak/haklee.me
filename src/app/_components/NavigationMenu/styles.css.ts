@@ -19,7 +19,6 @@ export const menu = style({
   display: 'flex',
   gap: rem(8),
   height: 'fit-content',
-  paddingTop: rem(8),
 });
 
 export const menuItem = style({
@@ -34,11 +33,6 @@ export const menuItem = style({
   backgroundColor: 'rgba(28, 27, 31, 0.03)',
   backdropFilter: `blur(${rem(4)})`,
   willChange: 'backdrop-filter',
-});
-
-export const menuItemActive = style({
-  backgroundColor: theme.colors.gray950,
-  color: theme.colors.gray0,
 });
 
 export const menuLink = style({

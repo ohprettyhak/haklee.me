@@ -1,6 +1,9 @@
 /** brand */
-export * from './components/BrandIcon';
+export * from './components/logo/BrandLogo';
 export * from './components/SunglassesIcon';
+export * from './components/logo/HUFSLogo';
+export * from './components/logo/HUFStoryLogo';
+export * from './components/logo/GDGLogo';
 
 /** social */
 export * from './components/social/GithubIcon';

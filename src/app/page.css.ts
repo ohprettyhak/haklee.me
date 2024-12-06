@@ -9,17 +9,17 @@ export const introduce = style({
 });
 
 globalStyle(`${introduce} > li`, {
+  position: 'relative',
+  paddingLeft: rem(16),
   color: theme.colors.text,
   fontSize: rem(16),
   fontWeight: 400,
-  wordBreak: 'keep-all',
-  position: 'relative',
-  paddingLeft: rem(16),
   lineHeight: 1.6,
+  wordBreak: 'keep-all',
 });
 
 globalStyle(`${introduce} > li::before`, {
-  content: '"•"',
+  content: '•',
   position: 'absolute',
   left: 0,
   fontSize: rem(16),
@@ -48,7 +48,7 @@ export const item = style({
   paddingBottom: rem(16),
 });
 
-globalStyle(`${item} h3`, {
+export const duration = style({
   color: theme.colors.text,
   fontSize: rem(16),
   fontWeight: 500,
@@ -96,15 +96,37 @@ export const card = style({
 });
 
 globalStyle(`${card} h4`, {
+  ...theme.layouts.centerY,
   color: theme.colors.text,
   fontSize: rem(16),
   fontWeight: 500,
+  gap: rem(6),
 });
 
 globalStyle(`${card} p`, {
   color: theme.colors.textSecondary,
   fontSize: rem(14),
-  fontWeight: 400,
   marginTop: rem(4),
   lineHeight: 1.6,
+});
+
+globalStyle(`${card} ul`, {
+  listStyle: 'none',
+  marginTop: rem(8),
+});
+
+globalStyle(`${card} ul > li`, {
+  position: 'relative',
+  marginTop: rem(4),
+  paddingLeft: rem(16),
+  color: theme.colors.textSecondary,
+  fontSize: rem(14),
+  wordBreak: 'keep-all',
+});
+
+globalStyle(`${card} ul > li::before`, {
+  content: '•',
+  position: 'absolute',
+  left: 0,
+  fontSize: rem(14),
 });

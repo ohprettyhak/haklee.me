@@ -72,6 +72,8 @@ const modeColors = createThemeContract({
   textSecondary: '--hakui-text-secondary',
   border: '--hakui-border',
   line: '--hakui-line',
+
+  hufs: '--hakui-hufs',
 });
 
 const colors = {
@@ -116,6 +118,8 @@ export const lightModeColors = createTheme(modeColors, {
   textSecondary: colors.gray700,
   border: colors.gray100,
   line: colors.gray50,
+
+  hufs: '#002B49',
 });
 
 export const darkModeColors = createTheme(modeColors, {
@@ -131,6 +135,8 @@ export const darkModeColors = createTheme(modeColors, {
   textSecondary: colors.gray400,
   border: colors.gray800,
   line: colors.gray800,
+
+  hufs: colors.gray0,
 });
 
 export const theme = createGlobalTheme(':root', {

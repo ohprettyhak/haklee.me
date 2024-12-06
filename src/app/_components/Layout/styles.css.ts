@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
+import { rem } from '@/styles';
 import { theme } from '@/styles/theme.css';
 
 export const root = style({
@@ -13,5 +14,6 @@ export const root = style({
 export const main = style({
   ...theme.layouts.column,
   flex: 1,
-  marginTop: `calc(${theme.sizes.appSpace} * 2)`,
+  paddingTop: `calc(${theme.sizes.appSpace} * 2)`,
+  paddingBottom: rem(96),
 });

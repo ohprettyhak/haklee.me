@@ -1,5 +1,6 @@
-'use client';
 import { FC, Fragment, ReactElement } from 'react';
+
+import RESUME from '@/constants/resume';
 
 import * as styles from './page.css';
 
@@ -15,21 +16,36 @@ const Home: FC = (): ReactElement => {
         <li>프론트엔드의 틀을 넘어 서비스가 무엇을 제공해야 하는지를 고민하고 있습니다.</li>
       </ul>
 
-      <section className={styles.section}>
-        <h2 id="#education">Education.</h2>
-        <ul className={styles.timeline}>
-          <li className={styles.item}>
-            <div className={styles.line} />
-            <div className={styles.dot} />
-            <h3>2019.03 - 2025.02 (예정)</h3>
+      {RESUME.map(({ id, title, items }) => (
+        <section key={id} className={styles.section}>
+          <h2 id={`#${id}`}>{title}</h2>
+          <ul className={styles.timeline}>
+            {items.map((item) => (
+              <li key={item.id} className={styles.item}>
+                <div className={styles.line} />
+                <div className={styles.dot} />
+                <p className={styles.duration}>{item.duration}</p>
 
-            <div className={styles.card}>
-              <h4>한국외국어대학교 글로벌캠퍼스</h4>
-              <p>컴퓨터.전자시스템공학부, 이중전공: Language&AI</p>
-            </div>
-          </li>
-        </ul>
-      </section>
+                <div className={styles.card}>
+                  <h4>
+                    {item.logo}
+                    {item.title}
+                  </h4>
+                  <p dangerouslySetInnerHTML={{ __html: item.description }} />
+
+                  {item.subItems && (
+                    <ul>
+                      {item.subItems.map((subItem) => (
+                        <li key={subItem.id} dangerouslySetInnerHTML={{ __html: subItem.title }} />
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
     </Fragment>
   );
 };
