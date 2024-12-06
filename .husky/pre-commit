@@ -11,7 +11,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-_echo "Running pnpm build..."
+_echo "Running next build..."
 pnpm build
 
 if [ $? -ne 0 ]; then
