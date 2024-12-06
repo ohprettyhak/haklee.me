@@ -4,13 +4,14 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FC, ReactElement, useMemo } from 'react';
 
-import { SparkleIcon, StorageIcon, ToiletIcon } from '@/components/icons';
+import { BirdIcon, SparkleIcon, StorageIcon, ToiletIcon } from '@/components/icons';
 import { theme } from '@/styles';
 
 import * as styles from './styles.css';
 
 const MENU = [
   { key: 'home', title: '홈', path: '/', icon: ToiletIcon },
+  { key: 'about', title: '소개', path: '/about', icon: BirdIcon },
   { key: 'playground', title: '프로젝트', path: '/playground', icon: StorageIcon },
   { key: 'article', title: '글', path: '/article', icon: SparkleIcon },
 ];
