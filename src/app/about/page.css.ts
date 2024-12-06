@@ -33,6 +33,14 @@ export const item = style({
   paddingBottom: rem(16),
 });
 
+globalStyle(`${timeline} > ${item}:last-child`, {
+  paddingBottom: 0,
+});
+
+globalStyle(`${timeline} > ${item} img`, {
+  objectFit: 'contain',
+});
+
 export const duration = style({
   color: theme.colors.text,
   fontSize: rem(16),
@@ -63,16 +71,8 @@ globalStyle(`${timeline} > ${item}:not(:first-child) .${line}`, {
   top: rem(2),
 });
 
-globalStyle(`${timeline} > ${item}:last-child`, {
-  paddingBottom: 0,
-});
-
 globalStyle(`${timeline} > ${item}:last-child .${line}`, {
   maskImage: `linear-gradient(rgb(0, 0, 0) 0%, rgb(0, 0, 0) calc(100% - ${rem(120)}), transparent 100%)`,
-});
-
-globalStyle(`${timeline} > ${item} img`, {
-  objectFit: 'contain',
 });
 
 export const card = style({
@@ -82,6 +82,7 @@ export const card = style({
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,
   borderRadius: rem(8),
   backgroundColor: theme.colors.cardBackground,
+  transition: 'all 0.3s',
 });
 
 globalStyle(`${card} h4`, {

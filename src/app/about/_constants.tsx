@@ -48,7 +48,8 @@ export const RESUME = [
           },
           {
             id: 'mdn-2',
-            title: 'yari, content, translated-content 레포지토리에 기여',
+            title:
+              '<a href="https://github.com/mdn/yari" target="_blank" rel="noreferrer noopener">yari</a>, <a href="https://github.com/mdn/content" target="_blank" rel="noreferrer noopener">content</a>, <a href="https://github.com/mdn/translated-content" target="_blank" rel="noreferrer noopener">translated-content</a> 레포지토리에 기여',
           },
         ],
       },
