@@ -8,6 +8,7 @@ export const root = style({
   maxWidth: theme.sizes.app,
   marginTop: theme.sizes.appSpace,
   paddingInline: theme.sizes.appSpace,
+  zIndex: theme.zIndices.header,
 });
 
 export const branding = style({

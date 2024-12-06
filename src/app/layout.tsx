@@ -8,6 +8,7 @@ import { darkModeColors, lightModeColors } from '@/styles';
 
 import Layout from './_components/Layout';
 import NavigationMenu from './_components/NavigationMenu';
+import * as styles from './page.css';
 
 const pretendard = localFont({
   src: './_fonts/PretendardVariable.woff2',
@@ -79,6 +80,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
         <title>haklee</title>
       </head>
       <body>
+        <div className={styles.blur} aria-hidden={true} />
         <Layout>{children}</Layout>
         <NavigationMenu />
       </body>
