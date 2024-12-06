@@ -13,7 +13,7 @@ const Layout: FC<LayoutProps> = ({ className, children, ...props }): ReactElemen
   return (
     <div className={styles.root}>
       <Header />
-      <main className={clsx(styles.main, className)} {...props}>
+      <main className={clsx(styles.main, className)} data-animate={true} {...props}>
         {children}
       </main>
     </div>

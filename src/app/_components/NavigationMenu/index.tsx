@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FC, ReactElement, useMemo } from 'react';
 
-import { StorageIcon, ToiletIcon } from '@/components/icons';
+import { SparkleIcon, StorageIcon, ToiletIcon } from '@/components/icons';
 import { theme } from '@/styles';
 
 import * as styles from './styles.css';
@@ -12,6 +12,7 @@ import * as styles from './styles.css';
 const MENU = [
   { key: 'home', title: '홈', path: '/', icon: ToiletIcon },
   { key: 'playground', title: '프로젝트', path: '/playground', icon: StorageIcon },
+  { key: 'article', title: '글', path: '/article', icon: SparkleIcon },
 ];
 
 const NavigationMenu: FC = (): ReactElement => {

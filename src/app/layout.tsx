@@ -8,13 +8,14 @@ import { darkModeColors, lightModeColors } from '@/styles';
 
 import Layout from './_components/Layout';
 import NavigationMenu from './_components/NavigationMenu';
+import * as styles from './page.css';
 
-const suit = localFont({
-  src: './_fonts/SUIT-Variable.woff2',
+const pretendard = localFont({
+  src: './_fonts/PretendardVariable.woff2',
   display: 'swap',
   weight: '45 920',
   preload: true,
-  variable: '--font-suit',
+  variable: '--font-pretendard',
 });
 
 const colorThemeScript = `
@@ -24,7 +25,7 @@ const colorThemeScript = `
       window.__theme = newTheme;
       preferredTheme = newTheme;
       document.documentElement.setAttribute('data-theme', newTheme);
-      document.documentElement.className = newTheme === 'dark' ? '${darkModeColors} ${suit.variable}' : '${lightModeColors} ${suit.variable}';
+      document.documentElement.className = newTheme === 'dark' ? '${darkModeColors} ${pretendard.variable}' : '${lightModeColors} ${pretendard.variable}';
       window.__onThemeChange(newTheme);
     }
     var preferredTheme;
@@ -46,7 +47,29 @@ const colorThemeScript = `
 `;
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.haklee.me'),
   description: "A website featuring Hak Lee's resume and portfolio.",
+  openGraph: {
+    title: 'haklee',
+    description: "A website featuring Hak Lee's resume and portfolio.",
+    images: '/static/preview.png',
+    type: 'website',
+    siteName: 'Hak Lee Portfolio',
+    url: 'https://www.haklee.me',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'haklee',
+    description: "A website featuring Hak Lee's resume and portfolio.",
+    images: '/static/preview.png',
+    creator: '@masonthecode',
+  },
+  authors: [
+    {
+      name: 'Hak Lee',
+      url: 'https://www.haklee.me',
+    },
+  ],
 };
 
 const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
@@ -57,6 +80,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
         <title>haklee</title>
       </head>
       <body>
+        <div className={styles.blur} aria-hidden={true} />
         <Layout>{children}</Layout>
         <NavigationMenu />
       </body>
