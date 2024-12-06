@@ -4,6 +4,9 @@ export * from './components/SunglassesIcon';
 export * from './components/logo/HUFSLogo';
 export * from './components/logo/HUFStoryLogo';
 export * from './components/logo/GDGLogo';
+export * from './components/logo/NylonBricksLogo';
+export * from './components/logo/SemanticLogo';
+export * from './components/logo/KNTOLogo';
 
 /** social */
 export * from './components/social/GithubIcon';
@@ -16,3 +19,4 @@ export * from './components/ToiletIcon';
 export * from './components/SunIcon';
 export * from './components/MoonIcon';
 export * from './components/CircleDashIcon';
+export * from './components/SparkleIcon';
