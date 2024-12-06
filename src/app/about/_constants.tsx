@@ -49,7 +49,7 @@ export const RESUME = [
           {
             id: 'mdn-2',
             title:
-              '<a href="https://github.com/mdn/yari" target="_blank" rel="noreferrer noopener">yari</a>, <a href="https://github.com/mdn/content" target="_blank" rel="noreferrer noopener">content</a>, <a href="https://github.com/mdn/translated-content" target="_blank" rel="noreferrer noopener">translated-content</a> 레포지토리에 기여',
+              '<a href="https://github.com/mdn/yari" target="_blank" rel="noreferrer noopener">yari</a>, <a href="https://github.com/mdn/content" target="_blank" rel="noreferrer noopener">content</a>, <a href="https://github.com/mdn/translated-content" target="_blank" rel="noreferrer noopener">translated-content</a> 리포지터리 기여',
           },
         ],
       },
@@ -68,7 +68,7 @@ export const RESUME = [
           {
             id: 'remark-blockquote-alerts',
             title:
-              '<a href="https://github.com/nylon-bricks/remark-blockquote-alerts" target="_blank" rel="noreferrer noopener">remark-blockquote-alerts</a>: <a href="https://github.github.com/gfm/" target="_blank" rel="noreferrer noopener">GFM</a>과 동일한 블록 강조를 지원하는 remark 라이브러리',
+              '<a href="https://www.npmjs.com/package/remark-blockquote-alerts" target="_blank" rel="noreferrer noopener">remark-blockquote-alerts</a>: <a href="https://github.github.com/gfm/" target="_blank" rel="noreferrer noopener">GFM</a>과 동일한 블록 강조를 지원하는 remark 라이브러리',
           },
         ],
       },

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FC, Fragment, ReactElement } from 'react';
 
 import * as styles from './page.css';
@@ -13,6 +14,18 @@ const Home: FC = (): ReactElement => {
         <li>저의 역할과 일의 본질을 탐구하는 것을 좋아합니다.</li>
         <li>프론트엔드의 틀을 넘어 서비스가 무엇을 제공해야 하는지를 고민하고 있습니다.</li>
       </ul>
+
+      <p className={styles.content}>
+        더 자세한 내용은&nbsp;
+        <Link className="gradient" href="/about">
+          소개
+        </Link>
+        &nbsp;와&nbsp;
+        <Link className="gradient" href="/playground">
+          프로젝트
+        </Link>
+        &nbsp;페이지에서 확인할 수 있습니다. 😀
+      </p>
     </Fragment>
   );
 };

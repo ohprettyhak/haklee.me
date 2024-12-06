@@ -28,7 +28,7 @@ globalStyle('.gradient', {
   color: 'transparent',
   borderBottom: '1px solid #09021d22',
   boxDecorationBreak: 'clone',
-  background: `linear-gradient(90deg, #ff6f61 0%, #ffcc66 25%, #6699cc 50%, ${theme.colors.gray950} 50%, ${theme.colors.gray950} 100%)`,
+  background: `linear-gradient(90deg, #833ab4 0%, #fd1d1d 25%, #C06C84 50%, ${theme.colors.gray950} 50%, ${theme.colors.gray950} 100%)`,
   backgroundClip: 'text',
   backgroundSize: '200% 100%',
   backgroundPosition: '100%',
