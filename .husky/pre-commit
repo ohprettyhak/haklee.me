@@ -1,20 +1,31 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "Running lint-staged..."
+colors=(31 32 33 34 35 36)
+
+_echo() {
+  text="$1"
+  for i in $(seq 0 $((${#text} - 1))); do
+    color=${colors[$((i % ${#colors[@]}))]}
+    printf "\033[1;${color}m${text:$i:1}\033[0m"
+  done
+  printf "\n"
+}
+
+_echo "Running lint-staged..."
 pnpm lint-staged
 
 if [ $? -ne 0 ]; then
-  echo "Lint-staged failed. Aborting commit/push."
+  _echo "Lint-staged failed. Aborting commit/push."
   exit 1
 fi
 
-echo "Running pnpm build..."
+_echo "Running pnpm build..."
 pnpm build
 
 if [ $? -ne 0 ]; then
-  echo "Build failed. Aborting commit/push."
+  _echo "Build failed. Aborting commit/push."
   exit 1
 fi
 
-echo "All checks passed. Proceeding with commit/push."
+_echo "All checks passed. Proceeding with commit/push."
