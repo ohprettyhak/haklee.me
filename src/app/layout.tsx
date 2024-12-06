@@ -46,6 +46,7 @@ const colorThemeScript = `
 `;
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.haklee.me'),
   description: "A website featuring Hak Lee's resume and portfolio.",
   openGraph: {
     title: 'haklee',
