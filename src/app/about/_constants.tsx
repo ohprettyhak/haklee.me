@@ -1,7 +1,16 @@
-import { GDGLogo, HUFSLogo, HUFStoryLogo, KNTOLogo, NylonBricksLogo } from '@/components/icons';
+import {
+  GDGLogo,
+  GovernmentLogo,
+  HUFSLogo,
+  HUFStoryLogo,
+  KDataLogo,
+  KNTOLogo,
+  MDNLogo,
+  NylonBricksLogo,
+} from '@/components/icons';
 import { theme } from '@/styles';
 
-const Constants = [
+export const RESUME = [
   {
     id: 'education',
     title: 'Education.',
@@ -26,6 +35,23 @@ const Constants = [
     id: 'experience',
     title: 'Experience.',
     items: [
+      {
+        id: 'mdn',
+        duration: '2024.11. — Now',
+        logo: <MDNLogo height={15.5} width={20} />,
+        title: 'MDN Web Docs Contributor',
+        description: 'Web 기술 문서 번역 및 기여',
+        subItems: [
+          {
+            id: 'mdn-1',
+            title: '한국어로 번역되지 않은 문서 번역 및 한국어 문서 오류 수정',
+          },
+          {
+            id: 'mdn-2',
+            title: 'yari, content, translated-content 레포지토리에 기여',
+          },
+        ],
+      },
       {
         id: 'nylon-bricks',
         duration: '2024.05. — Now',
@@ -94,7 +120,7 @@ const Constants = [
         subItems: [
           {
             id: '2024-22th-topcit-1',
-            title: '단체접수 응시자 상위10%',
+            title: '단체접수 응시자 상위 10%',
           },
         ],
       },
@@ -126,6 +152,25 @@ const Constants = [
       },
     ],
   },
-];
 
-export default Constants;
+  {
+    id: 'certificate',
+    title: 'Certificate.',
+    items: [
+      {
+        id: '2024-sqld',
+        duration: '2024.06.21.',
+        logo: <KDataLogo width={20} height={15.5} />,
+        title: 'SQL 개발자(SQLD)',
+        description: '한국데이터산업진흥원장, SQLD-053003462',
+      },
+      {
+        id: '2022-historyexam',
+        duration: '2022.06.24.',
+        logo: <GovernmentLogo size={20} />,
+        title: '한국사능력검정시험 1급',
+        description: '국사편찬위원회, 59-104890',
+      },
+    ],
+  },
+];

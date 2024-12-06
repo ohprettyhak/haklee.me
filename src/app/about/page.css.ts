@@ -2,12 +2,19 @@ import { globalStyle, style } from '@vanilla-extract/css';
 
 import { rem, theme } from '@/styles';
 
-export const root = style({
+export const introduce = style({
+  paddingInline: theme.sizes.appSpace,
+  color: theme.colors.text,
+  fontSize: rem(16),
+  lineHeight: 1.6,
+});
+
+export const section = style({
   marginTop: `calc(${theme.sizes.appSpace} * 2)`,
   paddingInline: theme.sizes.appSpace,
 });
 
-globalStyle(`${root} h2`, {
+globalStyle(`${section} h2`, {
   color: theme.colors.text,
   fontSize: rem(18),
   fontWeight: 600,

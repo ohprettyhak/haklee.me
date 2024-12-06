@@ -6,6 +6,9 @@ export * from './components/logo/GDGLogo';
 export * from './components/logo/NylonBricksLogo';
 export * from './components/logo/SemanticLogo';
 export * from './components/logo/KNTOLogo';
+export * from './components/logo/KDataLogo';
+export * from './components/logo/GovernmentLogo';
+export * from './components/logo/MDNLogo';
 
 /** custom */
 export * from './components/custom/SunglassesIcon';

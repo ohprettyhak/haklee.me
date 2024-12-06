@@ -1,7 +1,5 @@
 import { FC, Fragment, ReactElement } from 'react';
 
-import Resume from '@/components/Resume';
-
 import * as styles from './page.css';
 
 const Home: FC = (): ReactElement => {
@@ -15,8 +13,6 @@ const Home: FC = (): ReactElement => {
         <li>저의 역할과 일의 본질을 탐구하는 것을 좋아합니다.</li>
         <li>프론트엔드의 틀을 넘어 서비스가 무엇을 제공해야 하는지를 고민하고 있습니다.</li>
       </ul>
-
-      <Resume />
     </Fragment>
   );
 };
