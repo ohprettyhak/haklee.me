@@ -10,6 +10,30 @@ import {
 } from '@/components/icons';
 import { theme } from '@/styles';
 
+export const REACH = {
+  id: 'reach',
+  title: 'Reach.',
+  items: [
+    {
+      id: 'phone',
+      title: 'Phone',
+      value: '+82-10-6454-9806',
+      link: 'tel:+82-10-6454-9806',
+    },
+    {
+      id: 'email',
+      title: 'Email',
+      value: 'me@haklee.me',
+      link: 'mailto:me@haklee.me',
+    },
+    {
+      id: 'address',
+      title: 'Address',
+      value: '서울, 대한민국',
+    },
+  ],
+};
+
 export const RESUME = [
   {
     id: 'education',

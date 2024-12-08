@@ -5,8 +5,6 @@ import { rem, theme } from '@/styles';
 export const introduce = style({
   paddingInline: theme.sizes.appSpace,
   color: theme.colors.text,
-  fontSize: rem(16),
-  lineHeight: 1.6,
 });
 
 export const section = style({
@@ -75,6 +73,12 @@ globalStyle(`${timeline} > ${item}:last-child .${line}`, {
   maskImage: `linear-gradient(rgb(0, 0, 0) 0%, rgb(0, 0, 0) calc(100% - ${rem(120)}), transparent 100%)`,
 });
 
+export const grid = style({
+  display: 'grid',
+  gridTemplateColumns: 'repeat(3, 1fr)',
+  gap: rem(16),
+});
+
 export const card = style({
   paddingBlock: rem(12),
   paddingInline: rem(16),
@@ -83,6 +87,35 @@ export const card = style({
   borderRadius: rem(8),
   backgroundColor: theme.colors.cardBackground,
   transition: 'all 0.3s',
+});
+
+globalStyle(`${grid} > ${card}`, {
+  marginTop: 0,
+});
+
+globalStyle(`${grid} > ${card} h3`, {
+  color: theme.colors.text,
+  fontSize: rem(13),
+  fontWeight: 500,
+});
+
+globalStyle(`${grid} > ${card} p`, {
+  color: theme.colors.textSecondary,
+  fontSize: rem(14),
+  wordBreak: 'keep-all',
+});
+
+globalStyle(`${grid} > ${card} a`, {
+  color: theme.colors.textSecondary,
+  fontSize: rem(14),
+  wordBreak: 'keep-all',
+  textDecoration: 'underline',
+  opacity: 1,
+  transition: 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+});
+
+globalStyle(`${grid} > ${card} a:hover`, {
+  opacity: 0.7,
 });
 
 globalStyle(`${card} h4`, {

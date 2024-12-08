@@ -26,9 +26,9 @@ globalStyle('[data-theme="light"]', {
 globalStyle('.gradient', {
   width: 'fit-content',
   color: 'transparent',
-  borderBottom: '1px solid #09021d22',
+  borderBottom: `${rem(1)} solid ${theme.colors.border}`,
   boxDecorationBreak: 'clone',
-  background: `linear-gradient(90deg, #833ab4 0%, #fd1d1d 25%, #C06C84 50%, ${theme.colors.gray950} 50%, ${theme.colors.gray950} 100%)`,
+  background: `linear-gradient(90deg, #833ab4 0%, #fd1d1d 25%, #C06C84 50%, ${theme.colors.text} 50%, ${theme.colors.text} 100%)`,
   backgroundClip: 'text',
   backgroundSize: '200% 100%',
   backgroundPosition: '100%',
@@ -41,6 +41,7 @@ globalStyle('.gradient:hover', {
 
 globalStyle('a[rel="noreferrer noopener"][target=_blank]', {
   textDecoration: 'underline',
+  wordBreak: 'keep-all',
   opacity: 1,
   transition: 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
 });

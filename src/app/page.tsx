@@ -20,11 +20,11 @@ const Home: FC = (): ReactElement => {
         <Link className="gradient" href="/about">
           소개
         </Link>
-        &nbsp;와&nbsp;
+        와&nbsp;
         <Link className="gradient" href="/playground">
           프로젝트
         </Link>
-        &nbsp;페이지에서 확인할 수 있습니다. 😀
+        &nbsp;탭에서 확인해 주세요! 😆
       </p>
     </Fragment>
   );
