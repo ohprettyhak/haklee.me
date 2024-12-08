@@ -46,7 +46,6 @@ export const menuName = style({
   ...theme.layouts.center,
   fontWeight: 600,
   height: 'fit-content',
-  marginLeft: rem(4),
   overflowX: 'hidden',
   whiteSpace: 'nowrap',
 });

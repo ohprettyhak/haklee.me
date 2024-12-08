@@ -49,15 +49,11 @@ const NavigationMenu: FC = (): ReactElement => {
               {isActive && (
                 <motion.span
                   key={pathname}
+                  className={styles.menuName}
                   initial={{ width: 0, opacity: 0, marginLeft: 0 }}
-                  animate={{
-                    width: 'auto',
-                    opacity: 1,
-                    marginLeft: '0.75rem',
-                  }}
+                  animate={{ width: 'auto', opacity: 1, marginLeft: '0.5rem' }}
                   exit={{ width: 0, opacity: 0, marginLeft: 0 }}
                   transition={{ duration: 0.5 }}
-                  className={styles.menuName}
                 >
                   {title}
                 </motion.span>
