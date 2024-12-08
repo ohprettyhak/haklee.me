@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
-import Icon from '../icon';
-import { IconProps } from '../types';
+import Icon from '../../icon';
+import { IconProps } from '../../types';
 
 export const ToiletIcon = memo<IconProps>((props) => (
   <Icon type="stroke" {...props}>

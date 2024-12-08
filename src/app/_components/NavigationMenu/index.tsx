@@ -4,13 +4,14 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FC, ReactElement, useMemo } from 'react';
 
-import { SparkleIcon, StorageIcon, ToiletIcon } from '@/components/icons';
+import { BirdIcon, SparkleIcon, StorageIcon, ToiletIcon } from '@/components/icons';
 import { theme } from '@/styles';
 
 import * as styles from './styles.css';
 
 const MENU = [
   { key: 'home', title: '홈', path: '/', icon: ToiletIcon },
+  { key: 'about', title: '소개', path: '/about', icon: BirdIcon },
   { key: 'playground', title: '프로젝트', path: '/playground', icon: StorageIcon },
   { key: 'article', title: '글', path: '/article', icon: SparkleIcon },
 ];
@@ -48,15 +49,11 @@ const NavigationMenu: FC = (): ReactElement => {
               {isActive && (
                 <motion.span
                   key={pathname}
+                  className={styles.menuName}
                   initial={{ width: 0, opacity: 0, marginLeft: 0 }}
-                  animate={{
-                    width: 'auto',
-                    opacity: 1,
-                    marginLeft: '0.75rem',
-                  }}
+                  animate={{ width: 'auto', opacity: 1, marginLeft: '0.5rem' }}
                   exit={{ width: 0, opacity: 0, marginLeft: 0 }}
                   transition={{ duration: 0.5 }}
-                  className={styles.menuName}
                 >
                   {title}
                 </motion.span>

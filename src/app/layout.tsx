@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     description: "A website featuring Hak Lee's resume and portfolio.",
     images: '/static/preview.png',
     type: 'website',
-    siteName: 'Hak Lee Portfolio',
+    siteName: 'haklee',
     url: 'https://www.haklee.me',
   },
   twitter: {

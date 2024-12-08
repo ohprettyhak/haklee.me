@@ -1,22 +1,29 @@
 /** brand */
 export * from './components/logo/BrandLogo';
-export * from './components/SunglassesIcon';
 export * from './components/logo/HUFSLogo';
 export * from './components/logo/HUFStoryLogo';
 export * from './components/logo/GDGLogo';
 export * from './components/logo/NylonBricksLogo';
 export * from './components/logo/SemanticLogo';
 export * from './components/logo/KNTOLogo';
+export * from './components/logo/KDataLogo';
+export * from './components/logo/GovernmentLogo';
+export * from './components/logo/MDNLogo';
+
+/** custom */
+export * from './components/custom/SunglassesIcon';
 
 /** social */
 export * from './components/social/GithubIcon';
 export * from './components/social/LinkedInIcon';
 export * from './components/social/InstagramIcon';
 
-export * from './components/HouseIcon';
-export * from './components/StorageIcon';
-export * from './components/ToiletIcon';
-export * from './components/SunIcon';
-export * from './components/MoonIcon';
-export * from './components/CircleDashIcon';
-export * from './components/SparkleIcon';
+/** semantic */
+export * from './components/semantic/HouseIcon';
+export * from './components/semantic/StorageIcon';
+export * from './components/semantic/ToiletIcon';
+export * from './components/semantic/SunIcon';
+export * from './components/semantic/MoonIcon';
+export * from './components/semantic/CircleDashIcon';
+export * from './components/semantic/SparkleIcon';
+export * from './components/semantic/BirdIcon';

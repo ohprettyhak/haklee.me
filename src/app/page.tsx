@@ -1,6 +1,5 @@
+import Link from 'next/link';
 import { FC, Fragment, ReactElement } from 'react';
-
-import Resume from '@/components/Resume';
 
 import * as styles from './page.css';
 
@@ -16,7 +15,17 @@ const Home: FC = (): ReactElement => {
         <li>프론트엔드의 틀을 넘어 서비스가 무엇을 제공해야 하는지를 고민하고 있습니다.</li>
       </ul>
 
-      <Resume />
+      <p className={styles.content}>
+        더 자세한 내용은&nbsp;
+        <Link className="gradient" href="/about">
+          소개
+        </Link>
+        와&nbsp;
+        <Link className="gradient" href="/playground">
+          프로젝트
+        </Link>
+        &nbsp;탭에서 확인해 주세요! 😆
+      </p>
     </Fragment>
   );
 };

@@ -2,12 +2,17 @@ import { globalStyle, style } from '@vanilla-extract/css';
 
 import { rem, theme } from '@/styles';
 
-export const root = style({
+export const introduce = style({
+  paddingInline: theme.sizes.appSpace,
+  color: theme.colors.text,
+});
+
+export const section = style({
   marginTop: `calc(${theme.sizes.appSpace} * 2)`,
   paddingInline: theme.sizes.appSpace,
 });
 
-globalStyle(`${root} h2`, {
+globalStyle(`${section} h2`, {
   color: theme.colors.text,
   fontSize: rem(18),
   fontWeight: 600,
@@ -24,6 +29,14 @@ export const item = style({
   width: '100%',
   paddingLeft: rem(24),
   paddingBottom: rem(16),
+});
+
+globalStyle(`${timeline} > ${item}:last-child`, {
+  paddingBottom: 0,
+});
+
+globalStyle(`${timeline} > ${item} img`, {
+  objectFit: 'contain',
 });
 
 export const duration = style({
@@ -56,16 +69,14 @@ globalStyle(`${timeline} > ${item}:not(:first-child) .${line}`, {
   top: rem(2),
 });
 
-globalStyle(`${timeline} > ${item}:last-child`, {
-  paddingBottom: 0,
-});
-
 globalStyle(`${timeline} > ${item}:last-child .${line}`, {
   maskImage: `linear-gradient(rgb(0, 0, 0) 0%, rgb(0, 0, 0) calc(100% - ${rem(120)}), transparent 100%)`,
 });
 
-globalStyle(`${timeline} > ${item} img`, {
-  objectFit: 'contain',
+export const grid = style({
+  display: 'grid',
+  gridTemplateColumns: 'repeat(3, 1fr)',
+  gap: rem(16),
 });
 
 export const card = style({
@@ -75,6 +86,36 @@ export const card = style({
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,
   borderRadius: rem(8),
   backgroundColor: theme.colors.cardBackground,
+  transition: 'all 0.3s',
+});
+
+globalStyle(`${grid} > ${card}`, {
+  marginTop: 0,
+});
+
+globalStyle(`${grid} > ${card} h3`, {
+  color: theme.colors.text,
+  fontSize: rem(13),
+  fontWeight: 500,
+});
+
+globalStyle(`${grid} > ${card} p`, {
+  color: theme.colors.textSecondary,
+  fontSize: rem(14),
+  wordBreak: 'keep-all',
+});
+
+globalStyle(`${grid} > ${card} a`, {
+  color: theme.colors.textSecondary,
+  fontSize: rem(14),
+  wordBreak: 'keep-all',
+  textDecoration: 'underline',
+  opacity: 1,
+  transition: 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+});
+
+globalStyle(`${grid} > ${card} a:hover`, {
+  opacity: 0.7,
 });
 
 globalStyle(`${card} h4`, {
