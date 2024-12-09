@@ -41,7 +41,7 @@ export const RESUME = [
     items: [
       {
         id: 'HUFS GLOBAL',
-        duration: '2019.03. — 2025.02. (예정)',
+        duration: '2019.03. - 2025.02. (예정)',
         logo: <HUFSLogo size={20} fill={theme.colors.hufs} />,
         title: '한국외국어대학교 글로벌캠퍼스',
         description: '컴퓨터.전자시스템공학부 학사과정 졸업 예정 (4.17/4.5)',
@@ -61,7 +61,7 @@ export const RESUME = [
     items: [
       {
         id: 'mdn',
-        duration: '2024.11. — Now',
+        duration: '2024.11. - Now',
         logo: <MDNLogo height={15.5} width={20} />,
         title: 'MDN Web Docs Contributor',
         description: 'Web 기술 문서 번역 및 기여',
@@ -79,7 +79,7 @@ export const RESUME = [
       },
       {
         id: 'nylon-bricks',
-        duration: '2024.05. — Now',
+        duration: '2024.05. - Now',
         logo: <NylonBricksLogo height={13} width={20} />,
         title: '나일론브릭스 (개인사업자)',
         description: '생산성 향상을 위한 웹 기반 라이브러리 개발팀',
@@ -105,7 +105,7 @@ export const RESUME = [
     items: [
       {
         id: 'GDGoc HUFS 24-25',
-        duration: '2024.08. — Now',
+        duration: '2024.08. - Now',
         logo: <GDGLogo height={12} width={20} />,
         title: 'GDG on Campus HUFS 24-25',
         description: '코어 팀 멤버로 활동, 소모임 개설 및 운영',
@@ -124,7 +124,7 @@ export const RESUME = [
       },
       {
         id: 'HUFStory',
-        duration: '2023.03. — 2023.12.',
+        duration: '2023.03. - 2023.12.',
         logo: <HUFStoryLogo size={20} fill={theme.colors.background} />,
         title: '한국외국어대학교 학생 IT자치기구 훕스토리',
         description: `대학생 매칭 서비스 ‘외출’ 웹 프론트엔드 개발 (<a href="https://oechul.com" target="_blank" rel="noreferrer noopener">Link</a>)`,
@@ -158,7 +158,8 @@ export const RESUME = [
         subItems: [
           {
             id: '2023-winter-hufstudy-1',
-            title: '컴퓨터 공학, 외국어 학습, 비즈니스 상황에서의 ChatGPT 활용 사례 연구',
+            title:
+              '컴퓨터 공학, 외국어 학습, 비즈니스 상황에서의 ChatGPT 활용 사례 연구 (팀 센토사)',
           },
         ],
       },
