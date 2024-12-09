@@ -2,7 +2,7 @@ import '@/styles/global.css';
 
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import React, { FC, PropsWithChildren, ReactElement } from 'react';
+import { FC, ReactElement, ReactNode } from 'react';
 
 import { darkModeColors, lightModeColors } from '@/styles';
 
@@ -48,6 +48,7 @@ const colorThemeScript = `
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.haklee.me'),
+  title: 'haklee',
   description: "A website featuring Hak Lee's resume and portfolio.",
   openGraph: {
     title: 'haklee',
@@ -72,17 +73,22 @@ export const metadata: Metadata = {
   ],
 };
 
-const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
+type RootLayoutProps = {
+  children: ReactNode;
+  modal: ReactNode;
+};
+
+const RootLayout: FC<RootLayoutProps> = ({ children, modal }): ReactElement => {
   return (
     <html lang="ko" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: colorThemeScript }} />
-        <title>haklee</title>
       </head>
       <body>
         <div className={styles.blur} aria-hidden={true} />
         <Layout>{children}</Layout>
         <NavigationMenu />
+        {modal}
       </body>
     </html>
   );
