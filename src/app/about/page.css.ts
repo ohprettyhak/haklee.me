@@ -90,7 +90,7 @@ export const card = style({
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,
   borderRadius: rem(8),
   backgroundColor: theme.colors.cardBackground,
-  transition: 'all 0.3s',
+  transition: 'background-color 0.3s, border-color 0.3s',
 });
 
 globalStyle(`${grid} > ${card}`, {
