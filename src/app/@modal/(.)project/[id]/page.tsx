@@ -1,13 +1,15 @@
 import { FC, ReactElement } from 'react';
 
-type PlaygroundModalProps = {
+import Modal from './modal';
+
+type ProjectModalProps = {
   params: Promise<{ id: string }>;
 };
 
-const PlaygroundModal: FC<PlaygroundModalProps> = async ({ params }): Promise<ReactElement> => {
+const ProjectModal: FC<ProjectModalProps> = async ({ params }): Promise<ReactElement> => {
   const { id } = await params;
-
-  return <div>{id}</div>;
+  alert(id);
+  return <Modal />;
 };
 
-export default PlaygroundModal;
+export default ProjectModal;

@@ -71,6 +71,8 @@ const modeColors = createThemeContract({
   cardBorderHover: '--hakui-card-border-hover',
   cardBackgroundHover: '--hakui-card-background-hover',
 
+  tabBehind: '--hakui-tab-behind',
+
   text: '--hakui-text',
   textSecondary: '--hakui-text-secondary',
   border: '--hakui-border',
@@ -114,6 +116,8 @@ export const lightModeColors = createTheme(modeColors, {
   menuBackground: 'rgba(28, 27, 31, 0.03)',
   menuActiveBackground: 'rgba(28, 27, 31, 0.1)',
 
+  tabBehind: 'rgba(28, 27, 31, 0.03)',
+
   cardBorder: 'rgba(28, 27, 31, 0.04)',
   cardBackground: 'rgba(28, 27, 31, 0.01)',
   cardBorderHover: 'rgba(28, 27, 31, 0.15 )',
@@ -132,6 +136,8 @@ export const darkModeColors = createTheme(modeColors, {
   menuBorder: 'rgba(36, 36, 36, 0.4)',
   menuBackground: 'rgba(26, 26, 26, 0.5)',
   menuActiveBackground: 'rgba(36, 36, 36, 0.8)',
+
+  tabBehind: 'rgba(36, 36, 36, 0.8)',
 
   cardBorder: 'rgba(36, 36, 36, 0.6)',
   cardBackground: 'rgba(26, 26, 26, 0.3)',

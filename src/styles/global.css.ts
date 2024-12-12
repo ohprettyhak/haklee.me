@@ -13,6 +13,7 @@ globalStyle('body', {
   fontFamily: theme.fonts.sans,
   backgroundColor: theme.colors.background,
   transition: 'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  overflowY: 'scroll',
 });
 
 globalStyle('[data-theme="dark"]', {

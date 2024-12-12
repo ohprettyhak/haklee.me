@@ -21,19 +21,19 @@ const Tab: FC<TabProps> = ({ className, current, ...props }): ReactElement => {
   };
 
   useEffect(() => {
-    const activeTab = document.querySelector(`[data-tab="${current}"]`) as HTMLElement | null;
+    const activeTab: HTMLElement | null = document.querySelector(`[data-tab="${current}"]`);
     updateBehindPosition(activeTab);
   }, [current]);
 
   const handleMouseEnter = (tab: HTMLElement | null) => updateBehindPosition(tab);
   const handleMouseLeave = () => {
-    const activeTab = document.querySelector(`[data-tab="${current}"]`) as HTMLElement | null;
+    const activeTab: HTMLElement | null = document.querySelector(`[data-tab="${current}"]`);
     updateBehindPosition(activeTab);
   };
 
   return (
     <div className={clsx(styles.root, className)} {...props}>
-      <motion.div className={styles.tabWrapper}>
+      <motion.div className={styles.wrapper}>
         {behind && (
           <motion.div
             className={styles.behind}
