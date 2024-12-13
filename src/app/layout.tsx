@@ -1,4 +1,5 @@
 import '@/styles/global.css';
+import 'remark-blockquote-alerts/styles/blockquote.min.css';
 
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';

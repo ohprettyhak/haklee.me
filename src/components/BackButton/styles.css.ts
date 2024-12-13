@@ -16,6 +16,7 @@ export const button = style({
   cursor: 'pointer',
   transition: 'background-color 0.2s',
   gap: rem(4),
+  userSelect: 'none',
 
   ':hover': { backgroundColor: theme.colors.cardBackgroundHover },
 });

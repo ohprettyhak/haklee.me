@@ -6,4 +6,4 @@ title: '훕치치(HUFSCHEER)'
 type: '사이드 프로젝트'
 ---
 
-![칼국수](/project/hufscheer/cover.webp)
+![HUFSCHEER](/project/2024-hufscheer/cover.webp)

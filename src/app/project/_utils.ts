@@ -1,12 +1,17 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
+import rehypeStringify from 'rehype-stringify';
+import { remark } from 'remark';
+import remarkAlerts from 'remark-blockquote-alerts';
+import remarkRehype from 'remark-rehype';
 
 const projectDir = path.join(process.cwd(), 'project');
 const playgroundDir = path.join(process.cwd(), 'project');
 
 export type MarkdownItem = {
   content: string;
+  html?: string;
   frontmatter: {
     cover: string;
     description: string;
@@ -21,6 +26,15 @@ export type MarkdownItem = {
 export type Markdown = {
   year: string;
   items: MarkdownItem[];
+};
+
+const markdownToHtml = (markdown: string): string => {
+  return remark()
+    .use(remarkAlerts)
+    .use(remarkRehype)
+    .use(rehypeStringify)
+    .processSync(markdown)
+    .toString();
 };
 
 export const getMarkdownList = (dir: 'PROJECT' | 'PLAYGROUND'): Markdown[] => {
@@ -61,10 +75,12 @@ export const getMarkdownById = (
 
   const fileContent = fs.readFileSync(filePath, 'utf-8');
   const { data, content } = matter(fileContent);
+  const htmlContent = markdownToHtml(content);
 
   return {
     slug,
     frontmatter: data as MarkdownItem['frontmatter'],
     content,
+    html: htmlContent,
   };
 };

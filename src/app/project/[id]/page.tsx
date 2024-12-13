@@ -29,7 +29,7 @@ const Playground: FC<PlaygroundProps> = async ({ params }): Promise<ReactElement
   const project: MarkdownItem | null = getMarkdownById('PROJECT', id);
   if (!project) notFound();
 
-  const { frontmatter } = project;
+  const { frontmatter, html } = project;
 
   return (
     <article className={styles.root} data-animate={true}>
@@ -59,6 +59,8 @@ const Playground: FC<PlaygroundProps> = async ({ params }): Promise<ReactElement
           ))}
         </div>
       )}
+
+      {html && <div className={styles.content} dangerouslySetInnerHTML={{ __html: html }} />}
     </article>
   );
 };

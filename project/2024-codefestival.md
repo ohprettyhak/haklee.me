@@ -6,4 +6,4 @@ title: '한국외국어대학교 코드페스티벌'
 type: '사이드 프로젝트'
 ---
 
-![칼국수](/project/hufscheer/cover.webp)
+![CodeFestival](/project/2024-codefestival/cover.webp)

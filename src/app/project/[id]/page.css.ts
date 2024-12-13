@@ -72,3 +72,7 @@ globalStyle(`${link} a`, {
 globalStyle(`${link} a:hover`, {
   backgroundColor: theme.colors.cardBackgroundHover,
 });
+
+export const content = style({
+  color: theme.colors.text,
+});
