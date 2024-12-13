@@ -61,6 +61,7 @@ export const dot = style({
 
 export const card = style({
   ...theme.layouts.column,
+  width: '100%',
   paddingBlock: rem(12),
   paddingInline: rem(16),
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,
@@ -74,7 +75,7 @@ export const card = style({
   },
 });
 
-globalStyle(`${card} h4`, {
+globalStyle(`${card} h3`, {
   marginTop: rem(12),
   color: theme.colors.text,
   fontWeight: 500,
@@ -86,7 +87,7 @@ export const cover = style({
   position: 'relative',
   width: '100%',
   marginTop: rem(8),
-  aspectRatio: '16 / 9',
+  aspectRatio: '1200 / 630',
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,
   borderRadius: rem(8),
   overflow: 'hidden',

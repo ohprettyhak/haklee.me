@@ -4,15 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC, Fragment, ReactElement } from 'react';
 
-import { type Project } from '@/app/project/_utils';
+import { type Markdown } from '@/app/project/_utils';
 
 import * as styles from './styles.css';
 
 type ProjectGridProps = {
-  projects: Project[];
+  projects: Markdown[];
 };
-
-const MotionLink = motion.create(Link);
 
 const ProjectGrid: FC<ProjectGridProps> = ({ projects }): ReactElement => {
   return (
@@ -25,24 +23,23 @@ const ProjectGrid: FC<ProjectGridProps> = ({ projects }): ReactElement => {
 
           <div className={styles.grid}>
             {items.map(({ slug, frontmatter }) => (
-              <MotionLink key={slug} layoutId={`project-${slug}`} href={`/project/${slug}`}>
-                <div className={styles.card}>
+              <Link key={slug} href={`/project/${slug}`}>
+                <motion.div className={styles.card}>
                   <p className={styles.metadata}>
                     {frontmatter.duration} &middot; {frontmatter.type}
                   </p>
-                  <div className={styles.cover}>
+                  <motion.div className={styles.cover}>
                     <Image
                       src={frontmatter.cover}
                       alt={frontmatter.title}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       fill
                     />
-                  </div>
-                  <h4>{frontmatter.title}</h4>
-
-                  <p className={styles.description}>{frontmatter.description}</p>
-                </div>
-              </MotionLink>
+                  </motion.div>
+                  <motion.h3>{frontmatter.title}</motion.h3>
+                  <motion.p className={styles.description}>{frontmatter.description}</motion.p>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>

@@ -2,7 +2,7 @@ import '@/styles/global.css';
 
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import { FC, ReactElement, ReactNode } from 'react';
+import { FC, PropsWithChildren, ReactElement } from 'react';
 
 import { darkModeColors, lightModeColors } from '@/styles';
 
@@ -73,12 +73,7 @@ export const metadata: Metadata = {
   ],
 };
 
-type RootLayoutProps = {
-  children: ReactNode;
-  modal: ReactNode;
-};
-
-const RootLayout: FC<RootLayoutProps> = ({ children, modal }): ReactElement => {
+const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
   return (
     <html lang="ko" suppressHydrationWarning>
       <head>
@@ -88,7 +83,6 @@ const RootLayout: FC<RootLayoutProps> = ({ children, modal }): ReactElement => {
         <div className={styles.blur} aria-hidden={true} />
         <Layout>{children}</Layout>
         <NavigationMenu />
-        {modal}
       </body>
     </html>
   );

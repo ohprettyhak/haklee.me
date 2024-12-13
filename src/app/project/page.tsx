@@ -1,9 +1,9 @@
 import { FC, Fragment, ReactElement } from 'react';
 
-import Playground from './_components/Playground';
+import PlaygroundList from './_components/PlaygroundList';
 import ProjectGrid from './_components/ProjectGrid';
 import Tab from './_components/Tab';
-import { getProjectList, type Project } from './_utils';
+import { getMarkdownList, type Markdown } from './_utils';
 import * as styles from './page.css';
 
 type ProjectProps = {
@@ -11,7 +11,7 @@ type ProjectProps = {
 };
 
 const Project: FC<ProjectProps> = async ({ searchParams }): Promise<ReactElement> => {
-  const projects: Project[] = getProjectList();
+  const projects: Markdown[] = getMarkdownList('PROJECT');
 
   const { type: _type } = await searchParams;
   let type: 'PROJECT' | 'PLAYGROUND';
@@ -22,7 +22,7 @@ const Project: FC<ProjectProps> = async ({ searchParams }): Promise<ReactElement
     <Fragment>
       <Tab className={styles.tab} current={type} />
       <section className={styles.root} data-animate={true}>
-        {type === 'PROJECT' ? <ProjectGrid projects={projects} /> : <Playground />}
+        {type === 'PROJECT' ? <ProjectGrid projects={projects} /> : <PlaygroundList />}
       </section>
     </Fragment>
   );

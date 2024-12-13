@@ -118,7 +118,7 @@ export const RESUME = [
           {
             id: 'boo_design',
             title:
-              'Boo 디자인 시스템 개발 (<a href="https://github.com/GDGHUFS/boo-design" target="_blank" rel="noreferrer noopener">Github</a>)',
+              'Boo 디자인 시스템 개발팀 운영 (<a href="https://github.com/GDGHUFS/boo-design" target="_blank" rel="noreferrer noopener">Github</a>)',
           },
         ],
       },
