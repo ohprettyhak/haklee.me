@@ -17,7 +17,8 @@ const MENU = [
 ];
 
 const NavigationMenu: FC = (): ReactElement => {
-  const pathname: string = usePathname();
+  const _pathname: string = usePathname();
+  const pathname: string = '/' + _pathname.split('/')[1];
 
   const menuItems: ReactElement[] = useMemo((): ReactElement[] => {
     return MENU.map(({ key, title, icon: Icon, path }) => {
