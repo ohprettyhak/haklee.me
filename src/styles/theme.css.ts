@@ -54,9 +54,11 @@ const layouts = {
 };
 
 const zIndices = {
+  behind: '-1',
   overlay: '100',
   header: '150',
   modal: '200',
+  modalContent: '250',
 };
 
 const modeColors = createThemeContract({
@@ -67,6 +69,10 @@ const modeColors = createThemeContract({
 
   cardBorder: '--hakui-card-border',
   cardBackground: '--hakui-card-background',
+  cardBorderHover: '--hakui-card-border-hover',
+  cardBackgroundHover: '--hakui-card-background-hover',
+
+  tabBehind: '--hakui-tab-behind',
 
   text: '--hakui-text',
   textSecondary: '--hakui-text-secondary',
@@ -111,8 +117,12 @@ export const lightModeColors = createTheme(modeColors, {
   menuBackground: 'rgba(28, 27, 31, 0.03)',
   menuActiveBackground: 'rgba(28, 27, 31, 0.1)',
 
+  tabBehind: 'rgba(28, 27, 31, 0.03)',
+
   cardBorder: 'rgba(28, 27, 31, 0.04)',
   cardBackground: 'rgba(28, 27, 31, 0.01)',
+  cardBorderHover: 'rgba(28, 27, 31, 0.15 )',
+  cardBackgroundHover: 'rgba(28, 27, 31, 0.03)',
 
   text: colors.gray950,
   textSecondary: colors.gray700,
@@ -128,8 +138,12 @@ export const darkModeColors = createTheme(modeColors, {
   menuBackground: 'rgba(26, 26, 26, 0.5)',
   menuActiveBackground: 'rgba(36, 36, 36, 0.8)',
 
+  tabBehind: 'rgba(36, 36, 36, 0.8)',
+
   cardBorder: 'rgba(36, 36, 36, 0.6)',
   cardBackground: 'rgba(26, 26, 26, 0.3)',
+  cardBorderHover: 'rgba(46, 46, 46, 1)',
+  cardBackgroundHover: 'rgba(46, 46, 46, 0.5)',
 
   text: colors.gray0,
   textSecondary: colors.gray400,

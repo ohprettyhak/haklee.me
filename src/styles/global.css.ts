@@ -13,6 +13,7 @@ globalStyle('body', {
   fontFamily: theme.fonts.sans,
   backgroundColor: theme.colors.background,
   transition: 'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  overflowY: 'scroll',
 });
 
 globalStyle('[data-theme="dark"]', {
@@ -60,4 +61,69 @@ globalStyle('a[rel="noreferrer noopener"][target=_blank]:after', {
   mask: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 15.477l-.02-9.672a.802.802 0 0 0-.218-.577c-.145-.152-.34-.228-.587-.228H8.499a.751.751 0 0 0-.777.76c0 .199.076.371.227.517.15.145.326.218.525.218h3.733l4.52-.129-1.728 1.54-9.767 9.783a.692.692 0 0 0-.232.518c0 .205.078.387.235.545a.74.74 0 0 0 .542.237.73.73 0 0 0 .527-.224l9.775-9.78 1.544-1.727-.143 4.188v4.065c0 .199.075.376.225.531.15.155.327.232.531.232.202 0 .38-.076.534-.228a.768.768 0 0 0 .23-.569Z'/%3E%3C/svg%3E")`,
   maskRepeat: 'no-repeat',
   maskSize: 'cover',
+});
+
+globalStyle('article > div[data-content] h1', {
+  fontSize: rem(22),
+  lineHeight: 1.25,
+});
+
+globalStyle('article > div[data-content] h2', {
+  fontSize: rem(19),
+  lineHeight: 1.2,
+});
+
+globalStyle('article > div[data-content] h3', {
+  fontSize: rem(18),
+  lineHeight: 1.1,
+});
+
+globalStyle('article > div[data-content] h4', {
+  fontSize: rem(17),
+  lineHeight: 1.3,
+});
+
+globalStyle('article > div[data-content] h5, article > div[data-content] h6', {
+  fontSize: rem(16),
+  lineHeight: 1.3,
+});
+
+globalStyle(
+  'article > div[data-content] h1, article > div[data-content] h2, article > div[data-content] h3, article > div[data-content] h4, article > div[data-content] h5, article > div[data-content] h6',
+  {
+    fontWeight: 600,
+    paddingTop: rem(18),
+    paddingBottom: rem(24),
+  },
+);
+
+globalStyle('article > div[data-content] p', {
+  lineHeight: '180%',
+  paddingBottom: rem(18),
+});
+
+globalStyle('article > div[data-content] a', {
+  opacity: 0.8,
+  textDecoration: 'underline',
+  transition: 'opacity 0.2s',
+});
+
+globalStyle('article > div[data-content] a:hover', {
+  opacity: 1,
+});
+
+globalStyle('article > div[data-content] strong', {
+  fontWeight: 600,
+});
+
+globalStyle('article > div[data-content] img', {
+  maxWidth: '100%',
+  borderRadius: rem(10),
+  objectFit: 'cover',
+  overflow: 'hidden',
+});
+
+globalStyle('article div[data-content] [class^=blockquote-] > p', {
+  padding: 0,
+  margin: 0,
 });

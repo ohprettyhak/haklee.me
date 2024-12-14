@@ -27,3 +27,6 @@ export * from './components/semantic/MoonIcon';
 export * from './components/semantic/CircleDashIcon';
 export * from './components/semantic/SparkleIcon';
 export * from './components/semantic/BirdIcon';
+export * from './components/semantic/XIcon';
+export * from './components/semantic/GlobeIcon';
+export * from './components/semantic/MoveLeftIcon';
