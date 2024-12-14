@@ -3,10 +3,17 @@ import { FC, PropsWithChildren, ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: '프로젝트 — haklee',
+  openGraph: {
+    title: '프로젝트 — haklee',
+    url: 'https://www.haklee.me/project',
+  },
+  twitter: {
+    title: '프로젝트 — haklee',
+  },
 };
 
-const PlaygroundLayout: FC<PropsWithChildren> = ({ children }): ReactNode => {
+const ProjectLayout: FC<PropsWithChildren> = ({ children }): ReactNode => {
   return children;
 };
 
-export default PlaygroundLayout;
+export default ProjectLayout;

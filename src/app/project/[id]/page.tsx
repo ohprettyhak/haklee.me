@@ -41,14 +41,17 @@ const Playground: FC<PlaygroundProps> = async ({ params }): Promise<ReactElement
           alt={frontmatter.title}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           quality={100}
+          draggable={false}
           fill
         />
       </div>
-      <p className={styles.metadata}>
-        {frontmatter.duration} &middot; {frontmatter.type}
-      </p>
-      <h3 className={styles.title}>{frontmatter.title}</h3>
-      <p className={styles.description}>{frontmatter.description}</p>
+      <div>
+        <p className={styles.metadata}>
+          {frontmatter.duration} &middot; {frontmatter.type}
+        </p>
+        <h3 className={styles.title}>{frontmatter.title}</h3>
+        <p className={styles.description}>{frontmatter.description}</p>
+      </div>
       {frontmatter.links && (
         <div className={styles.link}>
           {frontmatter.links.map((link) => (
@@ -60,7 +63,9 @@ const Playground: FC<PlaygroundProps> = async ({ params }): Promise<ReactElement
         </div>
       )}
 
-      {html && <div className={styles.content} dangerouslySetInnerHTML={{ __html: html }} />}
+      <hr className={styles.divider} aria-hidden={true} />
+
+      {html && <div data-content={true} dangerouslySetInnerHTML={{ __html: html }} />}
     </article>
   );
 };

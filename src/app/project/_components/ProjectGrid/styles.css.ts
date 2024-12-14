@@ -95,6 +95,7 @@ export const cover = style({
 
 globalStyle(`${cover} > img`, {
   objectFit: 'cover',
+  userSelect: 'none',
 });
 
 export const metadata = style({

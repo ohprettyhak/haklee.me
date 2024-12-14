@@ -6,9 +6,6 @@ import { remark } from 'remark';
 import remarkAlerts from 'remark-blockquote-alerts';
 import remarkRehype from 'remark-rehype';
 
-const projectDir = path.join(process.cwd(), 'project');
-const playgroundDir = path.join(process.cwd(), 'project');
-
 export type MarkdownItem = {
   content: string;
   html?: string;
@@ -28,22 +25,25 @@ export type Markdown = {
   items: MarkdownItem[];
 };
 
+export type DirType = 'PROJECT' | 'PLAYGROUND' | 'ARTICLE';
+
 const markdownToHtml = (markdown: string): string => {
   return remark()
     .use(remarkAlerts)
-    .use(remarkRehype)
-    .use(rehypeStringify)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .processSync(markdown)
     .toString();
 };
 
-export const getMarkdownList = (dir: 'PROJECT' | 'PLAYGROUND'): Markdown[] => {
-  const files = fs.readdirSync(dir === 'PROJECT' ? projectDir : playgroundDir);
+export const getMarkdownList = (dir: DirType): Markdown[] => {
+  const pathDir: string = path.join(process.cwd(), dir.toLowerCase());
+  const files: string[] = fs.readdirSync(pathDir);
 
   const markdowns = files
     .filter((file) => file.endsWith('.md'))
     .map((file) => {
-      const filePath: string = path.join(projectDir, file);
+      const filePath: string = path.join(pathDir, file);
       const fileContent: string = fs.readFileSync(filePath, 'utf-8');
       const { data, content } = matter(fileContent);
       return {
@@ -65,11 +65,9 @@ export const getMarkdownList = (dir: 'PROJECT' | 'PLAYGROUND'): Markdown[] => {
   return Object.values(grouped).sort((a, b) => parseInt(b.year) - parseInt(a.year));
 };
 
-export const getMarkdownById = (
-  dir: 'PROJECT' | 'PLAYGROUND',
-  slug: string,
-): MarkdownItem | null => {
-  const filePath = path.join(dir === 'PROJECT' ? projectDir : playgroundDir, `${slug}.md`);
+export const getMarkdownById = (dir: DirType, slug: string): MarkdownItem | null => {
+  const pathDir: string = path.join(process.cwd(), dir.toLowerCase());
+  const filePath: string = path.join(pathDir, `${slug}.md`);
 
   if (!fs.existsSync(filePath)) return null;
 

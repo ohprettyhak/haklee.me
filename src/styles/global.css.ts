@@ -62,3 +62,68 @@ globalStyle('a[rel="noreferrer noopener"][target=_blank]:after', {
   maskRepeat: 'no-repeat',
   maskSize: 'cover',
 });
+
+globalStyle('article > div[data-content] h1', {
+  fontSize: rem(22),
+  lineHeight: 1.25,
+});
+
+globalStyle('article > div[data-content] h2', {
+  fontSize: rem(19),
+  lineHeight: 1.2,
+});
+
+globalStyle('article > div[data-content] h3', {
+  fontSize: rem(18),
+  lineHeight: 1.1,
+});
+
+globalStyle('article > div[data-content] h4', {
+  fontSize: rem(17),
+  lineHeight: 1.3,
+});
+
+globalStyle('article > div[data-content] h5, article > div[data-content] h6', {
+  fontSize: rem(16),
+  lineHeight: 1.3,
+});
+
+globalStyle(
+  'article > div[data-content] h1, article > div[data-content] h2, article > div[data-content] h3, article > div[data-content] h4, article > div[data-content] h5, article > div[data-content] h6',
+  {
+    fontWeight: 600,
+    paddingTop: rem(18),
+    paddingBottom: rem(24),
+  },
+);
+
+globalStyle('article > div[data-content] p', {
+  lineHeight: '180%',
+  paddingBottom: rem(18),
+});
+
+globalStyle('article > div[data-content] a', {
+  opacity: 0.8,
+  textDecoration: 'underline',
+  transition: 'opacity 0.2s',
+});
+
+globalStyle('article > div[data-content] a:hover', {
+  opacity: 1,
+});
+
+globalStyle('article > div[data-content] strong', {
+  fontWeight: 600,
+});
+
+globalStyle('article > div[data-content] img', {
+  maxWidth: '100%',
+  borderRadius: rem(10),
+  objectFit: 'cover',
+  overflow: 'hidden',
+});
+
+globalStyle('article div[data-content] [class^=blockquote-] > p', {
+  padding: 0,
+  margin: 0,
+});

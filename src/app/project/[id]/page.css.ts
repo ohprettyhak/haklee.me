@@ -24,12 +24,13 @@ export const cover = style({
   width: '100%',
   aspectRatio: '1200 / 630',
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,
-  borderRadius: rem(8),
+  borderRadius: rem(10),
   overflow: 'hidden',
 });
 
 globalStyle(`${cover} > img`, {
   objectFit: 'cover',
+  userSelect: 'none',
 });
 
 export const title = style({
@@ -51,7 +52,7 @@ export const description = style({
 
 export const link = style({
   ...theme.layouts.centerY,
-  marginBlock: rem(16),
+  marginTop: rem(16),
   gap: rem(8),
 });
 
@@ -71,6 +72,15 @@ globalStyle(`${link} a`, {
 
 globalStyle(`${link} a:hover`, {
   backgroundColor: theme.colors.cardBackgroundHover,
+});
+
+export const divider = style({
+  width: '100%',
+  height: rem(2),
+  marginBlock: `calc(${theme.sizes.appSpace} * 2)`,
+  border: 0,
+  borderRadius: rem(2),
+  backgroundColor: theme.colors.line,
 });
 
 export const content = style({
