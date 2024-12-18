@@ -24,22 +24,6 @@ globalStyle('[data-theme="light"]', {
   colorScheme: 'light',
 });
 
-globalStyle('.gradient', {
-  width: 'fit-content',
-  color: 'transparent',
-  borderBottom: `${rem(1)} solid ${theme.colors.border}`,
-  boxDecorationBreak: 'clone',
-  background: `linear-gradient(90deg, #833ab4 0%, #fd1d1d 25%, #C06C84 50%, ${theme.colors.text} 50%, ${theme.colors.text} 100%)`,
-  backgroundClip: 'text',
-  backgroundSize: '200% 100%',
-  backgroundPosition: '100%',
-  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-});
-
-globalStyle('.gradient:hover', {
-  backgroundPosition: '0',
-});
-
 globalStyle('a[rel="noreferrer noopener"][target=_blank]', {
   textDecoration: 'underline',
   wordBreak: 'keep-all',
@@ -62,6 +46,28 @@ globalStyle('a[rel="noreferrer noopener"][target=_blank]:after', {
   maskRepeat: 'no-repeat',
   maskSize: 'cover',
 });
+
+globalStyle(
+  '.gradient, article > div[data-content] a:not([rel="noreferrer noopener"][target=_blank])',
+  {
+    width: 'fit-content',
+    color: 'transparent',
+    borderBottom: `${rem(1)} solid ${theme.colors.border}`,
+    boxDecorationBreak: 'clone',
+    background: `linear-gradient(90deg, #833ab4 0%, #fd1d1d 25%, #C06C84 50%, ${theme.colors.textTertiary} 50%, ${theme.colors.textTertiary} 100%)`,
+    backgroundClip: 'text',
+    backgroundSize: '200% 100%',
+    backgroundPosition: '100%',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  },
+);
+
+globalStyle(
+  '.gradient:hover, article > div[data-content] a:not([rel="noreferrer noopener"][target=_blank]):hover',
+  {
+    backgroundPosition: '0',
+  },
+);
 
 globalStyle('article > div[data-content] h1', {
   fontSize: rem(22),
@@ -91,39 +97,44 @@ globalStyle('article > div[data-content] h5, article > div[data-content] h6', {
 globalStyle(
   'article > div[data-content] h1, article > div[data-content] h2, article > div[data-content] h3, article > div[data-content] h4, article > div[data-content] h5, article > div[data-content] h6',
   {
+    color: theme.colors.text,
     fontWeight: 600,
-    paddingTop: rem(18),
-    paddingBottom: rem(24),
+    paddingTop: rem(28),
+    paddingBottom: rem(20),
   },
 );
 
 globalStyle('article > div[data-content] p', {
+  color: theme.colors.text,
+  fontSize: rem(16),
   lineHeight: '180%',
   paddingBottom: rem(18),
-});
-
-globalStyle('article > div[data-content] a', {
-  opacity: 0.8,
-  textDecoration: 'underline',
-  transition: 'opacity 0.2s',
-});
-
-globalStyle('article > div[data-content] a:hover', {
-  opacity: 1,
 });
 
 globalStyle('article > div[data-content] strong', {
   fontWeight: 600,
 });
 
-globalStyle('article > div[data-content] img', {
+globalStyle('article > div[data-content] p > img', {
   maxWidth: '100%',
+  border: `${rem(1)} solid ${theme.colors.cardBorder}`,
   borderRadius: rem(10),
   objectFit: 'cover',
   overflow: 'hidden',
+  userSelect: 'none',
 });
 
 globalStyle('article div[data-content] [class^=blockquote-] > p', {
   padding: 0,
   margin: 0,
+});
+
+globalStyle('article div[data-content] p > code', {
+  paddingBlock: rem(2),
+  paddingInline: rem(4),
+  fontFamily: theme.fonts.mono,
+  fontSize: rem(14.5),
+  lineHeight: 1.3,
+  backgroundColor: theme.colors.cardBackgroundHover,
+  borderRadius: rem(4),
 });

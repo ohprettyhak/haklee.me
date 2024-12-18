@@ -5,8 +5,8 @@ import { FC, ReactElement } from 'react';
 import BackButton from '@/components/BackButton';
 import { GithubIcon, GlobeIcon } from '@/components/icons';
 import { theme } from '@/styles';
+import { getMarkdownById, MarkdownItem } from '@/utils/markdown';
 
-import { getMarkdownById, MarkdownItem } from '../_utils';
 import * as styles from './page.css';
 
 const getIconByType = (type: string): ReactElement => {
@@ -49,6 +49,8 @@ const Playground: FC<PlaygroundProps> = async ({ params }): Promise<ReactElement
         <p className={styles.metadata}>
           {frontmatter.duration} &middot; {frontmatter.type}
         </p>
+        <p className={styles.team}>{frontmatter.team}</p>
+
         <h3 className={styles.title}>{frontmatter.title}</h3>
         <p className={styles.description}>{frontmatter.description}</p>
       </div>

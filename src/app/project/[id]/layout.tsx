@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren, ReactNode } from 'react';
 
-import { getMarkdownById, MarkdownItem } from '../_utils';
+import { getMarkdownById, MarkdownItem } from '../../../utils/markdown';
 
 type MetadataProps = {
   params: Promise<{ id: string }>;

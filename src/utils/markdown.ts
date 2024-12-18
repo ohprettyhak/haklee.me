@@ -15,6 +15,7 @@ export type MarkdownItem = {
     duration: string;
     title: string;
     type: string;
+    team: string;
     links?: Array<{ type: string; link: string }>;
   };
   slug: string;

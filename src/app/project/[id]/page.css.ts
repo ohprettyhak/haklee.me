@@ -19,6 +19,14 @@ export const metadata = style({
   wordBreak: 'keep-all',
 });
 
+export const team = style({
+  marginTop: rem(5),
+  color: theme.colors.textSecondary,
+  fontSize: rem(12),
+  fontWeight: 500,
+  wordBreak: 'keep-all',
+});
+
 export const cover = style({
   position: 'relative',
   width: '100%',
@@ -34,7 +42,7 @@ globalStyle(`${cover} > img`, {
 });
 
 export const title = style({
-  marginTop: rem(8),
+  marginTop: rem(10),
   color: theme.colors.text,
   fontSize: rem(18),
   fontWeight: 500,
