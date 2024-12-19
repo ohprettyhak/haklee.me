@@ -154,8 +154,7 @@ globalStyle('[data-rehype-pretty-code-figure]', {
 });
 
 globalStyle('[data-rehype-pretty-code-figure] > pre > code', {
-  paddingBlock: rem(8),
-  paddingInline: rem(12),
+  padding: rem(8),
   fontFamily: theme.fonts.mono,
   fontSize: rem(14),
 });
