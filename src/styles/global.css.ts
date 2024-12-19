@@ -141,6 +141,7 @@ globalStyle('article div[data-content] p > code', {
 
 globalStyle('article div[data-content] video', {
   maxWidth: '100%',
+  marginBottom: rem(18),
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,
   borderRadius: rem(10),
   overflow: 'hidden',
@@ -148,6 +149,7 @@ globalStyle('article div[data-content] video', {
 });
 
 globalStyle('[data-rehype-pretty-code-figure]', {
+  marginBottom: rem(18),
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,
   borderRadius: rem(10),
   overflow: 'hidden',

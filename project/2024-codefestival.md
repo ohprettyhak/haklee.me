@@ -41,24 +41,23 @@ CodeFestival이라는 이름의 알고리즘 대회를 개최합니다. 올해 �
 
 ## 🌌 Three.js
 
-<video autoplay loop playsinline muted>
+<video controls autoplay loop playsinline muted>
   <source src="/project/2024-codefestival/animation.webm" type="video/webm" />
   <source src="/project/2024-codefestival/animation.mp4" type="video/mp4" />
   이 비디오가 보이지 않나요? 이슈로 알려주세요. 😢
 </video>
-<br/>
 
 이번 프로젝트에서 도전적인 부분은 <a href="https://threejs.org/" target="_blank" rel="noreferrer noopener">Three.js</a>를 사용하여 애니메이션을
 구현하는 부분이었습니다. `Three.js`는 웹 브라우저에서 3D 그래픽을 렌더링하기 위한
 라이브러리로, <a href="https://www.khronos.org/webgl/" target="_blank" rel="noreferrer noopener">WebGL</a>을 기반으로 합니다.
 
-처음 다루다보니 이 부분에서 시간을 가장 많이 썼고, 그만큼 보람있었습니다. 제가 애니메이션을 구현하기 위해 진행한 방법은 아래와 같습니다.
+처음 다루다 보니 이 부분에서 시간을 가장 많이 썼고, 그만큼 보람 있었습니다. 제가 애니메이션을 구현하기 위해 진행한 방법은 아래와 같습니다.
 
 #### ① 로고 생성
 
-피그마에서 로고를 `svg` 파일로 추출하고, `Three.js`의 `Shape` 클래스를 사용하여 로고를 그렸습니다.
+피그마에서 로고를 `svg` 파일로 추출하고, `Three.js`의 `Shape` 클래스를 사용하여 그렸습니다.
 
-```ts showLineNumbers
+```ts
 const shape = new THREE.Shape();
 shape.moveTo(18.9, 9.7);
 shape.lineTo(30.5, 9.7);
@@ -70,3 +69,51 @@ shape.lineTo(30.5, 64.3);
 shape.lineTo(18.9, 64.3);
 shape.lineTo(18.9, 9.7);
 ```
+
+이 좌표를 연결하면 위의 애니메이션과 같이 'ㄷ'자 형태의 선으로 연결됩니다. 이 로고를 3D로 만들기 위해 `ExtrudeGeometry`를 사용하여 깊이를 부여했습니다.
+
+#### ② 로고 회전
+
+```tsx
+<mesh
+  ref={meshRef}
+  scale={[1, 1, 1]}
+  rotation={[
+    THREE.MathUtils.degToRad(18),
+    THREE.MathUtils.degToRad(26),
+    THREE.MathUtils.degToRad(8.1),
+  ]}
+>
+  <meshStandardMaterial
+    attach="material"
+    metalness={0.7}
+    roughness={0.2}
+    color={0x363850}
+    emissive={0x000000}
+    emissiveIntensity={0.05}
+  />
+</mesh>
+```
+
+`THREE.MathUtils.degToRad`를 사용하면 각도를 라디안으로 변환할 수 있습니다. `rotation` 속성에 각도를 넣어서 원하는 회전각을 만들었습니다.
+
+#### ③ Canvas 렌더링
+
+```tsx
+const CIShape = () => {
+  return (
+    <Canvas camera={{ position: [0, 0, 80], fov: 75 }}>
+      <ambientLight intensity={0.3} />
+      <directionalLight position={[5, 10, 7.5]} intensity={0.8} />
+      <Environment preset="sunset" />
+      <DShape />
+      <OrbitControls enableRotate={false} enableZoom={false} enablePan={false} />
+    </Canvas>
+  );
+};
+```
+
+`ambientLight`, `directionalLight`를 통해 광원을 만들고, sunset 배경을 지정했습니다. 도형에 금속 효과를 넣어 이 배경을 반사하게 했는데요, 이에 따라 로고의 색이 유려하게
+변화합니다.
+
+생각보다 로고가 예쁘게 나와 만족스럽습니다. 프로젝트 구현 중 느낀 재미로 인해, 클라이언트 단에서 동작하는 기술에 관심이 생기는 경험이었습니다.
