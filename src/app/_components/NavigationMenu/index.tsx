@@ -12,12 +12,13 @@ import * as styles from './styles.css';
 const MENU = [
   { key: 'home', title: '홈', path: '/', icon: ToiletIcon },
   { key: 'about', title: '소개', path: '/about', icon: BirdIcon },
-  { key: 'playground', title: '프로젝트', path: '/playground', icon: StorageIcon },
+  { key: 'project', title: '프로젝트', path: '/project', icon: StorageIcon },
   { key: 'article', title: '글', path: '/article', icon: SparkleIcon },
 ];
 
 const NavigationMenu: FC = (): ReactElement => {
-  const pathname: string = usePathname();
+  const _pathname: string = usePathname();
+  const pathname: string = '/' + _pathname.split('/')[1];
 
   const menuItems: ReactElement[] = useMemo((): ReactElement[] => {
     return MENU.map(({ key, title, icon: Icon, path }) => {

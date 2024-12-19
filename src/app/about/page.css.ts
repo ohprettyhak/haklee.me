@@ -1,6 +1,7 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 
 import { rem, theme } from '@/styles';
+import { breakpoint } from '@/styles/responsive.css';
 
 export const introduce = style({
   paddingInline: theme.sizes.appSpace,
@@ -75,8 +76,11 @@ globalStyle(`${timeline} > ${item}:last-child .${line}`, {
 
 export const grid = style({
   display: 'grid',
-  gridTemplateColumns: 'repeat(3, 1fr)',
+  gridTemplateColumns: '1fr',
+  width: '100%',
   gap: rem(16),
+
+  ...breakpoint({ mobile: { gridTemplateColumns: 'repeat(3, 1fr)' } }),
 });
 
 export const card = style({
@@ -86,7 +90,7 @@ export const card = style({
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,
   borderRadius: rem(8),
   backgroundColor: theme.colors.cardBackground,
-  transition: 'all 0.3s',
+  transition: 'background-color 0.3s, border-color 0.3s',
 });
 
 globalStyle(`${grid} > ${card}`, {
