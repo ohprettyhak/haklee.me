@@ -26,7 +26,7 @@ type PlaygroundProps = {
 
 const Playground: FC<PlaygroundProps> = async ({ params }): Promise<ReactElement> => {
   const { id } = await params;
-  const project: MarkdownItem | null = getMarkdownById('PROJECT', id);
+  const project: MarkdownItem | null = await getMarkdownById('PROJECT', id);
   if (!project) notFound();
 
   const { frontmatter, html } = project;

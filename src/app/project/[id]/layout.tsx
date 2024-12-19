@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren, ReactNode } from 'react';
 
-import { getMarkdownById, MarkdownItem } from '../../../utils/markdown';
+import { getMarkdownById, MarkdownItem } from '@/utils/markdown';
 
 type MetadataProps = {
   params: Promise<{ id: string }>;
@@ -8,7 +8,7 @@ type MetadataProps = {
 
 export async function generateMetadata({ params }: MetadataProps) {
   const { id } = await params;
-  const project: MarkdownItem | null = getMarkdownById('PROJECT', id);
+  const project: MarkdownItem | null = await getMarkdownById('PROJECT', id);
   if (!project) return { title: 'haklee' };
 
   const { frontmatter } = project;

@@ -1,9 +1,11 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
+import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeStringify from 'rehype-stringify';
 import { remark } from 'remark';
 import remarkAlerts from 'remark-blockquote-alerts';
+import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 
 export type MarkdownItem = {
@@ -28,13 +30,19 @@ export type Markdown = {
 
 export type DirType = 'PROJECT' | 'PLAYGROUND' | 'ARTICLE';
 
-const markdownToHtml = (markdown: string): string => {
-  return remark()
+const markdownToHtml = async (markdown: string) => {
+  return await remark()
+    .use(remarkGfm)
     .use(remarkAlerts)
     .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypePrettyCode, {
+      theme: {
+        dark: 'github-dark-dimmed',
+        light: 'github-light',
+      },
+    })
     .use(rehypeStringify, { allowDangerousHtml: true })
-    .processSync(markdown)
-    .toString();
+    .process(markdown);
 };
 
 export const getMarkdownList = (dir: DirType): Markdown[] => {
@@ -66,20 +74,15 @@ export const getMarkdownList = (dir: DirType): Markdown[] => {
   return Object.values(grouped).sort((a, b) => parseInt(b.year) - parseInt(a.year));
 };
 
-export const getMarkdownById = (dir: DirType, slug: string): MarkdownItem | null => {
+export const getMarkdownById = async (dir: DirType, slug: string): Promise<MarkdownItem | null> => {
   const pathDir: string = path.join(process.cwd(), dir.toLowerCase());
   const filePath: string = path.join(pathDir, `${slug}.md`);
 
   if (!fs.existsSync(filePath)) return null;
 
-  const fileContent = fs.readFileSync(filePath, 'utf-8');
+  const fileContent: string = fs.readFileSync(filePath, 'utf-8');
   const { data, content } = matter(fileContent);
-  const htmlContent = markdownToHtml(content);
+  const html: string = String(await markdownToHtml(content));
 
-  return {
-    slug,
-    frontmatter: data as MarkdownItem['frontmatter'],
-    content,
-    html: htmlContent,
-  };
+  return { slug, frontmatter: data as MarkdownItem['frontmatter'], content, html };
 };

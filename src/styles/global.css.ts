@@ -138,3 +138,70 @@ globalStyle('article div[data-content] p > code', {
   backgroundColor: theme.colors.cardBackgroundHover,
   borderRadius: rem(4),
 });
+
+globalStyle('article div[data-content] video', {
+  maxWidth: '100%',
+  border: `${rem(1)} solid ${theme.colors.cardBorder}`,
+  borderRadius: rem(10),
+  overflow: 'hidden',
+  transform: 'translateZ(0)',
+});
+
+globalStyle('[data-rehype-pretty-code-figure]', {
+  border: `${rem(1)} solid ${theme.colors.cardBorder}`,
+  borderRadius: rem(10),
+  overflow: 'hidden',
+});
+
+globalStyle('[data-rehype-pretty-code-figure] > pre > code', {
+  paddingBlock: rem(8),
+  paddingInline: rem(12),
+  fontFamily: theme.fonts.mono,
+  fontSize: rem(14),
+});
+
+globalStyle('[data-line-numbers]', {
+  counterReset: 'line',
+});
+
+globalStyle('code[data-line-numbers] > [data-line]::before', {
+  counterIncrement: 'line',
+  content: 'counter(line)',
+  display: 'inline-block',
+  width: rem(12),
+  marginRight: rem(20),
+  color: theme.colors.textSecondary,
+  textAlign: 'right',
+  opacity: 0.8,
+});
+
+globalStyle('code[data-line-numbers-max-digits="2"] > [data-line]::before', {
+  width: rem(20),
+});
+
+globalStyle('code[data-line-numbers-max-digits="3"] > [data-line]::before', {
+  width: rem(28),
+});
+
+globalStyle('code[data-line-numbers-max-digits="4"] > [data-line]::before', {
+  width: rem(36),
+});
+
+globalStyle('code[data-theme*=" "], code[data-theme*=" "] span', {
+  vars: {
+    '--shiki-light': theme.colors.gray950,
+    '--shiki-light-bg': 'rgba(250, 250, 250)',
+    '--shiki-dark': theme.colors.gray0,
+    '--shiki-dark-bg': theme.colors.gray950,
+  },
+  color: 'var(--shiki-light)',
+  backgroundColor: 'var(--shiki-light-bg)',
+});
+
+globalStyle(
+  '[data-theme="dark"] code[data-theme*=" "], [data-theme="dark"] code[data-theme*=" "] span',
+  {
+    color: 'var(--shiki-dark)',
+    backgroundColor: 'var(--shiki-dark-bg)',
+  },
+);
