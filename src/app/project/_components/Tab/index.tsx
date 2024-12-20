@@ -45,7 +45,7 @@ const Tab: FC<TabProps> = ({ className, current, ...props }): ReactElement => {
         )}
 
         <Link
-          href="/content/project"
+          href="/project"
           data-tab="PROJECT"
           className={clsx(styles.tab, { [styles.active]: current === 'PROJECT' })}
           onMouseEnter={(e) => handleMouseEnter(e.currentTarget)}
@@ -55,7 +55,7 @@ const Tab: FC<TabProps> = ({ className, current, ...props }): ReactElement => {
         </Link>
 
         <Link
-          href="/content/project?type=playground"
+          href="/project?type=playground"
           data-tab="PLAYGROUND"
           className={clsx(styles.tab, { [styles.active]: current === 'PLAYGROUND' })}
           onMouseEnter={(e) => handleMouseEnter(e.currentTarget)}
