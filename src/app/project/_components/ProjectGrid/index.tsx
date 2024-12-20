@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC, Fragment, ReactElement } from 'react';
 
-import { type Markdown } from '@/app/project/_utils';
+import { type Markdown } from '@/utils/markdown';
 
 import * as styles from './styles.css';
 
@@ -34,6 +34,7 @@ const ProjectGrid: FC<ProjectGridProps> = ({ projects }): ReactElement => {
                       alt={frontmatter.title}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       draggable={false}
+                      quality={100}
                       fill
                     />
                   </motion.div>

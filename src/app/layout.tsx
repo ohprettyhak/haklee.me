@@ -54,7 +54,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'haklee',
     description: "A website featuring Hak Lee's resume and portfolio.",
-    images: '/static/preview.png',
+    images: [
+      {
+        url: '/static/preview.png',
+        alt: 'haklee',
+      },
+    ],
     type: 'website',
     siteName: 'haklee',
     url: 'https://www.haklee.me',
@@ -63,7 +68,12 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'haklee',
     description: "A website featuring Hak Lee's resume and portfolio.",
-    images: '/static/preview.png',
+    images: [
+      {
+        url: '/static/preview.png',
+        alt: 'haklee',
+      },
+    ],
     creator: '@masonthecode',
   },
   authors: [

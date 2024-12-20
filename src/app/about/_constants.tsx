@@ -41,10 +41,10 @@ export const RESUME = [
     items: [
       {
         id: 'HUFS GLOBAL',
-        duration: '2019.03. - 2025.02. (예정)',
+        duration: '2019.03. - 2025.08. (예정)',
         logo: <HUFSLogo size={20} fill={theme.colors.hufs} />,
         title: '한국외국어대학교 글로벌캠퍼스',
-        description: '컴퓨터.전자시스템공학부 학사과정 졸업 예정 (4.17/4.5)',
+        description: '컴퓨터.전자시스템공학부 학사과정 수료 예정 (4.17/4.5)',
         subItems: [
           {
             id: 'double-major',
@@ -73,7 +73,7 @@ export const RESUME = [
           {
             id: 'mdn-2',
             title:
-              '<a href="https://github.com/mdn/yari" target="_blank" rel="noreferrer noopener">yari</a>, <a href="https://github.com/mdn/content" target="_blank" rel="noreferrer noopener">content</a>, <a href="https://github.com/mdn/translated-content" target="_blank" rel="noreferrer noopener">translated-content</a> 리포지터리 기여',
+              '<a href="https://github.com/mdn/yari" target="_blank" rel="noreferrer noopener">yari</a>, <a href="https://github.com/mdn/translated-content" target="_blank" rel="noreferrer noopener">translated-content</a> 리포지터리 기여',
           },
         ],
       },
