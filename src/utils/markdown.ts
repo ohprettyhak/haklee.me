@@ -46,7 +46,7 @@ const markdownToHtml = async (markdown: string) => {
 };
 
 export const getMarkdownList = (dir: DirType): Markdown[] => {
-  const pathDir: string = path.join(process.cwd(), dir.toLowerCase());
+  const pathDir: string = path.join(process.cwd(), 'content', dir.toLowerCase());
   const files: string[] = fs.readdirSync(pathDir);
 
   const markdowns = files
@@ -75,7 +75,7 @@ export const getMarkdownList = (dir: DirType): Markdown[] => {
 };
 
 export const getMarkdownById = async (dir: DirType, slug: string): Promise<MarkdownItem | null> => {
-  const pathDir: string = path.join(process.cwd(), dir.toLowerCase());
+  const pathDir: string = path.join(process.cwd(), 'content', dir.toLowerCase());
   const filePath: string = path.join(pathDir, `${slug}.md`);
 
   if (!fs.existsSync(filePath)) return null;
