@@ -76,6 +76,7 @@ const modeColors = createThemeContract({
 
   text: '--hakui-text',
   textSecondary: '--hakui-text-secondary',
+  textTertiary: '--hakui-text-tertiary',
   border: '--hakui-border',
   line: '--hakui-line',
 
@@ -113,9 +114,9 @@ const colors = {
 
 export const lightModeColors = createTheme(modeColors, {
   background: colors.gray0,
-  menuBorder: 'rgba(28, 27, 31, 0.02)',
-  menuBackground: 'rgba(28, 27, 31, 0.03)',
-  menuActiveBackground: 'rgba(28, 27, 31, 0.1)',
+  menuBorder: 'rgba(215, 215, 215, 0.3)',
+  menuBackground: 'rgba(225, 225, 225, 0.3)',
+  menuActiveBackground: 'rgba(190, 190, 190, 0.6)',
 
   tabBehind: 'rgba(28, 27, 31, 0.03)',
 
@@ -126,6 +127,7 @@ export const lightModeColors = createTheme(modeColors, {
 
   text: colors.gray950,
   textSecondary: colors.gray700,
+  textTertiary: colors.gray500,
   border: colors.gray100,
   line: colors.gray50,
 
@@ -147,6 +149,7 @@ export const darkModeColors = createTheme(modeColors, {
 
   text: colors.gray0,
   textSecondary: colors.gray400,
+  textTertiary: colors.gray200,
   border: colors.gray800,
   line: colors.gray800,
 

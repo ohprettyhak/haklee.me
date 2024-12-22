@@ -1,9 +1,10 @@
 import { FC, Fragment, ReactElement } from 'react';
 
+import { getMarkdownList, type Markdown } from '@/utils/markdown';
+
 import PlaygroundList from './_components/PlaygroundList';
 import ProjectGrid from './_components/ProjectGrid';
 import Tab from './_components/Tab';
-import { getMarkdownList, type Markdown } from './_utils';
 import * as styles from './page.css';
 
 type ProjectProps = {
