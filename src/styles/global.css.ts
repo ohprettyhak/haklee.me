@@ -7,6 +7,7 @@ import { rem } from '@/styles/pxto';
 
 import { theme } from './theme.css';
 
+// global
 globalStyle('body', {
   paddingBottom: 'env(safe-area-inset-bottom)',
   overflowX: 'hidden',
@@ -69,6 +70,7 @@ globalStyle(
   },
 );
 
+// article
 globalStyle('article > div[data-content] h1', {
   fontSize: rem(22),
   lineHeight: 1.25,
@@ -104,6 +106,27 @@ globalStyle(
   },
 );
 
+globalStyle('article > div[data-content] ul, article > div[data-content] ol', {
+  paddingBottom: rem(20),
+});
+
+globalStyle('article > div[data-content] ul li, article > div[data-content] ol li', {
+  position: 'relative',
+  paddingLeft: rem(16),
+  paddingBottom: rem(8),
+  color: theme.colors.text,
+  fontSize: rem(16),
+  lineHeight: 1.6,
+  wordBreak: 'keep-all',
+});
+
+globalStyle(`article > div[data-content] li::before`, {
+  content: '•',
+  position: 'absolute',
+  left: 0,
+  fontSize: rem(16),
+});
+
 globalStyle('article > div[data-content] p', {
   color: theme.colors.text,
   fontSize: rem(16),
@@ -113,6 +136,21 @@ globalStyle('article > div[data-content] p', {
 
 globalStyle('article > div[data-content] strong', {
   fontWeight: 600,
+});
+
+globalStyle('article > div[data-content] small', {
+  color: theme.colors.textSecondary,
+  fontSize: rem(12.5),
+});
+
+globalStyle('article > div[data-content] small > code', {
+  paddingBlock: rem(1.5),
+  paddingInline: rem(3),
+  color: theme.colors.textSecondary,
+  fontFamily: theme.fonts.mono,
+  fontSize: rem(11),
+  backgroundColor: theme.colors.cardBackgroundHover,
+  borderRadius: rem(4),
 });
 
 globalStyle('article > div[data-content] p > img', {
@@ -148,6 +186,7 @@ globalStyle('article div[data-content] video', {
   transform: 'translateZ(0)',
 });
 
+// code-highlighting
 globalStyle('[data-rehype-pretty-code-figure]', {
   marginBottom: rem(18),
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,
@@ -155,7 +194,12 @@ globalStyle('[data-rehype-pretty-code-figure]', {
   overflow: 'hidden',
 });
 
+globalStyle('[data-rehype-pretty-code-figure] > pre', {
+  overflowX: 'auto',
+});
+
 globalStyle('[data-rehype-pretty-code-figure] > pre > code', {
+  width: 'fit-content',
   padding: rem(8),
   fontFamily: theme.fonts.mono,
   fontSize: rem(14),
@@ -188,7 +232,7 @@ globalStyle('code[data-line-numbers-max-digits="4"] > [data-line]::before', {
   width: rem(36),
 });
 
-globalStyle('code[data-theme*=" "], code[data-theme*=" "] span', {
+globalStyle('[data-rehype-pretty-code-figure], code[data-theme*=" "], code[data-theme*=" "] span', {
   vars: {
     '--shiki-light': theme.colors.gray950,
     '--shiki-light-bg': 'rgba(250, 250, 250)',
@@ -200,7 +244,7 @@ globalStyle('code[data-theme*=" "], code[data-theme*=" "] span', {
 });
 
 globalStyle(
-  '[data-theme="dark"] code[data-theme*=" "], [data-theme="dark"] code[data-theme*=" "] span',
+  '[data-theme="dark"] [data-rehype-pretty-code-figure], [data-theme="dark"] code[data-theme*=" "], [data-theme="dark"] code[data-theme*=" "] span',
   {
     color: 'var(--shiki-dark)',
     backgroundColor: 'var(--shiki-dark-bg)',
