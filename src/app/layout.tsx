@@ -1,8 +1,9 @@
 import '@/styles/global.css';
+import 'remark-blockquote-alerts/styles/blockquote.min.css';
 
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import React, { FC, PropsWithChildren, ReactElement } from 'react';
+import { FC, PropsWithChildren, ReactElement } from 'react';
 
 import { darkModeColors, lightModeColors } from '@/styles';
 
@@ -48,11 +49,17 @@ const colorThemeScript = `
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.haklee.me'),
+  title: 'haklee',
   description: "A website featuring Hak Lee's resume and portfolio.",
   openGraph: {
     title: 'haklee',
     description: "A website featuring Hak Lee's resume and portfolio.",
-    images: '/static/preview.png',
+    images: [
+      {
+        url: '/static/preview.png',
+        alt: 'haklee',
+      },
+    ],
     type: 'website',
     siteName: 'haklee',
     url: 'https://www.haklee.me',
@@ -61,7 +68,12 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'haklee',
     description: "A website featuring Hak Lee's resume and portfolio.",
-    images: '/static/preview.png',
+    images: [
+      {
+        url: '/static/preview.png',
+        alt: 'haklee',
+      },
+    ],
     creator: '@masonthecode',
   },
   authors: [
@@ -77,7 +89,6 @@ const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
     <html lang="ko" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: colorThemeScript }} />
-        <title>haklee</title>
       </head>
       <body>
         <div className={styles.blur} aria-hidden={true} />
