@@ -1,7 +1,8 @@
 import { FC, Fragment, ReactElement } from 'react';
 
-import { getMarkdownList, type Markdown } from '@/utils/markdown';
+import { allProjects } from 'contentlayer/generated';
 
+import HackathonGrid from './_components/HackathonGrid';
 import PlaygroundList from './_components/PlaygroundList';
 import ProjectGrid from './_components/ProjectGrid';
 import Tab from './_components/Tab';
@@ -12,18 +13,23 @@ type ProjectProps = {
 };
 
 const Project: FC<ProjectProps> = async ({ searchParams }): Promise<ReactElement> => {
-  const projects: Markdown[] = getMarkdownList('PROJECT');
-
   const { type: _type } = await searchParams;
-  let type: 'PROJECT' | 'PLAYGROUND';
-  if (!_type || _type !== 'playground') type = 'PROJECT';
-  else type = 'PLAYGROUND';
+  let type: 'HACKATHON' | 'PLAYGROUND' | 'PROJECT';
+  if (_type === 'hackathons') type = 'HACKATHON';
+  else if (_type === 'playgrounds') type = 'PLAYGROUND';
+  else type = 'PROJECT';
 
   return (
     <Fragment>
       <Tab className={styles.tab} current={type} />
       <section className={styles.root} data-animate={true}>
-        {type === 'PROJECT' ? <ProjectGrid projects={projects} /> : <PlaygroundList />}
+        {type === 'PROJECT' ? (
+          <ProjectGrid list={allProjects} />
+        ) : type === 'PLAYGROUND' ? (
+          <PlaygroundList />
+        ) : (
+          <HackathonGrid />
+        )}
       </section>
     </Fragment>
   );

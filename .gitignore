@@ -165,7 +165,7 @@ out
 dist
 
 # Gatsby files
-# Comment in the public line in if your project uses Gatsby and not Next.js
+# Comment in the public line in if your projects uses Gatsby and not Next.js
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # public
 
@@ -292,7 +292,7 @@ cmake-build-*/
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
 
-# File-based project format
+# File-based projects format
 *.iws
 
 # IntelliJ
@@ -381,5 +381,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# contentlayer
+.contentlayer
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,visualstudiocode,webstorm,node,react,nextjs,gatsby
