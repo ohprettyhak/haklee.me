@@ -48,56 +48,53 @@ globalStyle('a[rel="noreferrer noopener"][target=_blank]:after', {
   maskSize: 'cover',
 });
 
-globalStyle(
-  '.gradient, article > div[data-content] a:not([rel="noreferrer noopener"][target=_blank])',
-  {
-    width: 'fit-content',
-    color: 'transparent',
-    borderBottom: `${rem(1)} solid ${theme.colors.border}`,
-    boxDecorationBreak: 'clone',
-    background: `linear-gradient(90deg, #833ab4 0%, #fd1d1d 25%, #C06C84 50%, ${theme.colors.textTertiary} 50%, ${theme.colors.textTertiary} 100%)`,
-    backgroundClip: 'text',
-    backgroundSize: '200% 100%',
-    backgroundPosition: '100%',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-  },
-);
+globalStyle('.gradient, [data-article] a:not([rel="noreferrer noopener"][target=_blank])', {
+  width: 'fit-content',
+  color: 'transparent',
+  borderBottom: `${rem(1)} solid ${theme.colors.border}`,
+  boxDecorationBreak: 'clone',
+  background: `linear-gradient(90deg, #833ab4 0%, #fd1d1d 25%, #C06C84 50%, ${theme.colors.textTertiary} 50%, ${theme.colors.textTertiary} 100%)`,
+  backgroundClip: 'text',
+  backgroundSize: '200% 100%',
+  backgroundPosition: '100%',
+  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+});
 
 globalStyle(
-  '.gradient:hover, article > div[data-content] a:not([rel="noreferrer noopener"][target=_blank]):hover',
+  '.gradient:hover, [data-article] a:not([rel="noreferrer noopener"][target=_blank]):hover',
   {
     backgroundPosition: '0',
   },
 );
 
 // article
-globalStyle('article > div[data-content] h1', {
+globalStyle('[data-article] h1', {
   fontSize: rem(22),
   lineHeight: 1.25,
 });
 
-globalStyle('article > div[data-content] h2', {
+globalStyle('[data-article] h2', {
   fontSize: rem(19),
   lineHeight: 1.2,
 });
 
-globalStyle('article > div[data-content] h3', {
+globalStyle('[data-article] h3', {
   fontSize: rem(18),
   lineHeight: 1.1,
 });
 
-globalStyle('article > div[data-content] h4', {
+globalStyle('[data-article] h4', {
   fontSize: rem(17),
   lineHeight: 1.3,
 });
 
-globalStyle('article > div[data-content] h5, article > div[data-content] h6', {
+globalStyle('[data-article] h5, [data-article] h6', {
   fontSize: rem(16),
   lineHeight: 1.3,
 });
 
 globalStyle(
-  'article > div[data-content] h1, article > div[data-content] h2, article > div[data-content] h3, article > div[data-content] h4, article > div[data-content] h5, article > div[data-content] h6',
+  '[data-article] h1, [data-article] h2, [data-article] h3, [data-article] h4, [data-article] h5, [data-article] h6',
   {
     color: theme.colors.text,
     fontWeight: 600,
@@ -106,11 +103,11 @@ globalStyle(
   },
 );
 
-globalStyle('article > div[data-content] ul, article > div[data-content] ol', {
+globalStyle('[data-article] ul, [data-article] ol', {
   paddingBottom: rem(20),
 });
 
-globalStyle('article > div[data-content] ul li, article > div[data-content] ol li', {
+globalStyle('[data-article] ul li, [data-article] ol li', {
   position: 'relative',
   paddingLeft: rem(16),
   paddingBottom: rem(8),
@@ -120,30 +117,30 @@ globalStyle('article > div[data-content] ul li, article > div[data-content] ol l
   wordBreak: 'keep-all',
 });
 
-globalStyle(`article > div[data-content] li::before`, {
+globalStyle(`[data-article] li::before`, {
   content: '•',
   position: 'absolute',
   left: 0,
   fontSize: rem(16),
 });
 
-globalStyle('article > div[data-content] p', {
+globalStyle('[data-article] p', {
   color: theme.colors.text,
   fontSize: rem(16),
   lineHeight: '180%',
   paddingBottom: rem(18),
 });
 
-globalStyle('article > div[data-content] strong', {
+globalStyle('[data-article] strong', {
   fontWeight: 600,
 });
 
-globalStyle('article > div[data-content] small', {
+globalStyle('[data-article] small', {
   color: theme.colors.textSecondary,
   fontSize: rem(12.5),
 });
 
-globalStyle('article > div[data-content] small > code', {
+globalStyle('[data-article] small > code', {
   paddingBlock: rem(1.5),
   paddingInline: rem(3),
   color: theme.colors.textSecondary,
@@ -153,7 +150,7 @@ globalStyle('article > div[data-content] small > code', {
   borderRadius: rem(4),
 });
 
-globalStyle('article > div[data-content] p > img', {
+globalStyle('[data-article] p > img', {
   maxWidth: '100%',
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,
   borderRadius: rem(10),
@@ -162,12 +159,12 @@ globalStyle('article > div[data-content] p > img', {
   userSelect: 'none',
 });
 
-globalStyle('article div[data-content] [class^=blockquote-] > p', {
+globalStyle('[data-article] [class^=blockquote-] > p', {
   padding: 0,
   margin: 0,
 });
 
-globalStyle('article div[data-content] p > code', {
+globalStyle('[data-article] p > code', {
   paddingBlock: rem(2),
   paddingInline: rem(4),
   fontFamily: theme.fonts.mono,
@@ -177,7 +174,7 @@ globalStyle('article div[data-content] p > code', {
   borderRadius: rem(4),
 });
 
-globalStyle('article div[data-content] video', {
+globalStyle('[data-article] video', {
   maxWidth: '100%',
   marginBottom: rem(18),
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,

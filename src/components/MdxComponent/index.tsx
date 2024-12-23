@@ -9,7 +9,7 @@ const MdxComponent = ({ code }: MdxComponentProps) => {
   const MDXComponent = useMDXComponent(code);
 
   return (
-    <div data-content={true}>
+    <div data-article={true}>
       <MDXComponent />
     </div>
   );
