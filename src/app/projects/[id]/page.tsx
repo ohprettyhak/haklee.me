@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { FC, ReactElement } from 'react';
@@ -74,15 +75,27 @@ const Playground: FC<PlaygroundProps> = async ({ params }): Promise<ReactElement
 
 export default Playground;
 
-// title: `${frontmatter.title} — haklee`,
-//   description: frontmatter.description,
-//   openGraph: {
-//   title: `${frontmatter.title} — haklee`,
-//     description: frontmatter.description,
-//     url: `https://www.haklee.me/project/${id}`,
-//     images: [{ url: frontmatter.cover }],
-// },
-// twitter: {
-//   title: `${frontmatter.title} — haklee`,
-//     description: frontmatter.description,
-// },
+const getProjectBySlug = (slug: string) => {
+  return allProjects.find((project) => project.slug === slug);
+};
+
+export const generateMetadata = async ({ params }: PlaygroundProps): Promise<Metadata> => {
+  const { id } = await params;
+  const project = getProjectBySlug(id);
+  if (!project) return {};
+
+  return {
+    title: `${project.title} — haklee`,
+    description: project.description,
+    openGraph: {
+      title: `${project.title} — haklee`,
+      description: project.description,
+      url: `https://www.haklee.me/project/${id}`,
+      images: [{ url: project.cover }],
+    },
+    twitter: {
+      title: `${project.title} — haklee`,
+      description: project.description,
+    },
+  };
+};
