@@ -44,6 +44,7 @@ const Playground: FC<PlaygroundProps> = async ({ params }): Promise<ReactElement
           quality={100}
           draggable={false}
           fill
+          priority
         />
       </div>
       <div>

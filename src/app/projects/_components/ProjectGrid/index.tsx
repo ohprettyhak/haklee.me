@@ -38,6 +38,7 @@ const ProjectGrid: FC<ProjectGridProps> = ({ list: _list }): ReactElement => {
                       draggable={false}
                       quality={100}
                       fill
+                      priority
                     />
                   </motion.div>
                   <motion.h3>{title}</motion.h3>
