@@ -2,10 +2,12 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { FC, ReactElement } from 'react';
 
+import { allProjects } from 'contentlayer/generated';
+
 import BackButton from '@/components/BackButton';
 import { GithubIcon, GlobeIcon } from '@/components/icons';
+import MdxComponent from '@/components/MdxComponent';
 import { theme } from '@/styles';
-import { getMarkdownById, MarkdownItem } from '@/utils/markdown';
 
 import * as styles from './page.css';
 
@@ -26,10 +28,8 @@ type PlaygroundProps = {
 
 const Playground: FC<PlaygroundProps> = async ({ params }): Promise<ReactElement> => {
   const { id } = await params;
-  const project: MarkdownItem | null = await getMarkdownById('PROJECT', id);
+  const project = allProjects.find((project) => project.slug === id);
   if (!project) notFound();
-
-  const { frontmatter, html } = project;
 
   return (
     <article className={styles.root} data-animate={true}>
@@ -37,8 +37,8 @@ const Playground: FC<PlaygroundProps> = async ({ params }): Promise<ReactElement
 
       <div className={styles.cover}>
         <Image
-          src={frontmatter.cover}
-          alt={frontmatter.title}
+          src={project.cover}
+          alt={project.title}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           quality={100}
           draggable={false}
@@ -47,29 +47,42 @@ const Playground: FC<PlaygroundProps> = async ({ params }): Promise<ReactElement
       </div>
       <div>
         <p className={styles.metadata}>
-          {frontmatter.duration} &middot; {frontmatter.type}
+          {project.duration} &middot; {project.category}
         </p>
-        <p className={styles.team}>{frontmatter.team}</p>
+        <p className={styles.team}>{project.team}</p>
 
-        <h3 className={styles.title}>{frontmatter.title}</h3>
-        <p className={styles.description}>{frontmatter.description}</p>
+        <h3 className={styles.title}>{project.title}</h3>
+        <p className={styles.description}>{project.description}</p>
       </div>
-      {frontmatter.links && (
+      {project.links && (
         <div className={styles.link}>
-          {frontmatter.links.map((link) => (
+          {project.links.map((link) => (
             <a key={link.link} href={link.link} target="_blank" rel="noopener noreferrer">
               {getIconByType(link.type)}
-              {link.type}
+              {link.category}
             </a>
           ))}
         </div>
       )}
 
-      <hr className={styles.divider} aria-hidden={true} />
+      <hr className={styles.divider} tabIndex={-1} aria-hidden={true} />
 
-      {html && <div data-content={true} dangerouslySetInnerHTML={{ __html: html }} />}
+      <MdxComponent code={project.body.code} />
     </article>
   );
 };
 
 export default Playground;
+
+// title: `${frontmatter.title} — haklee`,
+//   description: frontmatter.description,
+//   openGraph: {
+//   title: `${frontmatter.title} — haklee`,
+//     description: frontmatter.description,
+//     url: `https://www.haklee.me/project/${id}`,
+//     images: [{ url: frontmatter.cover }],
+// },
+// twitter: {
+//   title: `${frontmatter.title} — haklee`,
+//     description: frontmatter.description,
+// },

@@ -12,8 +12,8 @@ import * as styles from './styles.css';
 const MENU = [
   { key: 'home', title: '홈', path: '/', icon: ToiletIcon },
   { key: 'about', title: '소개', path: '/about', icon: BirdIcon },
-  { key: 'project', title: '프로젝트', path: '/project', icon: StorageIcon },
-  { key: 'article', title: '글', path: '/article', icon: SparkleIcon },
+  { key: 'projects', title: '프로젝트', path: '/projects', icon: StorageIcon },
+  { key: 'article', title: '글', path: '/articles', icon: SparkleIcon },
 ];
 
 const NavigationMenu: FC = (): ReactElement => {

@@ -7,7 +7,7 @@ import { ComponentProps, FC, ReactElement, useEffect, useState } from 'react';
 import * as styles from './styles.css';
 
 type TabProps = ComponentProps<'div'> & {
-  current: 'PROJECT' | 'PLAYGROUND';
+  current: 'PROJECT' | 'PLAYGROUND' | 'HACKATHON';
 };
 
 const Tab: FC<TabProps> = ({ className, current, ...props }): ReactElement => {
@@ -45,7 +45,7 @@ const Tab: FC<TabProps> = ({ className, current, ...props }): ReactElement => {
         )}
 
         <Link
-          href="/project"
+          href="/projects"
           data-tab="PROJECT"
           className={clsx(styles.tab, { [styles.active]: current === 'PROJECT' })}
           onMouseEnter={(e) => handleMouseEnter(e.currentTarget)}
@@ -55,13 +55,23 @@ const Tab: FC<TabProps> = ({ className, current, ...props }): ReactElement => {
         </Link>
 
         <Link
-          href="/project?type=playground"
+          href="/projects?type=playground"
           data-tab="PLAYGROUND"
           className={clsx(styles.tab, { [styles.active]: current === 'PLAYGROUND' })}
           onMouseEnter={(e) => handleMouseEnter(e.currentTarget)}
           onMouseLeave={handleMouseLeave}
         >
           플레이그라운드
+        </Link>
+
+        <Link
+          href="/projects?type=hackathon"
+          data-tab="HACKATHON"
+          className={clsx(styles.tab, { [styles.active]: current === 'HACKATHON' })}
+          onMouseEnter={(e) => handleMouseEnter(e.currentTarget)}
+          onMouseLeave={handleMouseLeave}
+        >
+          해커톤
         </Link>
       </motion.div>
     </div>
