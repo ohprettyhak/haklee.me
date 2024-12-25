@@ -19,6 +19,7 @@ export const Article = defineDocumentType(() => ({
   contentType: 'mdx',
   filePathPattern: `articles/**/*.mdx`,
   fields: {
+    preview: { type: 'string', required: false },
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
     createdAt: { type: 'date', required: true },

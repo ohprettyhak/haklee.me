@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC, Fragment, ReactElement } from 'react';
 
-import { Project } from 'contentlayer/generated';
+import { type Project } from 'contentlayer/generated';
 
 import * as styles from './styles.css';
 

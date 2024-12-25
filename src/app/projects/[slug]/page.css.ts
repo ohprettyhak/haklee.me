@@ -7,10 +7,6 @@ export const root = style({
   paddingInline: theme.sizes.appSpace,
 });
 
-export const backButton = style({
-  marginBottom: rem(16),
-});
-
 export const metadata = style({
   marginTop: rem(16),
   color: theme.colors.textSecondary,
@@ -30,6 +26,7 @@ export const team = style({
 export const cover = style({
   position: 'relative',
   width: '100%',
+  marginTop: rem(32),
   aspectRatio: '1200 / 630',
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,
   borderRadius: rem(10),
@@ -80,15 +77,6 @@ globalStyle(`${link} a`, {
 
 globalStyle(`${link} a:hover`, {
   backgroundColor: theme.colors.cardBackgroundHover,
-});
-
-export const divider = style({
-  width: '100%',
-  height: rem(2),
-  marginBlock: `calc(${theme.sizes.appSpace} * 2)`,
-  border: 0,
-  borderRadius: rem(2),
-  backgroundColor: theme.colors.line,
 });
 
 export const content = style({
