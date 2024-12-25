@@ -3,6 +3,7 @@ import 'remark-blockquote-alerts/styles/blockquote.min.css';
 
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import Script from 'next/script';
 import { FC, PropsWithChildren, ReactElement } from 'react';
 
 import { darkModeColors, lightModeColors } from '@/styles';
@@ -10,6 +11,8 @@ import { darkModeColors, lightModeColors } from '@/styles';
 import Layout from './_components/Layout';
 import NavigationMenu from './_components/NavigationMenu';
 import * as styles from './page.css';
+
+const gaId: string = 'G-XNT27Z5EZ2';
 
 const pretendard = localFont({
   src: './_fonts/PretendardVariable.woff2',
@@ -96,6 +99,19 @@ const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
         <Layout>{children}</Layout>
         <NavigationMenu />
       </body>
+
+      <Script
+        id="_next-ga-init"
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${gaId}')`,
+        }}
+      />
+      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
     </html>
   );
 };
