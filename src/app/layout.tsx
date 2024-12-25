@@ -82,6 +82,7 @@ export const metadata: Metadata = {
       url: 'https://www.haklee.me',
     },
   ],
+  robots: 'index, follow',
 };
 
 const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {

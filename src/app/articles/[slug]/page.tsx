@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { FC, ReactElement } from 'react';
 
@@ -41,4 +42,36 @@ export default Article;
 
 const getArticleBySlug = (slug: string) => {
   return allArticles.find((article) => article.slug === slug);
+};
+
+export const generateMetadata = async ({ params }: ArticleProps): Promise<Metadata> => {
+  const { slug } = await params;
+  const article: Article | undefined = getArticleBySlug(slug);
+  if (!article) return {};
+
+  const metadata: Metadata = {
+    title: `${article.title} — haklee`,
+    description: article.description,
+    publisher: 'haklee',
+    openGraph: {
+      title: `${article.title} — haklee`,
+      description: article.description,
+      url: `https://www.haklee.me/articles/${slug}`,
+      type: 'article',
+      publishedTime: article.createdAt,
+      modifiedTime: article.modifiedAt,
+    },
+    twitter: {
+      title: `${article.title} — haklee`,
+      description: article.description,
+      card: article.preview ? 'summary_large_image' : 'summary',
+    },
+  };
+
+  if (article.preview) {
+    if (metadata.openGraph) metadata.openGraph.images = [{ url: article.preview }];
+    if (metadata.twitter) metadata.twitter.images = [{ url: article.preview }];
+  }
+
+  return metadata;
 };

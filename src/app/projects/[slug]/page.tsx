@@ -91,12 +91,13 @@ export const generateMetadata = async ({ params }: ProjectProps): Promise<Metada
     openGraph: {
       title: `${project.title} — haklee`,
       description: project.description,
-      url: `https://www.haklee.me/project/${slug}`,
+      url: `https://www.haklee.me/projects/${slug}`,
       images: [{ url: project.cover }],
     },
     twitter: {
       title: `${project.title} — haklee`,
       description: project.description,
+      images: [{ url: project.cover }],
     },
   };
 };
