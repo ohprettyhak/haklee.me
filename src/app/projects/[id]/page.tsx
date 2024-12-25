@@ -60,7 +60,7 @@ const Playground: FC<PlaygroundProps> = async ({ params }): Promise<ReactElement
         <div className={styles.link}>
           {project.links.map((link) => (
             <a key={link.link} href={link.link} target="_blank" rel="noopener noreferrer">
-              {getIconByType(link.type)}
+              {getIconByType(link.category)}
               {link.category}
             </a>
           ))}
