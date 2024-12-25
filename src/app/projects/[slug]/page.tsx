@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { FC, ReactElement } from 'react';
 
-import { allProjects } from 'contentlayer/generated';
+import { type Project, allProjects } from 'contentlayer/generated';
 
 import BackButton from '@/components/BackButton';
 import { GithubIcon, GlobeIcon } from '@/components/icons';
@@ -14,7 +14,7 @@ import * as styles from './page.css';
 
 const getIconByType = (type: string): ReactElement => {
   switch (type) {
-    case 'Github':
+    case 'GitHub':
       return <GithubIcon stroke={theme.colors.text} />;
     case 'Demo':
       return <GlobeIcon stroke={theme.colors.text} />;
@@ -23,18 +23,18 @@ const getIconByType = (type: string): ReactElement => {
   }
 };
 
-type PlaygroundProps = {
+type ProjectProps = {
   params: Promise<{ slug: string }>;
 };
 
-const Playground: FC<PlaygroundProps> = async ({ params }): Promise<ReactElement> => {
+const Project: FC<ProjectProps> = async ({ params }): Promise<ReactElement> => {
   const { slug } = await params;
-  const project = allProjects.find((project) => project.slug === slug);
+  const project: Project | undefined = allProjects.find((project) => project.slug === slug);
   if (!project) notFound();
 
   return (
     <article className={styles.root} data-animate={true}>
-      <BackButton className={styles.backButton} />
+      <BackButton />
 
       <div className={styles.cover}>
         <Image
@@ -67,20 +67,20 @@ const Playground: FC<PlaygroundProps> = async ({ params }): Promise<ReactElement
         </div>
       )}
 
-      <hr className={styles.divider} tabIndex={-1} aria-hidden={true} />
+      <hr tabIndex={-1} aria-hidden={true} />
 
       <MdxComponent code={project.body.code} />
     </article>
   );
 };
 
-export default Playground;
+export default Project;
 
 const getProjectBySlug = (slug: string) => {
   return allProjects.find((project) => project.slug === slug);
 };
 
-export const generateMetadata = async ({ params }: PlaygroundProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: ProjectProps): Promise<Metadata> => {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) return {};
