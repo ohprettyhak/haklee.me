@@ -39,8 +39,8 @@
     "lint-staged": "^15.2.11",
     "next-contentlayer": "^0.3.4",
     "prettier": "^3.4.2",
-    "rehype-pretty-code": "^0.14.0",
-    "remark-blockquote-alerts": "^0.0.6",
+    "rehype-pretty-code": "^0.10.0",
+    "remark-blockquote-alerts": "^0.0.7",
     "shiki": "^1.24.4",
     "typescript": "5.7.2"
   }
