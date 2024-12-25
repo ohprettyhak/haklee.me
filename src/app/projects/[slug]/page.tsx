@@ -24,12 +24,12 @@ const getIconByType = (type: string): ReactElement => {
 };
 
 type PlaygroundProps = {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 };
 
 const Playground: FC<PlaygroundProps> = async ({ params }): Promise<ReactElement> => {
-  const { id } = await params;
-  const project = allProjects.find((project) => project.slug === id);
+  const { slug } = await params;
+  const project = allProjects.find((project) => project.slug === slug);
   if (!project) notFound();
 
   return (
@@ -81,8 +81,8 @@ const getProjectBySlug = (slug: string) => {
 };
 
 export const generateMetadata = async ({ params }: PlaygroundProps): Promise<Metadata> => {
-  const { id } = await params;
-  const project = getProjectBySlug(id);
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) return {};
 
   return {
@@ -91,7 +91,7 @@ export const generateMetadata = async ({ params }: PlaygroundProps): Promise<Met
     openGraph: {
       title: `${project.title} — haklee`,
       description: project.description,
-      url: `https://www.haklee.me/project/${id}`,
+      url: `https://www.haklee.me/project/${slug}`,
       images: [{ url: project.cover }],
     },
     twitter: {
