@@ -31,7 +31,7 @@ globalStyle(`${introduce} > li`, {
   paddingLeft: rem(16),
   color: theme.colors.text,
   fontSize: rem(16),
-  lineHeight: 1.6,
+  lineHeight: 1.8,
   wordBreak: 'keep-all',
 });
 

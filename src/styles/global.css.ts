@@ -113,7 +113,7 @@ globalStyle('[data-article] ul li, [data-article] ol li', {
   paddingBottom: rem(8),
   color: theme.colors.text,
   fontSize: rem(16),
-  lineHeight: 1.6,
+  lineHeight: 1.8,
   wordBreak: 'keep-all',
 });
 

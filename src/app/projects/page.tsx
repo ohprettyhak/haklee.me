@@ -15,8 +15,8 @@ type ProjectProps = {
 const Project: FC<ProjectProps> = async ({ searchParams }): Promise<ReactElement> => {
   const { type: _type } = await searchParams;
   let type: 'HACKATHON' | 'PLAYGROUND' | 'PROJECT';
-  if (_type === 'hackathons') type = 'HACKATHON';
-  else if (_type === 'playgrounds') type = 'PLAYGROUND';
+  if (_type === 'hackathon') type = 'HACKATHON';
+  else if (_type === 'playground') type = 'PLAYGROUND';
   else type = 'PROJECT';
 
   return (
