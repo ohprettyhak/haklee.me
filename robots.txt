@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.yourwebsite.com/sitemap.xml
+Sitemap: https://www.haklee.me/sitemap.xml
