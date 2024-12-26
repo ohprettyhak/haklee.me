@@ -5,15 +5,16 @@ import { usePathname } from 'next/navigation';
 import { FC, ReactElement, useMemo } from 'react';
 
 import { BirdIcon, SparkleIcon, StorageIcon, ToiletIcon } from '@/components/icons';
+import { PATH } from '@/constants';
 import { theme } from '@/styles';
 
 import * as styles from './styles.css';
 
 const MENU = [
-  { key: 'home', title: '홈', path: '/', icon: ToiletIcon },
-  { key: 'about', title: '소개', path: '/about', icon: BirdIcon },
-  { key: 'projects', title: '프로젝트', path: '/projects', icon: StorageIcon },
-  { key: 'article', title: '글', path: '/articles', icon: SparkleIcon },
+  { key: 'home', title: '홈', path: PATH.INDEX, icon: ToiletIcon },
+  { key: 'about', title: '소개', path: PATH.ABOUT, icon: BirdIcon },
+  { key: 'projects', title: '프로젝트', path: PATH.PROJECT, icon: StorageIcon },
+  { key: 'article', title: '글', path: PATH.ARTICLE, icon: SparkleIcon },
 ];
 
 const NavigationMenu: FC = (): ReactElement => {

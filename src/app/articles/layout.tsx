@@ -1,14 +1,16 @@
 import type { Metadata } from 'next';
 import { FC, PropsWithChildren, ReactNode } from 'react';
 
+import { BASE_URL, PATH } from '@/constants';
+
 export const metadata: Metadata = {
-  title: '글 — haklee',
+  title: '글 — ${PROFILE.TITLE}',
   openGraph: {
-    title: '글 — haklee',
-    url: 'https://www.haklee.me/articles',
+    title: '글 — ${PROFILE.TITLE}',
+    url: `${BASE_URL}${PATH.ARTICLE}`,
   },
   twitter: {
-    title: '글 — haklee',
+    title: '글 — ${PROFILE.TITLE}',
   },
 };
 
