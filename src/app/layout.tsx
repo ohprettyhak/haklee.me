@@ -3,8 +3,10 @@ import 'remark-blockquote-alerts/styles/blockquote.min.css';
 
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import Script from 'next/script';
 import { FC, PropsWithChildren, ReactElement } from 'react';
 
+import { BASE_URL, GA_ID, PROFILE } from '@/constants';
 import { darkModeColors, lightModeColors } from '@/styles';
 
 import Layout from './_components/Layout';
@@ -48,38 +50,38 @@ const colorThemeScript = `
 `;
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.haklee.me'),
-  title: 'haklee',
-  description: "A website featuring Hak Lee's resume and portfolio.",
+  metadataBase: new URL(BASE_URL),
+  title: PROFILE.TITLE,
+  description: PROFILE.DESCRIPTION,
   openGraph: {
-    title: 'haklee',
-    description: "A website featuring Hak Lee's resume and portfolio.",
+    title: PROFILE.TITLE,
+    description: PROFILE.DESCRIPTION,
     images: [
       {
-        url: '/static/preview.png',
-        alt: 'haklee',
+        url: PROFILE.PREVIEW_IMAGE,
+        alt: PROFILE.PREVIEW_IMAGE_ALT,
       },
     ],
     type: 'website',
-    siteName: 'haklee',
-    url: 'https://www.haklee.me',
+    siteName: PROFILE.TITLE,
+    url: BASE_URL,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'haklee',
-    description: "A website featuring Hak Lee's resume and portfolio.",
+    title: PROFILE.TITLE,
+    description: PROFILE.DESCRIPTION,
     images: [
       {
-        url: '/static/preview.png',
-        alt: 'haklee',
+        url: PROFILE.PREVIEW_IMAGE,
+        alt: PROFILE.PREVIEW_IMAGE_ALT,
       },
     ],
-    creator: '@masonthecode',
+    creator: PROFILE.SOCIAL.TWITTER,
   },
   authors: [
     {
-      name: 'Hak Lee',
-      url: 'https://www.haklee.me',
+      name: PROFILE.NAME,
+      url: BASE_URL,
     },
   ],
   robots: 'index, follow',
@@ -96,6 +98,19 @@ const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
         <Layout>{children}</Layout>
         <NavigationMenu />
       </body>
+
+      <Script
+        id="_next-ga-init"
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${GA_ID}')`,
+        }}
+      />
+      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
     </html>
   );
 };

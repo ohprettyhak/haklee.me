@@ -4,11 +4,19 @@ import { motion } from 'motion/react';
 import Link from 'next/link';
 import { ComponentProps, FC, ReactElement, useEffect, useState } from 'react';
 
+import { PATH } from '@/constants';
+
 import * as styles from './styles.css';
 
 type TabProps = ComponentProps<'div'> & {
   current: 'PROJECT' | 'PLAYGROUND' | 'HACKATHON';
 };
+
+const tabs = [
+  { key: 'PROJECT', label: '프로젝트', href: PATH.PROJECT },
+  { key: 'PLAYGROUND', label: '플레이그라운드', href: PATH.PLAYGROUND },
+  { key: 'HACKATHON', label: '해커톤', href: PATH.HACKATHON },
+];
 
 const Tab: FC<TabProps> = ({ className, current, ...props }): ReactElement => {
   const [behind, setBehind] = useState<{ width: number; x: number } | null>(null);
@@ -44,35 +52,18 @@ const Tab: FC<TabProps> = ({ className, current, ...props }): ReactElement => {
           />
         )}
 
-        <Link
-          href="/projects"
-          data-tab="PROJECT"
-          className={clsx(styles.tab, { [styles.active]: current === 'PROJECT' })}
-          onMouseEnter={(e) => handleMouseEnter(e.currentTarget)}
-          onMouseLeave={handleMouseLeave}
-        >
-          프로젝트
-        </Link>
-
-        <Link
-          href="/projects?type=playground"
-          data-tab="PLAYGROUND"
-          className={clsx(styles.tab, { [styles.active]: current === 'PLAYGROUND' })}
-          onMouseEnter={(e) => handleMouseEnter(e.currentTarget)}
-          onMouseLeave={handleMouseLeave}
-        >
-          플레이그라운드
-        </Link>
-
-        <Link
-          href="/projects?type=hackathon"
-          data-tab="HACKATHON"
-          className={clsx(styles.tab, { [styles.active]: current === 'HACKATHON' })}
-          onMouseEnter={(e) => handleMouseEnter(e.currentTarget)}
-          onMouseLeave={handleMouseLeave}
-        >
-          해커톤
-        </Link>
+        {tabs.map((tab) => (
+          <Link
+            key={tab.key}
+            href={tab.href}
+            data-tab={tab.key}
+            className={clsx(styles.tab, { [styles.active]: current === tab.key })}
+            onMouseEnter={(e) => handleMouseEnter(e.currentTarget)}
+            onMouseLeave={handleMouseLeave}
+          >
+            {tab.label}
+          </Link>
+        ))}
       </motion.div>
     </div>
   );
