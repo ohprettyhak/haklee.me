@@ -9,23 +9,23 @@ import Tab from './_components/Tab';
 import * as styles from './page.css';
 
 type ProjectProps = {
-  searchParams: Promise<{ type: string }>;
+  searchParams: Promise<{ tab: string }>;
 };
 
 const Project: FC<ProjectProps> = async ({ searchParams }): Promise<ReactElement> => {
-  const { type: _type } = await searchParams;
-  let type: 'HACKATHON' | 'PLAYGROUND' | 'PROJECT';
-  if (_type === 'hackathons') type = 'HACKATHON';
-  else if (_type === 'playgrounds') type = 'PLAYGROUND';
-  else type = 'PROJECT';
+  const { tab: _tab } = await searchParams;
+  let tab: 'HACKATHON' | 'PLAYGROUND' | 'PROJECT';
+  if (_tab === 'hackathons') tab = 'HACKATHON';
+  else if (_tab === 'playgrounds') tab = 'PLAYGROUND';
+  else tab = 'PROJECT';
 
   return (
     <Fragment>
-      <Tab className={styles.tab} current={type} />
+      <Tab className={styles.tab} current={tab} />
       <section className={styles.root} data-animate={true}>
-        {type === 'PROJECT' ? (
+        {tab === 'PROJECT' ? (
           <ProjectGrid list={allProjects} />
-        ) : type === 'PLAYGROUND' ? (
+        ) : tab === 'PLAYGROUND' ? (
           <PlaygroundList />
         ) : (
           <HackathonGrid />
