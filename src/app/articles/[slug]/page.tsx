@@ -20,16 +20,18 @@ const Article: FC<ArticleProps> = async ({ params }): Promise<ReactElement> => {
   if (!article) notFound();
 
   return (
-    <article>
+    <article className={styles.root} data-animate={true}>
       <BackButton />
-      <h1 className={styles.title}>{article.title}</h1>
-      <p className={styles.description}>{article.description}</p>
-      <time className={styles.time}>
-        작성: {dayjs(article.createdAt).format('YYYY.MM.DD.')}
-        {article.modifiedAt && dayjs(article.modifiedAt).isAfter(article.createdAt) && (
-          <> &middot; 수정: {dayjs(article.modifiedAt).format('YYYY.MM.DD.')}</>
-        )}
-      </time>
+      <div>
+        <h1 className={styles.title}>{article.title}</h1>
+        <p className={styles.description}>{article.description}</p>
+        <time className={styles.time}>
+          작성: {dayjs(article.createdAt).format('YYYY.MM.DD.')}
+          {article.modifiedAt && dayjs(article.modifiedAt).isAfter(article.createdAt) && (
+            <> &middot; 수정: {dayjs(article.modifiedAt).format('YYYY.MM.DD.')}</>
+          )}
+        </time>
+      </div>
 
       <hr tabIndex={-1} aria-hidden={true} />
 
