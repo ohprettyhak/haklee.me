@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: '프로젝트 — haklee',
   openGraph: {
     title: '프로젝트 — haklee',
-    url: 'https://www.haklee.me/project',
+    url: 'https://www.haklee.me/projects',
   },
   twitter: {
     title: '프로젝트 — haklee',

@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import Link from 'next/link';
 import { FC, ReactElement } from 'react';
 
 import { type Article, allArticles } from 'contentlayer/generated';
@@ -19,13 +20,13 @@ const Article: FC = (): ReactElement => {
           <ul className={styles.list}>
             {items.map(({ slug, title, description, createdAt }) => (
               <li className={styles.card} key={slug}>
-                <a href={`/articles/${slug}`}>
+                <Link href={`/articles/${slug}`}>
                   <div>
                     <h3>{title}</h3>
                     <p>{description}</p>
                   </div>
                   <time>{dayjs(createdAt).format('MM.DD.')}</time>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
