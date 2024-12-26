@@ -13,6 +13,7 @@ import {
   SunIcon,
   CircleDashIcon,
 } from '@/components/icons';
+import { PROFILE } from '@/constants';
 import { useIsClient } from '@/hooks/useIsClient';
 import { useTheme } from '@/hooks/useTheme';
 import { theme } from '@/styles';
@@ -60,13 +61,25 @@ const Header: FC = (): ReactElement | null => {
       </Link>
 
       <div className={styles.social}>
-        <a href="https://github.com/ohprettyhak" target="_blank" rel="noopener noreferrer">
+        <a
+          href={`https://github.com/${PROFILE.SOCIAL.GITHUB}/`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <GithubIcon height={22} width={22} stroke={theme.colors.text} />
         </a>
-        <a href="https://linkedin.com/in/hak-lee" target="_blank" rel="noopener noreferrer">
+        <a
+          href={`https://linkedin.com/in/${PROFILE.SOCIAL.LINKEDIN}/`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <LinkedInIcon height={22} width={22} stroke={theme.colors.text} />
         </a>
-        <a href="https://instagram.com/ohprettyhak" target="_blank" rel="noopener noreferrer">
+        <a
+          href={`https://instagram.com/${PROFILE.SOCIAL.INSTAGRAM}/`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <InstagramIcon height={22} width={22} stroke={theme.colors.text} />
         </a>
 

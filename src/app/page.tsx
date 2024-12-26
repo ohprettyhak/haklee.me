@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { FC, Fragment, ReactElement } from 'react';
 
+import { PATH } from '@/constants';
+
 import * as styles from './page.css';
 
 const Home: FC = (): ReactElement => {
@@ -23,11 +25,11 @@ const Home: FC = (): ReactElement => {
 
       <p className={styles.content}>
         더 자세한 내용은&nbsp;
-        <Link className="gradient" href="/about">
+        <Link className="gradient" href={PATH.ABOUT}>
           소개
         </Link>
         와&nbsp;
-        <Link className="gradient" href="/projects">
+        <Link className="gradient" href={PATH.PROJECT}>
           프로젝트
         </Link>
         &nbsp;탭에서 확인해 주세요! 😆
