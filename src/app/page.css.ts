@@ -20,13 +20,13 @@ export const blur = style({
   ...breakpoint({ tablet: { height: rem(96) } }),
 });
 
-export const introduce = style({
+export const list = style({
   ...theme.layouts.column,
   paddingInline: theme.sizes.appSpace,
   gap: rem(6),
 });
 
-globalStyle(`${introduce} > li`, {
+globalStyle(`${list} > li`, {
   position: 'relative',
   paddingLeft: rem(16),
   color: theme.colors.text,
@@ -35,7 +35,7 @@ globalStyle(`${introduce} > li`, {
   wordBreak: 'keep-all',
 });
 
-globalStyle(`${introduce} > li::before`, {
+globalStyle(`${list} > li::before`, {
   content: '•',
   position: 'absolute',
   left: 0,
@@ -47,5 +47,10 @@ export const content = style({
   marginTop: `calc(${theme.sizes.appSpace} * 2)`,
   color: theme.colors.text,
   fontSize: rem(15.5),
-  lineHeight: 1.6,
+});
+
+export const article = style({
+  marginBottom: rem(8),
+  fontSize: rem(16),
+  fontWeight: 500,
 });

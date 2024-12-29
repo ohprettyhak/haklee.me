@@ -1,6 +1,7 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 
 import { rem, theme } from '@/styles';
+import { breakpoint } from '@/styles/responsive.css';
 
 export const root = style({
   paddingInline: theme.sizes.appSpace,
@@ -71,10 +72,13 @@ globalStyle(`${list} > ${card}:last-child`, {
 });
 
 globalStyle(`${card} a`, {
-  ...theme.layouts.rowBetween,
+  ...theme.layouts.column,
   paddingBlock: rem(12),
   paddingInline: rem(16),
   flex: 1,
+  gap: rem(6),
+
+  ...breakpoint({ mobile: { ...theme.layouts.rowBetween, flexDirection: 'row' } }),
 });
 
 globalStyle(`${card}:hover`, {
