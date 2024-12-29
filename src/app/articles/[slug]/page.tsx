@@ -28,7 +28,7 @@ const Article: FC<ArticleProps> = async ({ params }): Promise<ReactElement> => {
         <time className={styles.time}>
           작성: {dayjs(article.createdAt).format('YYYY.MM.DD.')}
           {article.modifiedAt && dayjs(article.modifiedAt).isAfter(article.createdAt) && (
-            <> &middot; 수정: {dayjs(article.modifiedAt).format('YYYY.MM.DD.')}</>
+            <> &middot; 최종 수정: {dayjs(article.modifiedAt).format('YYYY.MM.DD.')}</>
           )}
         </time>
       </div>

@@ -17,12 +17,12 @@ globalStyle('body', {
   overflowY: 'scroll',
 });
 
-globalStyle('[data-theme="dark"]', {
-  colorScheme: 'dark',
-});
-
 globalStyle('[data-theme="light"]', {
   colorScheme: 'light',
+});
+
+globalStyle('[data-theme="dark"]', {
+  colorScheme: 'dark',
 });
 
 globalStyle('a[rel="noreferrer noopener"][target=_blank]', {
@@ -67,6 +67,10 @@ globalStyle(
   },
 );
 
+globalStyle('::selection', {
+  backgroundColor: theme.colors.selection,
+});
+
 // article
 globalStyle('[data-article] h1', {
   fontSize: rem(22),
@@ -79,16 +83,11 @@ globalStyle('[data-article] h2', {
 });
 
 globalStyle('[data-article] h3', {
-  fontSize: rem(18),
+  fontSize: rem(17.5),
   lineHeight: 1.1,
 });
 
-globalStyle('[data-article] h4', {
-  fontSize: rem(17),
-  lineHeight: 1.3,
-});
-
-globalStyle('[data-article] h5, [data-article] h6', {
+globalStyle('[data-article] h4, [data-article] h5, [data-article] h6', {
   fontSize: rem(16),
   lineHeight: 1.3,
 });
@@ -97,7 +96,7 @@ globalStyle(
   '[data-article] h1, [data-article] h2, [data-article] h3, [data-article] h4, [data-article] h5, [data-article] h6',
   {
     color: theme.colors.text,
-    fontWeight: 600,
+    fontWeight: 700,
     paddingTop: rem(28),
     paddingBottom: rem(20),
   },
@@ -107,26 +106,39 @@ globalStyle('[data-article] ul, [data-article] ol', {
   paddingBottom: rem(20),
 });
 
+globalStyle(`[data-article] ol`, {
+  counterReset: 'basics-ol',
+});
+
 globalStyle('[data-article] ul li, [data-article] ol li', {
   position: 'relative',
   paddingLeft: rem(16),
   paddingBottom: rem(8),
   color: theme.colors.text,
-  fontSize: rem(16),
+  fontSize: rem(15.5),
   lineHeight: 1.8,
-  wordBreak: 'keep-all',
+  listStyle: 'none',
 });
 
-globalStyle(`[data-article] li::before`, {
+globalStyle(`[data-article] ol li::before`, {
+  content: `counter(basics-ol) ". "`,
+  counterIncrement: 'basics-ol',
+  position: 'absolute',
+  left: 0,
+  fontSize: rem(15.5),
+});
+
+globalStyle(`[data-article] ul li::before`, {
   content: '•',
   position: 'absolute',
   left: 0,
-  fontSize: rem(16),
+  fontSize: rem(15.5),
 });
 
 globalStyle('[data-article] p', {
   color: theme.colors.text,
-  fontSize: rem(16),
+  fontSize: rem(15.5),
+  fontWeight: 400,
   lineHeight: '180%',
   paddingBottom: rem(18),
 });

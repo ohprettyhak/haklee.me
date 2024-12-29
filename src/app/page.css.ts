@@ -30,7 +30,7 @@ globalStyle(`${introduce} > li`, {
   position: 'relative',
   paddingLeft: rem(16),
   color: theme.colors.text,
-  fontSize: rem(16),
+  fontSize: rem(15.5),
   lineHeight: 1.8,
   wordBreak: 'keep-all',
 });
@@ -39,13 +39,13 @@ globalStyle(`${introduce} > li::before`, {
   content: '•',
   position: 'absolute',
   left: 0,
-  fontSize: rem(16),
+  fontSize: rem(15.5),
 });
 
 export const content = style({
   paddingInline: theme.sizes.appSpace,
   marginTop: `calc(${theme.sizes.appSpace} * 2)`,
   color: theme.colors.text,
-  fontSize: rem(16),
+  fontSize: rem(15.5),
   lineHeight: 1.6,
 });
