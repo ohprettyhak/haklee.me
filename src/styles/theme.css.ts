@@ -81,6 +81,8 @@ const modeColors = createThemeContract({
   line: '--hakui-line',
 
   hufs: '--hakui-hufs',
+
+  selection: '--hakui-selection',
 });
 
 const colors = {
@@ -132,6 +134,8 @@ export const lightModeColors = createTheme(modeColors, {
   line: colors.gray50,
 
   hufs: '#002B49',
+
+  selection: 'rgba(0, 0, 0, 0.15)',
 });
 
 export const darkModeColors = createTheme(modeColors, {
@@ -147,13 +151,15 @@ export const darkModeColors = createTheme(modeColors, {
   cardBorderHover: 'rgba(46, 46, 46, 1)',
   cardBackgroundHover: 'rgba(46, 46, 46, 0.5)',
 
-  text: colors.gray0,
+  text: 'rgba(255, 255, 255, 0.9)',
   textSecondary: colors.gray400,
   textTertiary: colors.gray200,
   border: colors.gray800,
   line: colors.gray800,
 
   hufs: colors.gray0,
+
+  selection: 'rgba(255, 255, 255, 0.15)',
 });
 
 export const theme = createGlobalTheme(':root', {
