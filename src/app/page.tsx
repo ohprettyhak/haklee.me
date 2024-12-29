@@ -1,14 +1,20 @@
+import { clsx } from 'clsx';
+import dayjs from 'dayjs';
 import Link from 'next/link';
 import { FC, Fragment, ReactElement } from 'react';
+
+import { type Article, allArticles } from 'contentlayer/generated';
 
 import { PATH } from '@/constants';
 
 import * as styles from './page.css';
 
 const Home: FC = (): ReactElement => {
+  const articles: Article[] = getSortedArticles(allArticles);
+
   return (
     <Fragment>
-      <ul className={styles.introduce}>
+      <ul className={styles.list}>
         <li>안녕하세요, 웹 프론트엔드 개발자 이학입니다.</li>
         <li>
           사이버 지식 정보방에서 우연히 시작한 웹 개발이 너무 즐거워서 지금까지 계속하고 있습니다.
@@ -32,10 +38,25 @@ const Home: FC = (): ReactElement => {
         <Link className="gradient" href={PATH.PROJECT}>
           프로젝트
         </Link>
-        &nbsp;탭에서 확인해 주세요! 😆
+        &nbsp;탭을 확인해 주세요! 😆
       </p>
+
+      <p className={clsx(styles.content, styles.article)}>최신 글</p>
+      <ul className={styles.list}>
+        {articles.map((article) => (
+          <li key={article.slug}>
+            <Link className="gradient" href={`/articles/${article.slug}`}>
+              {article.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </Fragment>
   );
 };
 
 export default Home;
+
+const getSortedArticles = (articles: Article[]): Article[] => {
+  return articles.sort((a, b) => (dayjs(a.createdAt).isAfter(dayjs(b.createdAt)) ? -1 : 1));
+};
