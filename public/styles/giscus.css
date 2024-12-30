@@ -1,4 +1,4 @@
-.giscus-section {
+main {
   --primary-default: 5, 92, 55;
   --bg-default: 246, 246, 247;
   --color-prettylights-syntax-comment: #6e7781;
@@ -88,15 +88,15 @@
   --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-1);
 }
 
-.giscus-section .pagination-loader-container {
+main .pagination-loader-container {
   background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line.svg);
 }
 
-.giscus-section .gsc-loading-image {
+main .gsc-loading-image {
   background-image: url(https://github.githubassets.com/images/mona-loading-default.gif);
 }
 
-.giscus-section .gsc-comment:not(.gsc-reply-box) .gsc-replies {
+main .gsc-comment:not(.gsc-reply-box) .gsc-replies {
   border-radius: unset;
 }
 
