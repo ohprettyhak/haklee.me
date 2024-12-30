@@ -6,7 +6,6 @@ type GiscusProps = ComponentProps<'section'>;
 const Giscus: FC<GiscusProps> = ({ ...props }): ReactElement => {
   const ref = useRef<HTMLDivElement | null>(null);
 
-  // 'https://hstatic.haklee.me/styles/giscus.css'
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
@@ -20,7 +19,7 @@ const Giscus: FC<GiscusProps> = ({ ...props }): ReactElement => {
     script.setAttribute('data-emit-metadata', '0');
     script.setAttribute('data-input-position', 'bottom');
     script.setAttribute('data-lang', 'ko');
-    script.setAttribute('data-theme', 'noborder_light');
+    script.setAttribute('data-theme', 'https://hstatic.haklee.me/styles/giscus.css');
     script.setAttribute('data-loading', 'lazy');
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;
