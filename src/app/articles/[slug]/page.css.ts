@@ -55,3 +55,8 @@ export const navigation = style({
   position: 'sticky',
   top: `calc(${rem(64)} + ${theme.sizes.appSpace})`,
 });
+
+export const giscus = style({
+  marginTop: `calc(${theme.sizes.appSpace} * 2)`,
+  paddingInline: theme.sizes.appSpace,
+});

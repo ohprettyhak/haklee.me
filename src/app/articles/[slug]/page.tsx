@@ -6,6 +6,7 @@ import { FC, Fragment, ReactElement } from 'react';
 import { type Article, allArticles } from 'contentlayer/generated';
 
 import BackButton from '@/components/BackButton';
+import Giscus from '@/components/Giscus';
 import MdxComponent from '@/components/MdxComponent';
 import TableOfContents, { type TOCType } from '@/components/TableOfContents';
 import { PROFILE } from '@/constants';
@@ -51,6 +52,8 @@ const Article: FC<ArticleProps> = async ({ params }): Promise<ReactElement> => {
           </aside>
         </div>
       </article>
+
+      <Giscus className={styles.giscus} />
     </Fragment>
   );
 };
