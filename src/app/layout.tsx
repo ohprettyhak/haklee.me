@@ -56,12 +56,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: PROFILE.TITLE,
     description: PROFILE.DESCRIPTION,
-    images: [
-      {
-        url: PROFILE.PREVIEW_IMAGE,
-        alt: PROFILE.PREVIEW_IMAGE_ALT,
-      },
-    ],
+    images: [{ url: PROFILE.PREVIEW_IMAGE, alt: PROFILE.PREVIEW_IMAGE_ALT }],
     type: 'website',
     siteName: PROFILE.TITLE,
     url: BASE_URL,
@@ -70,20 +65,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: PROFILE.TITLE,
     description: PROFILE.DESCRIPTION,
-    images: [
-      {
-        url: PROFILE.PREVIEW_IMAGE,
-        alt: PROFILE.PREVIEW_IMAGE_ALT,
-      },
-    ],
+    images: [{ url: PROFILE.PREVIEW_IMAGE, alt: PROFILE.PREVIEW_IMAGE_ALT }],
     creator: PROFILE.SOCIAL.TWITTER,
   },
-  authors: [
-    {
-      name: PROFILE.NAME,
-      url: BASE_URL,
-    },
-  ],
+  authors: [{ name: PROFILE.NAME, url: BASE_URL }],
   robots: 'index, follow',
 };
 

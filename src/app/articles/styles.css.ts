@@ -96,7 +96,7 @@ globalStyle(`${card} h3`, {
 globalStyle(`${card} p, ${card} time`, {
   color: theme.colors.textSecondary,
   fontSize: rem(14),
-  lineHeight: 1.6,
+  lineHeight: '160%',
 });
 
 globalStyle(`${root}:hover ${card}:not(:hover)`, {
