@@ -99,6 +99,7 @@ globalStyle(
     fontWeight: 700,
     paddingTop: rem(28),
     paddingBottom: rem(20),
+    scrollMarginTop: rem(64),
   },
 );
 
@@ -198,7 +199,7 @@ globalStyle('[data-article] video', {
 globalStyle('article hr', {
   width: '100%',
   height: rem(2),
-  marginBlock: `calc(${theme.sizes.appSpace} * 2)`,
+  marginBlock: rem(32),
   border: 0,
   borderRadius: rem(2),
   backgroundColor: theme.colors.line,

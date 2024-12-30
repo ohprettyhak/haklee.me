@@ -4,13 +4,32 @@ import {
   defineNestedType,
   makeSource,
 } from 'contentlayer/source-files';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeSlug from 'rehype-slug';
 import remarkAlerts from 'remark-blockquote-alerts';
 
 const computedFields: ComputedFields = {
   slug: {
     type: 'string',
     resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ''),
+  },
+  toc: {
+    type: 'json',
+    resolve: (doc) => {
+      const headerRegex = /^(#{1,3})\s(.+)$/gm;
+      const matches = [...doc.body.raw.matchAll(headerRegex)];
+
+      return matches.map((match): { id: string; level: number; text: string } => ({
+        id: match[2]
+          .trim()
+          .replace(/\s+/g, '-')
+          .replace(/[^\w가-힣ㄱ-ㅎㅏ-ㅣ-]/g, '')
+          .toLowerCase(),
+        level: match[1].length,
+        text: match[2],
+      }));
+    },
   },
 };
 
@@ -83,6 +102,13 @@ export default makeSource({
   mdx: {
     remarkPlugins: [remarkAlerts],
     rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: 'wrap',
+        },
+      ],
       [
         rehypePrettyCode,
         {

@@ -22,9 +22,9 @@ globalStyle(':root', {
   tabSize: 4,
 });
 
-globalStyle('html, body', {
-  height: '100%',
-});
+globalStyle('html', { scrollBehavior: 'smooth' });
+
+globalStyle('html, body', { height: '100%' });
 
 globalStyle('img, picture, video, canvas, svg', {
   display: 'block',
@@ -37,9 +37,7 @@ globalStyle('button', {
   cursor: 'pointer',
 });
 
-globalStyle('a, abbr', {
-  textDecoration: 'none',
-});
+globalStyle('a, abbr', { textDecoration: 'none' });
 
 globalStyle('table', {
   borderCollapse: 'collapse',
