@@ -1,5 +1,6 @@
 'use client';
 import { clsx } from 'clsx';
+import { useRouter } from 'next/navigation';
 import { ComponentProps, FC, ReactElement } from 'react';
 
 import { MoveLeftIcon } from '@/components/icons';
@@ -10,6 +11,8 @@ import * as styles from './styles.css';
 type PreviousEntry = { idx?: number } | null;
 
 const BackButton: FC<ComponentProps<'button'>> = ({ className, ...props }): ReactElement => {
+  const router = useRouter();
+
   const handleBack = () => {
     const currentHost: string = window.location.origin;
     const currentPathname: string = window.location.pathname;
@@ -27,14 +30,14 @@ const BackButton: FC<ComponentProps<'button'>> = ({ className, ...props }): Reac
       const previousUrl = new URL(document.referrer);
 
       if (previousUrl.origin !== currentHost) {
-        window.history.replaceState(null, '', `${currentHost}${parentPath}`);
+        router.replace(`${currentHost}${parentPath}`);
       } else if (previousUrl.pathname === currentPathname && previousUrl.hash) {
-        window.history.replaceState(null, '', `${currentHost}${parentPath}`);
+        router.replace(`${currentHost}${parentPath}`);
       } else {
-        window.history.back();
+        router.back();
       }
     } else {
-      window.history.replaceState(null, '', `${currentHost}${parentPath}`);
+      router.replace(`${currentHost}${parentPath}`);
     }
   };
 
