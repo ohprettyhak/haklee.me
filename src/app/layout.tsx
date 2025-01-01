@@ -39,7 +39,9 @@ const colorThemeScript = `
       setTheme(newTheme);
       try {
         localStorage.setItem('theme', newTheme);
-      } catch (err) {}
+      } catch (err) {
+        console.log('error');
+      }
     }
     var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
     darkQuery.addListener(function(e) {
