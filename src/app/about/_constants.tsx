@@ -41,10 +41,10 @@ export const RESUME = [
     items: [
       {
         id: 'HUFS GLOBAL',
-        duration: '2019.03. - 2025.08. (예정)',
+        duration: '2019.03. - 2025.02. (수료)',
         logo: <HUFSLogo size={20} fill={theme.colors.hufs} />,
         title: '한국외국어대학교 글로벌캠퍼스',
-        description: '컴퓨터.전자시스템공학부 학사과정 수료 예정 (4.17/4.5)',
+        description: '컴퓨터.전자시스템공학부 학사과정 수료 (4.05/4.5)',
         subItems: [
           {
             id: 'double-major',
