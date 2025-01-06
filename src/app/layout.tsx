@@ -1,6 +1,7 @@
 import '@/styles/global.css';
 import 'remark-blockquote-alerts/styles/blockquote.min.css';
 
+import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
@@ -83,6 +84,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
         <div className={styles.blur} aria-hidden={true} />
         <Layout>{children}</Layout>
         <NavigationMenu />
+        <Analytics />
         <SpeedInsights />
       </body>
 
