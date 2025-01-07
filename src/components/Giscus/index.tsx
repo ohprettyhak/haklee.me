@@ -8,7 +8,9 @@ type GiscusProps = ComponentProps<'section'>;
 const Giscus: FC<GiscusProps> = ({ ...props }): ReactElement => {
   const ref = useRef<HTMLDivElement | null>(null);
 
-  const { theme } = useTheme();
+  const { theme: appTheme } = useTheme();
+
+  const theme = appTheme === 'light' ? 'noborder_light' : 'noborder_dark';
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -23,7 +25,7 @@ const Giscus: FC<GiscusProps> = ({ ...props }): ReactElement => {
     script.setAttribute('data-emit-metadata', '0');
     script.setAttribute('data-input-position', 'bottom');
     script.setAttribute('data-lang', 'ko');
-    script.setAttribute('data-theme', theme === 'dark' ? 'noborder_dark' : 'noborder_light');
+    script.setAttribute('data-theme', theme);
     script.setAttribute('data-loading', 'lazy');
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;
