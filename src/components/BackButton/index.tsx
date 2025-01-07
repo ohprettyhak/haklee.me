@@ -1,6 +1,6 @@
 'use client';
 import { clsx } from 'clsx';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { ComponentProps, FC, ReactElement } from 'react';
 
 import { MoveLeftIcon } from '@/components/icons';
@@ -10,9 +10,21 @@ import * as styles from './styles.css';
 
 const BackButton: FC<ComponentProps<'button'>> = ({ className, ...props }): ReactElement => {
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleBack = () => {
-    router.back();
+    if (pathname === '/') {
+      router.back();
+      return;
+    }
+
+    const path: string[] = pathname.split('/').filter(Boolean);
+    if (path.length > 1) {
+      const parent = `/${path.slice(0, -1).join('/')}`;
+      router.replace(parent);
+    } else {
+      router.replace('/');
+    }
   };
 
   return (
