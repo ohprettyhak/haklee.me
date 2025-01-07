@@ -1,13 +1,14 @@
 'use client';
-import { clsx } from 'clsx';
 import { ComponentProps, FC, ReactElement, useEffect, useRef } from 'react';
 
-type GiscusProps = ComponentProps<'section'> & {
-  className?: string;
-};
+import { useTheme } from '@/states/ThemeProvider';
 
-const Giscus: FC<GiscusProps> = ({ className, ...props }): ReactElement => {
+type GiscusProps = ComponentProps<'section'>;
+
+const Giscus: FC<GiscusProps> = ({ ...props }): ReactElement => {
   const ref = useRef<HTMLDivElement | null>(null);
+
+  const { theme } = useTheme();
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -22,7 +23,7 @@ const Giscus: FC<GiscusProps> = ({ className, ...props }): ReactElement => {
     script.setAttribute('data-emit-metadata', '0');
     script.setAttribute('data-input-position', 'bottom');
     script.setAttribute('data-lang', 'ko');
-    script.setAttribute('data-theme', 'preferred_color_scheme');
+    script.setAttribute('data-theme', theme === 'dark' ? 'noborder_dark' : 'noborder_light');
     script.setAttribute('data-loading', 'lazy');
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;
@@ -35,9 +36,9 @@ const Giscus: FC<GiscusProps> = ({ className, ...props }): ReactElement => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       if (ref.current) ref.current.innerHTML = '';
     };
-  }, []);
+  }, [theme]);
 
-  return <section className={clsx('giscus-section', className)} ref={ref} {...props} />;
+  return <section ref={ref} {...props} />;
 };
 
 export default Giscus;
