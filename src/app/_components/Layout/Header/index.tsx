@@ -15,7 +15,7 @@ import {
 } from '@/components/icons';
 import { PROFILE } from '@/constants';
 import { useIsClient } from '@/hooks/useIsClient';
-import { useTheme } from '@/hooks/useTheme';
+import { useTheme } from '@/states/ThemeProvider';
 import { theme } from '@/styles';
 
 import * as styles from './styles.css';
