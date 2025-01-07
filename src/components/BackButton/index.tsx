@@ -1,5 +1,6 @@
 'use client';
 import { clsx } from 'clsx';
+import { usePathname, useRouter } from 'next/navigation';
 import { ComponentProps, FC, ReactElement } from 'react';
 
 import { MoveLeftIcon } from '@/components/icons';
@@ -7,34 +8,22 @@ import { theme } from '@/styles';
 
 import * as styles from './styles.css';
 
-type PreviousEntry = { idx?: number } | null;
-
 const BackButton: FC<ComponentProps<'button'>> = ({ className, ...props }): ReactElement => {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const handleBack = () => {
-    const currentHost: string = window.location.origin;
-    const currentPathname: string = window.location.pathname;
-    const previousEntry: PreviousEntry = window.history.state?.idx > 0 && window.history.state;
+    if (pathname === '/') {
+      router.back();
+      return;
+    }
 
-    const getParentPath = (pathname: string): string => {
-      const segments: string[] = pathname.split('/').filter(Boolean);
-      if (segments.length <= 1) return '/';
-      return `/${segments.slice(0, -1).join('/')}`;
-    };
-
-    const parentPath: string = getParentPath(currentPathname);
-
-    if (previousEntry) {
-      const previousUrl = new URL(document.referrer);
-
-      if (previousUrl.origin !== currentHost) {
-        window.history.replaceState(null, '', `${currentHost}${parentPath}`);
-      } else if (previousUrl.pathname === currentPathname && previousUrl.hash) {
-        window.history.replaceState(null, '', `${currentHost}${parentPath}`);
-      } else {
-        window.history.back();
-      }
+    const path: string[] = pathname.split('/').filter(Boolean);
+    if (path.length > 1) {
+      const parent = `/${path.slice(0, -1).join('/')}`;
+      router.replace(parent);
     } else {
-      window.history.replaceState(null, '', `${currentHost}${parentPath}`);
+      router.replace('/');
     }
   };
 

@@ -1,10 +1,14 @@
 'use client';
 import { ComponentProps, FC, ReactElement, useEffect, useRef } from 'react';
 
+import { useTheme } from '@/states/ThemeProvider';
+
 type GiscusProps = ComponentProps<'section'>;
 
 const Giscus: FC<GiscusProps> = ({ ...props }): ReactElement => {
   const ref = useRef<HTMLDivElement | null>(null);
+
+  const { theme } = useTheme();
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -19,7 +23,7 @@ const Giscus: FC<GiscusProps> = ({ ...props }): ReactElement => {
     script.setAttribute('data-emit-metadata', '0');
     script.setAttribute('data-input-position', 'bottom');
     script.setAttribute('data-lang', 'ko');
-    script.setAttribute('data-theme', 'https://hstatic.haklee.me/styles/giscus.css');
+    script.setAttribute('data-theme', theme === 'dark' ? 'noborder_dark' : 'noborder_light');
     script.setAttribute('data-loading', 'lazy');
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;
@@ -32,7 +36,7 @@ const Giscus: FC<GiscusProps> = ({ ...props }): ReactElement => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       if (ref.current) ref.current.innerHTML = '';
     };
-  }, []);
+  }, [theme]);
 
   return <section ref={ref} {...props} />;
 };

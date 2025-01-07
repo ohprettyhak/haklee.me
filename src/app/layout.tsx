@@ -1,12 +1,15 @@
 import '@/styles/global.css';
 import 'remark-blockquote-alerts/styles/blockquote.min.css';
 
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import Script from 'next/script';
 import { FC, PropsWithChildren, ReactElement } from 'react';
 
 import { BASE_URL, GA_ID, PROFILE } from '@/constants';
+import { ThemeProvider } from '@/states/ThemeProvider';
 import { darkModeColors, lightModeColors } from '@/styles';
 
 import Layout from './_components/Layout';
@@ -28,7 +31,8 @@ const colorThemeScript = `
       window.__theme = newTheme;
       preferredTheme = newTheme;
       document.documentElement.setAttribute('data-theme', newTheme);
-      document.documentElement.className = newTheme === 'dark' ? '${darkModeColors} ${pretendard.variable}' : '${lightModeColors} ${pretendard.variable}';
+      document.documentElement.className = newTheme === 'dark' ? '${darkModeColors}' : '${lightModeColors}';
+      document.documentElement.classList.add('${pretendard.variable}');
       window.__onThemeChange(newTheme);
     }
     var preferredTheme;
@@ -79,9 +83,13 @@ const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
         <script dangerouslySetInnerHTML={{ __html: colorThemeScript }} />
       </head>
       <body>
-        <div className={styles.blur} aria-hidden={true} />
-        <Layout>{children}</Layout>
-        <NavigationMenu />
+        <ThemeProvider>
+          <div className={styles.blur} aria-hidden={true} />
+          <Layout>{children}</Layout>
+          <NavigationMenu />
+        </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
 
       <Script

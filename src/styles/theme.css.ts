@@ -83,6 +83,7 @@ const modeColors = createThemeContract({
   hufs: '--hakui-hufs',
 
   selection: '--hakui-selection',
+  toc: '--hakui-toc',
 });
 
 const colors = {
@@ -136,6 +137,7 @@ export const lightModeColors = createTheme(modeColors, {
   hufs: '#002B49',
 
   selection: 'rgba(0, 0, 0, 0.15)',
+  toc: colors.gray300,
 });
 
 export const darkModeColors = createTheme(modeColors, {
@@ -160,6 +162,7 @@ export const darkModeColors = createTheme(modeColors, {
   hufs: colors.gray0,
 
   selection: 'rgba(255, 255, 255, 0.15)',
+  toc: colors.gray600,
 });
 
 export const theme = createGlobalTheme(':root', {

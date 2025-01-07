@@ -14,7 +14,7 @@ export const list = style({
 });
 
 export const item = style({
-  color: theme.colors.textTertiary,
+  color: theme.colors.toc,
   fontSize: rem(14),
   fontWeight: 400,
   textAlign: 'left',
