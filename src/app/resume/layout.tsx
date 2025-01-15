@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: `소개 — ${PROFILE.TITLE}`,
   openGraph: {
     title: `소개 — ${PROFILE.TITLE}`,
-    url: `${BASE_URL}${PATH.ABOUT}`,
+    url: `${BASE_URL}${PATH.RESUME}`,
   },
   twitter: {
     title: `소개 — ${PROFILE.TITLE}`,

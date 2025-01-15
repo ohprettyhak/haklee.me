@@ -3,10 +3,12 @@ import { FC, Fragment, ReactElement } from 'react';
 import { REACH, RESUME } from './_constants';
 import * as styles from './page.css';
 
-const About: FC = (): ReactElement => {
+const Resume: FC = (): ReactElement => {
   return (
     <Fragment>
-      <p className={styles.introduce}>열심히 하겠습니다.</p>
+      <p className={styles.introduce}>
+        무엇인가 만들고 고민하는 과정이 즐겁습니다. 현재는 성장에 진심인 회사를 찾고 있습니다.
+      </p>
 
       <section className={styles.section}>
         <h2 id={`#${REACH.id}`}>{REACH.title}</h2>
@@ -53,4 +55,4 @@ const About: FC = (): ReactElement => {
   );
 };
 
-export default About;
+export default Resume;

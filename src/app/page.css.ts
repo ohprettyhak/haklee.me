@@ -45,12 +45,8 @@ globalStyle(`${list} > li::before`, {
 export const content = style({
   paddingInline: theme.sizes.appSpace,
   marginTop: `calc(${theme.sizes.appSpace} * 2)`,
-  color: theme.colors.text,
-  fontSize: rem(15.5),
-});
-
-export const article = style({
   marginBottom: rem(8),
+  color: theme.colors.text,
   fontSize: rem(16),
   fontWeight: 500,
 });
