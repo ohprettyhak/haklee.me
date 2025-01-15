@@ -6,6 +6,7 @@ import { breakpoint } from '@/styles/responsive.css';
 export const introduce = style({
   paddingInline: theme.sizes.appSpace,
   color: theme.colors.text,
+  fontSize: rem(15.5),
 });
 
 export const section = style({

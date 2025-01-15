@@ -1,4 +1,3 @@
-import { clsx } from 'clsx';
 import dayjs from 'dayjs';
 import Link from 'next/link';
 import { FC, Fragment, ReactElement } from 'react';
@@ -29,27 +28,24 @@ const Home: FC = (): ReactElement => {
         </li>
       </ul>
 
-      <p className={styles.content}>
-        더 자세한 내용은&nbsp;
-        <Link className="gradient" href={PATH.ABOUT}>
-          소개
-        </Link>
-        와&nbsp;
-        <Link className="gradient" href={PATH.PROJECT}>
-          프로젝트
-        </Link>
-        &nbsp;탭을 확인해 주세요! 😆
-      </p>
-
-      <p className={clsx(styles.content, styles.article)}>최신 글</p>
+      <p className={styles.content}>최신 글</p>
       <ul className={styles.list}>
-        {articles.map((article) => (
+        {articles.slice(0, 3).map((article) => (
           <li key={article.slug}>
             <Link className="gradient" href={`/articles/${article.slug}`}>
               {article.title}
             </Link>
           </li>
         ))}
+      </ul>
+
+      <p className={styles.content}>링크</p>
+      <ul className={styles.list}>
+        <li>
+          <Link className="gradient" href={PATH.RESUME}>
+            이력
+          </Link>
+        </li>
       </ul>
     </Fragment>
   );
