@@ -47,7 +47,7 @@ const TableOfContents: FC<TableOfContentsProps> = ({ toc }): ReactElement => {
           <a
             href={`#${id}`}
             className={clsx(styles.item, { [styles.active]: id === activeId })}
-            style={{ marginLeft: `${(level - 2) * 16}px` }}
+            style={{ marginLeft: `${(level - 2) * 10}px` }}
           >
             {text}
           </a>

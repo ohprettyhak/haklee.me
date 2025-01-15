@@ -50,7 +50,7 @@ globalStyle('a[rel="noreferrer noopener"][target=_blank]:after', {
 
 globalStyle('.gradient, [data-article] a:not([rel="noreferrer noopener"][target=_blank])', {
   width: 'fit-content',
-  color: 'transparent',
+  color: theme.colors.textTertiary,
   borderBottom: `${rem(1)} solid ${theme.colors.border}`,
   boxDecorationBreak: 'clone',
   background: `linear-gradient(90deg, #833ab4 0%, #fd1d1d 25%, #C06C84 50%, ${theme.colors.textTertiary} 50%, ${theme.colors.textTertiary} 100%)`,
@@ -63,6 +63,7 @@ globalStyle('.gradient, [data-article] a:not([rel="noreferrer noopener"][target=
 globalStyle(
   '.gradient:hover, [data-article] a:not([rel="noreferrer noopener"][target=_blank]):hover',
   {
+    color: 'transparent',
     backgroundPosition: '0',
   },
 );
@@ -78,17 +79,17 @@ globalStyle('[data-article] h1', {
 });
 
 globalStyle('[data-article] h2', {
-  fontSize: rem(19),
+  fontSize: rem(18),
   lineHeight: 1.2,
 });
 
 globalStyle('[data-article] h3', {
-  fontSize: rem(17.5),
+  fontSize: rem(16),
   lineHeight: 1.1,
 });
 
 globalStyle('[data-article] h4, [data-article] h5, [data-article] h6', {
-  fontSize: rem(16),
+  fontSize: rem(15),
   lineHeight: 1.3,
 });
 
@@ -96,7 +97,7 @@ globalStyle(
   '[data-article] h1, [data-article] h2, [data-article] h3, [data-article] h4, [data-article] h5, [data-article] h6',
   {
     color: theme.colors.text,
-    fontWeight: 700,
+    fontWeight: 600,
     paddingTop: rem(28),
     paddingBottom: rem(20),
     scrollMarginTop: rem(64),
