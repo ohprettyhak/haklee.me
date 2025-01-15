@@ -1,11 +1,12 @@
 'use client';
 import { useMDXComponent } from 'next-contentlayer/hooks';
+import { FC, ReactElement } from 'react';
 
 type MdxComponentProps = {
   code: string;
 };
 
-const MdxComponent = ({ code }: MdxComponentProps) => {
+const MdxComponent: FC<MdxComponentProps> = ({ code }): ReactElement => {
   const MDXComponent = useMDXComponent(code);
 
   return (

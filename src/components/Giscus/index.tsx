@@ -24,7 +24,6 @@ const Giscus: FC<GiscusProps> = ({ ...props }): ReactElement => {
     script.setAttribute('data-input-position', 'bottom');
     script.setAttribute('data-lang', 'ko');
     script.setAttribute('data-theme', theme === 'dark' ? 'noborder_dark' : 'noborder_light');
-    script.setAttribute('data-loading', 'lazy');
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;
 
