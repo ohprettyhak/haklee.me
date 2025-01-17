@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const SunIcon = memo<IconProps>((props) => (
+export const SunIcon: FC<IconProps> = (props) => (
   <Icon type="stroke" {...props}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -28,6 +28,6 @@ export const SunIcon = memo<IconProps>((props) => (
       <path d="m19.07 4.93-1.41 1.41" />
     </svg>
   </Icon>
-));
+);
 
 SunIcon.displayName = 'SunIcon';

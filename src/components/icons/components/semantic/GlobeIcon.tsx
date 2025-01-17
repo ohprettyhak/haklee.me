@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const GlobeIcon = memo<IconProps>((props) => (
+export const GlobeIcon: FC<IconProps> = (props) => (
   <Icon type="stroke" {...props}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -22,6 +22,6 @@ export const GlobeIcon = memo<IconProps>((props) => (
       <path d="M2 12h20" />
     </svg>
   </Icon>
-));
+);
 
 GlobeIcon.displayName = 'GlobeIcon';

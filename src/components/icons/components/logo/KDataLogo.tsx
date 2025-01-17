@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const KDataLogo = memo<IconProps>((props) => (
+export const KDataLogo: FC<IconProps> = (props) => (
   <Icon type="fill" {...props}>
     <svg
       width="530"
@@ -30,6 +30,6 @@ export const KDataLogo = memo<IconProps>((props) => (
       />
     </svg>
   </Icon>
-));
+);
 
 KDataLogo.displayName = 'KDataLogo';

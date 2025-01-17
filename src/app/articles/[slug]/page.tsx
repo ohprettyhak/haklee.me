@@ -5,10 +5,10 @@ import { FC, Fragment, ReactElement } from 'react';
 
 import { type Article, allArticles } from 'contentlayer/generated';
 
-import BackButton from '@/components/BackButton';
-import Giscus from '@/components/Giscus';
-import MdxComponent from '@/components/MdxComponent';
-import TableOfContents, { type TOCType } from '@/components/TableOfContents';
+import BackButton from '@/components/back-button';
+import Giscus from '@/components/giscus';
+import MdxComponent from '@/components/mdx-component';
+import TableOfContents, { type TOCType } from '@/components/table-of-contents';
 import { PROFILE } from '@/constants';
 
 import * as styles from './page.css';

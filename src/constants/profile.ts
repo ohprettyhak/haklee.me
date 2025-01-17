@@ -10,7 +10,6 @@ export const PROFILE = {
     EMAIL: 'me@haklee.me',
     GITHUB: 'ohprettyhak',
     LINKEDIN: 'hak-lee',
-    INSTAGRAM: 'ohprettyhak',
     TWITTER: '@masonthecode',
   },
 } as const;

@@ -5,9 +5,9 @@ import { FC, ReactElement } from 'react';
 
 import { type Project, allProjects } from 'contentlayer/generated';
 
-import BackButton from '@/components/BackButton';
+import BackButton from '@/components/back-button';
 import { GithubIcon, GlobeIcon } from '@/components/icons';
-import MdxComponent from '@/components/MdxComponent';
+import MdxComponent from '@/components/mdx-component';
 import { theme } from '@/styles';
 
 import * as styles from './page.css';

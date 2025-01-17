@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const InstagramIcon = memo<IconProps>((props) => (
+export const InstagramIcon: FC<IconProps> = (props) => (
   <Icon type="stroke" {...props}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -22,6 +22,6 @@ export const InstagramIcon = memo<IconProps>((props) => (
       <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
     </svg>
   </Icon>
-));
+);
 
 InstagramIcon.displayName = 'InstagramIcon';

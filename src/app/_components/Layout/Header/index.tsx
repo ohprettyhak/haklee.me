@@ -3,22 +3,13 @@ import { motion } from 'motion/react';
 import Link from 'next/link';
 import { FC, ReactElement } from 'react';
 
-import {
-  BrandLogo,
-  SunglassesIcon,
-  GithubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  MoonIcon,
-  SunIcon,
-  CircleDashIcon,
-} from '@/components/icons';
-import { PROFILE } from '@/constants';
+import { BrandLogo, SunglassesIcon, MoonIcon, SunIcon, CircleDashIcon } from '@/components/icons';
 import { useIsClient } from '@/hooks/useIsClient';
 import { useTheme } from '@/states/ThemeProvider';
 import { theme } from '@/styles';
 
 import * as styles from './styles.css';
+import CommandMenu from '../CommandMenu';
 
 const Header: FC = (): ReactElement | null => {
   const { theme: currentTheme, toggleTheme } = useTheme();
@@ -61,28 +52,7 @@ const Header: FC = (): ReactElement | null => {
       </Link>
 
       <div className={styles.social}>
-        <a
-          href={`https://github.com/${PROFILE.SOCIAL.GITHUB}/`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <GithubIcon height={22} width={22} stroke={theme.colors.text} />
-        </a>
-        <a
-          href={`https://linkedin.com/in/${PROFILE.SOCIAL.LINKEDIN}/`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <LinkedInIcon height={22} width={22} stroke={theme.colors.text} />
-        </a>
-        <a
-          href={`https://instagram.com/${PROFILE.SOCIAL.INSTAGRAM}/`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <InstagramIcon height={22} width={22} stroke={theme.colors.text} />
-        </a>
-
+        <CommandMenu />
         <div className={styles.divider} />
 
         <button onClick={toggleTheme}>

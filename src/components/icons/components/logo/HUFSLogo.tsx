@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const HUFSLogo = memo<IconProps>((props) => (
+export const HUFSLogo: FC<IconProps> = (props) => (
   <Icon type="fill" {...props}>
     <svg
       width="152"
@@ -214,6 +214,6 @@ export const HUFSLogo = memo<IconProps>((props) => (
       />
     </svg>
   </Icon>
-));
+);
 
 HUFSLogo.displayName = 'HUFSLogo';

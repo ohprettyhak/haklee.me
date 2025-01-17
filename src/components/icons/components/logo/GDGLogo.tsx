@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const GDGLogo = memo<IconProps>((props) => (
+export const GDGLogo: FC<IconProps> = (props) => (
   <Icon type="fill" {...props}>
     <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 233.4 129.1">
       <g>
@@ -48,6 +48,6 @@ export const GDGLogo = memo<IconProps>((props) => (
       </g>
     </svg>
   </Icon>
-));
+);
 
 GDGLogo.displayName = 'GDGLogo';

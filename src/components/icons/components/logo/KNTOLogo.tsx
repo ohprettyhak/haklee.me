@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const KNTOLogo = memo<IconProps>((props) => (
+export const KNTOLogo: FC<IconProps> = (props) => (
   <Icon type="fill" {...props}>
     <svg width="41" height="46" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_i_40_1780)">
@@ -133,6 +133,6 @@ export const KNTOLogo = memo<IconProps>((props) => (
       </defs>
     </svg>
   </Icon>
-));
+);
 
 KNTOLogo.displayName = 'KNTOLogo';

@@ -4,7 +4,7 @@ import { FC, ReactElement } from 'react';
 
 import { type Article, allArticles } from 'contentlayer/generated';
 
-import * as styles from './styles.css';
+import * as styles from './page.css';
 
 const Article: FC = (): ReactElement => {
   const list = getSortedArticleByYears(allArticles);

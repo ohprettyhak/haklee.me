@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const StorageIcon = memo<IconProps>((props) => (
+export const StorageIcon: FC<IconProps> = (props) => (
   <Icon type="stroke" {...props}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -24,6 +24,6 @@ export const StorageIcon = memo<IconProps>((props) => (
       <path d="M18 17.5V9.4" />
     </svg>
   </Icon>
-));
+);
 
 StorageIcon.displayName = 'StorageIcon';

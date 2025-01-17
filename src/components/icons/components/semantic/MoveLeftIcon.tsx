@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const MoveLeftIcon = memo<IconProps>((props) => (
+export const MoveLeftIcon: FC<IconProps> = (props) => (
   <Icon type="stroke" {...props}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,6 +21,6 @@ export const MoveLeftIcon = memo<IconProps>((props) => (
       <path d="M2 12H22" />
     </svg>
   </Icon>
-));
+);
 
 MoveLeftIcon.displayName = 'MoveLeftIcon';

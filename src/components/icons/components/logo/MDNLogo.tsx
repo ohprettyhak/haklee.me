@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const MDNLogo = memo<IconProps>((props) => (
+export const MDNLogo: FC<IconProps> = (props) => (
   <Icon type="fill" {...props}>
     <svg
       width="131"
@@ -18,6 +18,6 @@ export const MDNLogo = memo<IconProps>((props) => (
       <path d="M130.6 0.73999H117.23V119.18H130.6V0.73999Z" fill="#1870F0" />
     </svg>
   </Icon>
-));
+);
 
 MDNLogo.displayName = 'MDNLogo';
