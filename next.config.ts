@@ -1,6 +1,6 @@
 import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
 import type { NextConfig } from 'next';
-import { withContentlayer } from 'next-contentlayer';
+import { withContentlayer } from 'next-contentlayer2';
 
 const withVanillaExtract = createVanillaExtractPlugin();
 

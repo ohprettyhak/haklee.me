@@ -1,5 +1,5 @@
 'use client';
-import { useMDXComponent } from 'next-contentlayer/hooks';
+import { useMDXComponent } from 'next-contentlayer2/hooks';
 import { FC, ReactElement } from 'react';
 
 type MdxComponentProps = {
