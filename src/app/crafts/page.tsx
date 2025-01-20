@@ -11,7 +11,7 @@ const content = {
   '2025': [
     {
       id: '2025-01-signature',
-      cover: '/content/crafts/2025-01-signature/preview.webp',
+      cover: 'https://hstatic.haklee.me/content/crafts/2025-01-signature/preview.webp',
       title: 'Signature',
     },
   ],
