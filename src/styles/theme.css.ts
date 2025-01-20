@@ -105,6 +105,8 @@ const modeColors = createThemeContract({
   modalOverlay: '--hakui-modal-overlay',
   modalBackground: '--hakui-modal-background',
   modalBorder: '--hakui-modal-border',
+
+  craftBorder: '--hakui-craft-border',
 });
 
 const colors = {
@@ -169,6 +171,8 @@ export const lightModeColors = createTheme(modeColors, {
   modalOverlay: 'rgba(255, 255, 255, 0.7)',
   modalBackground: 'rgba(255, 255, 255, 0.9)',
   modalBorder: colors.gray100,
+
+  craftBorder: 'rgba(231, 231, 231, 0.5)',
 });
 
 export const darkModeColors = createTheme(modeColors, {
@@ -203,6 +207,8 @@ export const darkModeColors = createTheme(modeColors, {
   modalOverlay: 'rgba(0, 0, 0, 0.7)',
   modalBackground: 'rgba(10, 10, 10, 0.95)',
   modalBorder: colors.gray950,
+
+  craftBorder: colors.gray950,
 });
 
 export const theme = createGlobalTheme(':root', {

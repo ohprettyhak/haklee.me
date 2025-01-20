@@ -8,17 +8,16 @@ import { PATH } from '@/constants';
 
 import * as styles from './styles.css';
 
-type TabProps = ComponentProps<'div'> & {
-  current: 'PROJECT' | 'PLAYGROUND' | 'HACKATHON';
+type ProjectTabProps = ComponentProps<'div'> & {
+  current: 'PROJECT' | 'HACKATHON';
 };
 
 const tabs = [
   { key: 'PROJECT', label: '프로젝트', href: PATH.PROJECT },
-  { key: 'PLAYGROUND', label: '플레이그라운드', href: PATH.PLAYGROUND },
   { key: 'HACKATHON', label: '해커톤', href: PATH.HACKATHON },
 ];
 
-const Tab: FC<TabProps> = ({ className, current, ...props }): ReactElement => {
+export const ProjectTab: FC<ProjectTabProps> = ({ className, current, ...props }): ReactElement => {
   const [behind, setBehind] = useState<{ width: number; x: number } | null>(null);
 
   const updateBehindPosition = (tab: HTMLElement | null) => {
@@ -68,5 +67,3 @@ const Tab: FC<TabProps> = ({ className, current, ...props }): ReactElement => {
     </div>
   );
 };
-
-export default Tab;

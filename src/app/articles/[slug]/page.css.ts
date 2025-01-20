@@ -58,6 +58,8 @@ export const navigation = style({
 
 export const signature = style({
   marginTop: `calc(${theme.sizes.appSpace} * 2)`,
+  width: '100%',
+  height: rem(42),
 });
 
 export const giscus = style({

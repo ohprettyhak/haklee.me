@@ -14,6 +14,7 @@ export const root = style({
 export const signature = style({
   width: rem(96),
   height: 'fit-content',
+  maxHeight: '100%',
   color: theme.colors.text,
   pointerEvents: 'none',
   strokeDashoffset: 1,

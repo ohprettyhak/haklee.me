@@ -5,53 +5,16 @@ import { breakpoint } from '@/styles/responsive.css';
 
 export const root = style({
   paddingInline: theme.sizes.appSpace,
-  listStyle: 'none',
 });
 
 export const year = style({
-  position: 'relative',
-  paddingLeft: rem(24),
   paddingBottom: rem(32),
 });
 
-globalStyle(`${root} > ${year}:last-child`, {
-  paddingBottom: 0,
-});
-
-globalStyle(`${year} h2`, {
-  color: theme.colors.text,
+export const heading = style({
   fontSize: rem(18),
   fontWeight: 600,
-  wordBreak: 'keep-all',
   marginBottom: rem(16),
-});
-
-export const line = style({
-  position: 'absolute',
-  top: rem(16),
-  left: rem(6),
-  bottom: 0,
-  borderLeft: `${rem(2)} dashed ${theme.colors.line}`,
-  transition: 'border-color 0.3s',
-});
-
-export const dot = style({
-  position: 'absolute',
-  top: rem(7),
-  left: rem(3),
-  width: rem(8),
-  height: rem(8),
-  borderRadius: '50%',
-  backgroundColor: theme.colors.border,
-  transition: 'background-color 0.3s',
-});
-
-globalStyle(`${root} > ${year}:not(:first-child) .${line}`, {
-  top: rem(2),
-});
-
-globalStyle(`${root} > ${year}:last-child .${line}`, {
-  maskImage: `linear-gradient(rgb(0, 0, 0) 0%, rgb(0, 0, 0) calc(100% - ${rem(120)}), transparent 100%)`,
 });
 
 export const list = style({
