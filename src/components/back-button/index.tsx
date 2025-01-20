@@ -8,7 +8,7 @@ import { theme } from '@/styles';
 
 import * as styles from './styles.css';
 
-const BackButton: FC<ComponentProps<'button'>> = ({ className, ...props }): ReactElement => {
+export const BackButton: FC<ComponentProps<'button'>> = ({ className, ...props }): ReactElement => {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -34,5 +34,3 @@ const BackButton: FC<ComponentProps<'button'>> = ({ className, ...props }): Reac
     </button>
   );
 };
-
-export default BackButton;

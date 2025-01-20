@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const CircleDashIcon = memo<IconProps>((props) => (
+export const CircleDashIcon: FC<IconProps> = (props) => (
   <Icon type="stroke" {...props}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +27,6 @@ export const CircleDashIcon = memo<IconProps>((props) => (
       <path d="M6.391 20.279a10 10 0 0 1-2.69-2.7" />
     </svg>
   </Icon>
-));
+);
 
 CircleDashIcon.displayName = 'CircleDashIcon';

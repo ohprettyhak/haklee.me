@@ -61,6 +61,18 @@ const zIndices = {
   modalContent: '250',
 };
 
+const fontSizes = {
+  xxxl: rem(28),
+  xxl: rem(24),
+  xl: rem(20),
+  lg: rem(18),
+  md: rem(16),
+  sm: rem(14),
+  xs: rem(12),
+  xxs: rem(10),
+  xxxs: rem(8),
+};
+
 const modeColors = createThemeContract({
   background: '--hakui-background',
   menuBorder: '--hakui-menu-border',
@@ -84,10 +96,20 @@ const modeColors = createThemeContract({
 
   selection: '--hakui-selection',
   toc: '--hakui-toc',
+
+  commandTriggerBackground: '--hakui-command-menu-background',
+  commandTriggerBorder: '--hakui-command-menu-border',
+  commandTriggerInner: '--hakui-command-menu-inner',
+  commandItemPressed: '--hakui-command-item-pressed',
+
+  modalOverlay: '--hakui-modal-overlay',
+  modalBackground: '--hakui-modal-background',
+  modalBorder: '--hakui-modal-border',
 });
 
 const colors = {
-  gray0: '#FFFFFF',
+  white: '#FFFFFF',
+
   gray50: '#F6F6F6',
   gray100: '#E7E7E7',
   gray200: '#D1D1D1',
@@ -116,7 +138,7 @@ const colors = {
 };
 
 export const lightModeColors = createTheme(modeColors, {
-  background: colors.gray0,
+  background: colors.white,
   menuBorder: 'rgba(215, 215, 215, 0.3)',
   menuBackground: 'rgba(225, 225, 225, 0.3)',
   menuActiveBackground: 'rgba(190, 190, 190, 0.6)',
@@ -138,6 +160,15 @@ export const lightModeColors = createTheme(modeColors, {
 
   selection: 'rgba(0, 0, 0, 0.15)',
   toc: colors.gray300,
+
+  commandTriggerBackground: colors.white,
+  commandTriggerBorder: colors.gray50,
+  commandTriggerInner: colors.gray50,
+  commandItemPressed: 'rgba(150, 150, 150, 0.2)',
+
+  modalOverlay: 'rgba(255, 255, 255, 0.7)',
+  modalBackground: 'rgba(255, 255, 255, 0.9)',
+  modalBorder: colors.gray100,
 });
 
 export const darkModeColors = createTheme(modeColors, {
@@ -159,15 +190,25 @@ export const darkModeColors = createTheme(modeColors, {
   border: colors.gray800,
   line: colors.gray800,
 
-  hufs: colors.gray0,
+  hufs: colors.white,
 
   selection: 'rgba(255, 255, 255, 0.15)',
   toc: colors.gray600,
+
+  commandTriggerBackground: 'rgba(16, 16, 16)',
+  commandTriggerBorder: 'rgba(61, 61, 61, 0.5)',
+  commandTriggerInner: 'rgba(61, 61, 61, 0.4)',
+  commandItemPressed: 'rgba(61, 61, 61, 0.3)',
+
+  modalOverlay: 'rgba(0, 0, 0, 0.7)',
+  modalBackground: 'rgba(10, 10, 10, 0.95)',
+  modalBorder: colors.gray950,
 });
 
 export const theme = createGlobalTheme(':root', {
   colors,
   fonts,
+  fontSizes,
   sizes,
   layouts,
   zIndices,

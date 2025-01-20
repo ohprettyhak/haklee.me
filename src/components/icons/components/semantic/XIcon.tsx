@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const XIcon = memo<IconProps>((props) => (
+export const XIcon: FC<IconProps> = (props) => (
   <Icon type="stroke" {...props}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,6 +21,6 @@ export const XIcon = memo<IconProps>((props) => (
       <path d="m6 6 12 12" />
     </svg>
   </Icon>
-));
+);
 
 XIcon.displayName = 'XIcon';

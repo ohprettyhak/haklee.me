@@ -42,6 +42,13 @@ globalStyle(`${list} > li::before`, {
   fontSize: rem(15.5),
 });
 
+export const social = style({
+  color: theme.colors.textTertiary,
+  textDecoration: 'none !important',
+  borderBottom: `${rem(1)} solid ${theme.colors.border}`,
+  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+});
+
 export const content = style({
   paddingInline: theme.sizes.appSpace,
   marginTop: `calc(${theme.sizes.appSpace} * 2)`,

@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const GovernmentLogo = memo<IconProps>((props) => (
+export const GovernmentLogo: FC<IconProps> = (props) => (
   <Icon type="fill" {...props}>
     <svg
       width="722"
@@ -52,6 +52,6 @@ export const GovernmentLogo = memo<IconProps>((props) => (
       </defs>
     </svg>
   </Icon>
-));
+);
 
 GovernmentLogo.displayName = 'GovernmentLogo';

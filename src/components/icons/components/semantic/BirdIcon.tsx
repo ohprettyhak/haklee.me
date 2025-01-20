@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const BirdIcon = memo<IconProps>((props) => (
+export const BirdIcon: FC<IconProps> = (props) => (
   <Icon type="stroke" {...props}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -25,6 +25,6 @@ export const BirdIcon = memo<IconProps>((props) => (
       <path d="M7 18a6 6 0 0 0 3.84-10.61" />
     </svg>
   </Icon>
-));
+);
 
 BirdIcon.displayName = 'BirdIcon';

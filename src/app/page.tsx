@@ -4,7 +4,7 @@ import { FC, Fragment, ReactElement } from 'react';
 
 import { type Article, allArticles } from 'contentlayer/generated';
 
-import { PATH } from '@/constants';
+import { PATH, PROFILE } from '@/constants';
 
 import * as styles from './page.css';
 
@@ -45,6 +45,26 @@ const Home: FC = (): ReactElement => {
           <Link className="gradient" href={PATH.RESUME}>
             이력
           </Link>
+        </li>
+        <li>
+          <a
+            className={styles.social}
+            href={`https://github.com/${PROFILE.SOCIAL.GITHUB}/`}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a
+            className={styles.social}
+            href={`https://linkedin.com/in/${PROFILE.SOCIAL.LINKEDIN}/`}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            LinkedIn
+          </a>
         </li>
       </ul>
     </Fragment>

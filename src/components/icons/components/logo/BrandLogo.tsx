@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const BrandLogo = memo<IconProps>((props) => (
+export const BrandLogo: FC<IconProps> = (props) => (
   <Icon type="fill" {...props}>
     <svg
       width="175"
@@ -26,6 +26,6 @@ export const BrandLogo = memo<IconProps>((props) => (
       />
     </svg>
   </Icon>
-));
+);
 
 BrandLogo.displayName = 'BrandLogo';

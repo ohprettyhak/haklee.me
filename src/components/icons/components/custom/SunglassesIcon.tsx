@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const SunglassesIcon = memo<IconProps>((props) => (
+export const SunglassesIcon: FC<IconProps> = (props) => (
   <Icon type="fill" {...props}>
     <svg
       width="598"
@@ -20,6 +20,6 @@ export const SunglassesIcon = memo<IconProps>((props) => (
       />
     </svg>
   </Icon>
-));
+);
 
 SunglassesIcon.displayName = 'SunglassesIcon';

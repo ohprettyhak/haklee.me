@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const GithubIcon = memo<IconProps>((props) => (
+export const GithubIcon: FC<IconProps> = (props) => (
   <Icon type="stroke" {...props}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,6 +21,6 @@ export const GithubIcon = memo<IconProps>((props) => (
       <path d="M9 18c-4.51 2-5-2-7-2" />
     </svg>
   </Icon>
-));
+);
 
 GithubIcon.displayName = 'GithubIcon';

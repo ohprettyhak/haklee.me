@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const LinkedInIcon = memo<IconProps>((props) => (
+export const LinkedInIcon: FC<IconProps> = (props) => (
   <Icon type="stroke" {...props}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -22,6 +22,6 @@ export const LinkedInIcon = memo<IconProps>((props) => (
       <circle cx="4" cy="4" r="2" />
     </svg>
   </Icon>
-));
+);
 
 LinkedInIcon.displayName = 'LinkedInIcon';

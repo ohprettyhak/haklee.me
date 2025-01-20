@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC } from 'react';
 
 import Icon from '../../icon';
 import { IconProps } from '../../types';
 
-export const SemanticLogo = memo<IconProps>((props) => (
+export const SemanticLogo: FC<IconProps> = (props) => (
   <Icon type="fill" {...props}>
     <svg
       width="280"
@@ -45,6 +45,6 @@ export const SemanticLogo = memo<IconProps>((props) => (
       </defs>
     </svg>
   </Icon>
-));
+);
 
 SemanticLogo.displayName = 'SemanticLogo';
