@@ -20,7 +20,7 @@ globalStyle('[data-theme="light"] [data-rehype-pretty-code-fragment] > pre.githu
 });
 
 globalStyle('[data-theme="dark"] [data-rehype-pretty-code-fragment] > pre', {
-  color: `${theme.colors.gray0} !important`,
+  color: `${theme.colors.white} !important`,
   backgroundColor: `${theme.colors.gray950} !important`,
 });
 
@@ -72,7 +72,7 @@ globalStyle(
     vars: {
       '--shiki-light': theme.colors.gray950,
       '--shiki-light-bg': 'rgba(250, 250, 250)',
-      '--shiki-dark': theme.colors.gray0,
+      '--shiki-dark': theme.colors.white,
       '--shiki-dark-bg': theme.colors.gray950,
     },
     color: 'var(--shiki-light)',

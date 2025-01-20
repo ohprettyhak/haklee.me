@@ -56,6 +56,10 @@ export const navigation = style({
   top: `calc(${rem(64)} + ${theme.sizes.appSpace})`,
 });
 
+export const signature = style({
+  marginTop: `calc(${theme.sizes.appSpace} * 2)`,
+});
+
 export const giscus = style({
   marginTop: `calc(${theme.sizes.appSpace} * 2)`,
   paddingInline: theme.sizes.appSpace,

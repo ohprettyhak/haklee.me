@@ -9,7 +9,7 @@ import { useTheme } from '@/states/ThemeProvider';
 import { theme } from '@/styles';
 
 import * as styles from './styles.css';
-import CommandMenu from '../CommandMenu';
+// import CommandMenu from '../CommandMenu';
 
 const Header: FC = (): ReactElement | null => {
   const { theme: currentTheme, toggleTheme } = useTheme();
@@ -52,8 +52,7 @@ const Header: FC = (): ReactElement | null => {
       </Link>
 
       <div className={styles.social}>
-        <CommandMenu />
-        <div className={styles.divider} />
+        {/*<CommandMenu />*/}
 
         <button onClick={toggleTheme}>
           <motion.div

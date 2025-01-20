@@ -5,7 +5,7 @@ import { useTheme } from '@/states/ThemeProvider';
 
 type GiscusProps = ComponentProps<'section'>;
 
-const Giscus: FC<GiscusProps> = ({ ...props }): ReactElement => {
+export const Giscus: FC<GiscusProps> = ({ ...props }): ReactElement => {
   const ref = useRef<HTMLDivElement | null>(null);
 
   const { theme } = useTheme();
@@ -39,5 +39,3 @@ const Giscus: FC<GiscusProps> = ({ ...props }): ReactElement => {
 
   return <section ref={ref} {...props} />;
 };
-
-export default Giscus;

@@ -19,7 +19,7 @@ export const overlay = style({
   bottom: 0,
   left: 0,
   zIndex: theme.zIndices.modal,
-  backgroundColor: 'rgba(0, 0, 0, 0.3)',
+  backgroundColor: theme.colors.modalOverlay,
   inset: 0,
 
   selectors: {
@@ -37,13 +37,14 @@ export const content = style({
   left: '50%',
   top: '50%',
   display: 'grid',
-  maxWidth: rem(327),
   width: '100%',
+  maxWidth: rem(560),
+  border: `${rem(1)} solid ${theme.colors.modalBorder}`,
+  borderRadius: rem(16),
+  backgroundColor: theme.colors.modalBackground,
+  backdropFilter: `blur(${rem(4)})`,
+  boxShadow: `0 ${rem(16)} ${rem(70)} rgba(0, 0, 0, 0.2)`,
   transform: 'translate(-50%, -50%)',
-  border: 0,
-  borderRadius: rem(8),
-  backgroundColor: theme.colors.background,
-  padding: rem(22),
   zIndex: theme.zIndices.modalContent,
 
   selectors: {

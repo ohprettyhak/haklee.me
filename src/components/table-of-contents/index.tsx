@@ -14,7 +14,7 @@ type TableOfContentsProps = {
   toc: TOCType[];
 };
 
-const TableOfContents: FC<TableOfContentsProps> = ({ toc }): ReactElement => {
+export const TableOfContents: FC<TableOfContentsProps> = ({ toc }): ReactElement => {
   const [activeId, setActiveId] = useState<string | null>(toc[0]?.id || null);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
@@ -56,5 +56,3 @@ const TableOfContents: FC<TableOfContentsProps> = ({ toc }): ReactElement => {
     </ul>
   );
 };
-
-export default TableOfContents;
