@@ -1,6 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
 import { rem, theme } from '@/styles';
+import { breakpoint } from '@/styles/responsive.css';
 
 export const root = style({
   ...theme.layouts.rowBetween,
@@ -30,4 +31,31 @@ export const sunglasses = style({
 export const menu = style({
   ...theme.layouts.centerY,
   gap: rem(16),
+});
+
+export const cmdk = style({
+  ...theme.layouts.rowBetween,
+  paddingBlock: rem(6),
+  paddingInline: rem(10),
+  color: theme.colors.textSecondary,
+  fontSize: theme.fontSizes.xs,
+  lineHeight: '100%',
+  width: rem(128),
+  border: `${rem(1)} solid ${theme.colors.commandTriggerBorder}`,
+  borderRadius: rem(8),
+  backgroundColor: theme.colors.commandTriggerBackground,
+  opacity: 1,
+  transition: 'opacity 0.3s, border-color 0.3s, background-color 0.3s',
+
+  ':hover': { opacity: 0.7 },
+  ...breakpoint({ tablet: { width: rem(156) } }),
+});
+
+export const kbd = style({
+  paddingBlock: rem(3),
+  paddingInline: rem(4),
+  fontSize: theme.fontSizes.xs,
+  border: `${rem(1)} solid ${theme.colors.commandTriggerInner}`,
+  borderRadius: rem(6),
+  backgroundColor: theme.colors.commandTriggerInner,
 });
