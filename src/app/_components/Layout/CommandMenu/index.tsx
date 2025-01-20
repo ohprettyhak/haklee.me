@@ -57,7 +57,7 @@ const CommandMenu: FC<PropsWithChildren> = ({ children }): ReactElement => {
   ];
 
   const fuse = new Fuse(allContent, {
-    threshold: 0.1,
+    threshold: 0.6,
     keys: ['_normalizedTitle', '_normalizedDescription'],
   });
 
