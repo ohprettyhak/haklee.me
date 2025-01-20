@@ -8,7 +8,11 @@ import { theme } from '@/styles';
 
 import * as styles from './styles.css';
 
-export const BackButton: FC<ComponentProps<'button'>> = ({ className, ...props }): ReactElement => {
+type BackButtonProps = ComponentProps<'button'> & {
+  className?: string;
+};
+
+export const BackButton: FC<BackButtonProps> = ({ className, ...props }): ReactElement => {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -28,7 +32,7 @@ export const BackButton: FC<ComponentProps<'button'>> = ({ className, ...props }
   };
 
   return (
-    <button className={clsx(styles.button, className)} onClick={handleBack} {...props}>
+    <button className={clsx(className, styles.button)} onClick={handleBack} {...props}>
       <MoveLeftIcon stroke={theme.colors.text} />
       이전으로
     </button>

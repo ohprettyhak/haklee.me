@@ -31,3 +31,4 @@ export * from './components/semantic/XIcon';
 export * from './components/semantic/GlobeIcon';
 export * from './components/semantic/MoveLeftIcon';
 export * from './components/semantic/PickaxeIcon';
+export * from './components/semantic/RotateCWIcon';
