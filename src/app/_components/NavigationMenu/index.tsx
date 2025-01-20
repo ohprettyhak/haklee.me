@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FC, ReactElement, useMemo } from 'react';
 
-import { SparkleIcon, StorageIcon, ToiletIcon } from '@/components/icons';
+import { PickaxeIcon, SparkleIcon, StorageIcon, ToiletIcon } from '@/components/icons';
 import { PATH } from '@/constants';
 import { theme } from '@/styles';
 
@@ -12,6 +12,7 @@ import * as styles from './styles.css';
 
 const MENU = [
   { key: 'home', title: '홈', path: PATH.INDEX, icon: ToiletIcon },
+  { key: 'craft', title: '크래프트', path: PATH.CRAFT, icon: PickaxeIcon },
   { key: 'projects', title: '프로젝트', path: PATH.PROJECT, icon: StorageIcon },
   { key: 'article', title: '글', path: PATH.ARTICLE, icon: SparkleIcon },
 ];

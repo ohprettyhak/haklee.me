@@ -1,36 +1,35 @@
 'use client';
-import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC, Fragment, ReactElement } from 'react';
 
-import { type Project } from 'contentlayer/generated';
+import { allProjects, type Project } from 'contentlayer/generated';
+
+import { TimelineDot, TimelineHeading, TimelineItem, TimelineLine } from '@/components/timeline';
 
 import * as styles from './styles.css';
 
-type ProjectGridProps = {
-  list: Project[];
-};
-
-const ProjectGrid: FC<ProjectGridProps> = ({ list: _list }): ReactElement => {
-  const list = getSortedProjectByYears(_list);
+export const ProjectGrid: FC = (): ReactElement => {
+  const list = getSortedProjectByYears(allProjects);
 
   return (
     <Fragment>
       {list.map(({ year, items }) => (
-        <div key={year} className={styles.root}>
-          <h2 id={`#${year}`}>{year}.</h2>
-          <div className={styles.line} />
-          <div className={styles.dot} />
+        <TimelineItem key={year} className={styles.item}>
+          <TimelineHeading className={styles.heading} id={`#${year}`}>
+            {year}.
+          </TimelineHeading>
+          <TimelineLine />
+          <TimelineDot />
 
           <div className={styles.grid}>
             {items.map(({ slug, cover, title, description, duration, category }) => (
               <Link key={slug} href={`/projects/${slug}`}>
-                <motion.div className={styles.card}>
+                <div className={styles.card}>
                   <p className={styles.metadata}>
                     {duration} &middot; {category}
                   </p>
-                  <motion.div className={styles.cover}>
+                  <div className={styles.cover}>
                     <Image
                       src={cover}
                       alt={title}
@@ -40,20 +39,18 @@ const ProjectGrid: FC<ProjectGridProps> = ({ list: _list }): ReactElement => {
                       fill
                       priority
                     />
-                  </motion.div>
-                  <motion.h3>{title}</motion.h3>
-                  <motion.p className={styles.description}>{description}</motion.p>
-                </motion.div>
+                  </div>
+                  <h3>{title}</h3>
+                  <p className={styles.description}>{description}</p>
+                </div>
               </Link>
             ))}
           </div>
-        </div>
+        </TimelineItem>
       ))}
     </Fragment>
   );
 };
-
-export default ProjectGrid;
 
 const getSortedProjectByYears = (projects: Project[]) => {
   const grouped = projects.reduce((map, project) => {

@@ -59,19 +59,6 @@ export const Hackathon = defineDocumentType(() => ({
   computedFields,
 }));
 
-export const Playground = defineDocumentType(() => ({
-  name: 'Playground',
-  contentType: 'mdx',
-  filePathPattern: `playgrounds/**/*.mdx`,
-  fields: {
-    name: { type: 'string', required: true },
-    description: { type: 'string', required: true },
-    tools: { type: 'list', of: { type: 'string' } },
-    date: { type: 'date', required: true },
-  },
-  computedFields,
-}));
-
 const Link = defineNestedType(() => ({
   name: 'Link',
   fields: {
@@ -98,7 +85,7 @@ export const Project = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Article, Hackathon, Playground, Project],
+  documentTypes: [Article, Hackathon, Project],
   mdx: {
     remarkPlugins: [remarkAlerts],
     rehypePlugins: [

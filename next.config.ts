@@ -19,4 +19,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withVanillaExtract(withContentlayer(nextConfig));
+export default withContentlayer(withVanillaExtract(nextConfig));
