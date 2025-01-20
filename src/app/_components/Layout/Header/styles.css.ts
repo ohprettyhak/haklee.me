@@ -1,4 +1,4 @@
-import { globalStyle, style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 
 import { rem, theme } from '@/styles';
 
@@ -27,23 +27,7 @@ export const sunglasses = style({
   left: rem(10),
 });
 
-export const social = style({
+export const menu = style({
   ...theme.layouts.centerY,
   gap: rem(16),
-});
-
-globalStyle(`${social} > a`, {
-  opacity: 1,
-  transition: 'opacity 0.2s ease-in-out',
-});
-
-globalStyle(`${social} > a:hover`, {
-  opacity: 0.7,
-});
-
-export const divider = style({
-  height: rem(22),
-  width: rem(1),
-  backgroundColor: theme.colors.border,
-  transition: 'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
 });

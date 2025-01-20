@@ -51,7 +51,7 @@ const Header: FC = (): ReactElement | null => {
         </motion.div>
       </Link>
 
-      <div className={styles.social}>
+      <div className={styles.menu}>
         {/*<CommandMenu />*/}
 
         <button onClick={toggleTheme}>
