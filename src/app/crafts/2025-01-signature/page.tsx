@@ -7,7 +7,7 @@ import { Signature } from '@/components/signature';
 
 import * as styles from './page.css';
 
-const SignatureCraftPage: FC = (): ReactElement => {
+const SignatureCraft: FC = (): ReactElement => {
   const [key, seyKey] = useState<number>(0);
 
   const handleRefresh = (): void => {
@@ -18,6 +18,11 @@ const SignatureCraftPage: FC = (): ReactElement => {
     <section className={styles.root} data-animate={true}>
       <BackButton />
 
+      <h1 className={styles.title}>Signature</h1>
+      <p className={styles.description}>
+        Signature component created using <code>motion.dev</code> and <code>CSS</code>.
+      </p>
+
       <div className={styles.signature}>
         <Signature key={key} />
       </div>
@@ -27,4 +32,4 @@ const SignatureCraftPage: FC = (): ReactElement => {
   );
 };
 
-export default SignatureCraftPage;
+export default SignatureCraft;

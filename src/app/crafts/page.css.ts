@@ -5,6 +5,9 @@ import { breakpoint } from '@/styles/responsive.css';
 
 export const root = style({
   paddingInline: theme.sizes.appSpace,
+});
+
+export const year = style({
   paddingBottom: rem(32),
 });
 
