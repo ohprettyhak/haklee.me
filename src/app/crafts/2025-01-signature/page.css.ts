@@ -2,6 +2,11 @@ import { style } from '@vanilla-extract/css';
 
 import { rem, theme } from '@/styles';
 
+export const root = style({
+  ...theme.layouts.column,
+  paddingInline: theme.sizes.appSpace,
+});
+
 export const signature = style({
   ...theme.layouts.center,
   width: '100%',

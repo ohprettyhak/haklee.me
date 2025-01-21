@@ -1,5 +1,5 @@
 'use client';
-import { FC, Fragment, ReactElement, useState } from 'react';
+import { FC, ReactElement, useState } from 'react';
 
 import { BackButton } from '@/components/back-button';
 import { RefreshButton } from '@/components/refresh-button';
@@ -15,7 +15,7 @@ const SignatureCraftPage: FC = (): ReactElement => {
   };
 
   return (
-    <Fragment>
+    <section className={styles.root} data-animate={true}>
       <BackButton />
 
       <div className={styles.signature}>
@@ -23,7 +23,7 @@ const SignatureCraftPage: FC = (): ReactElement => {
       </div>
 
       <RefreshButton className={styles.refresh} onClick={handleRefresh} />
-    </Fragment>
+    </section>
   );
 };
 
