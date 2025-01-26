@@ -10,7 +10,7 @@ export const MdxComponent: FC<MdxComponentProps> = ({ code }): ReactElement => {
   const MDXComponent = useMDXComponent(code);
 
   return (
-    <div data-article={true}>
+    <div data-article-content={true}>
       <MDXComponent />
     </div>
   );
