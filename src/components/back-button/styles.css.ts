@@ -8,7 +8,7 @@ export const button = style({
   paddingBlock: rem(6),
   paddingInline: rem(10),
   color: theme.colors.text,
-  fontSize: rem(14),
+  fontSize: theme.fontSizes.sm,
   fontWeight: 500,
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,
   borderRadius: rem(8),

@@ -16,7 +16,7 @@ export const root = style({
 
 export const title = style({
   color: theme.colors.text,
-  fontSize: rem(18),
+  fontSize: theme.fontSizes.lg,
   fontWeight: 500,
   lineHeight: 1.6,
   wordBreak: 'keep-all',
@@ -26,14 +26,14 @@ export const description = style({
   marginTop: rem(2),
   marginBottom: rem(4),
   color: theme.colors.textSecondary,
-  fontSize: rem(14),
+  fontSize: theme.fontSizes.sm,
   lineHeight: 1.6,
   wordBreak: 'keep-all',
 });
 
 export const time = style({
   color: theme.colors.textSecondary,
-  fontSize: rem(12),
+  fontSize: theme.fontSizes.xs,
   fontWeight: 500,
   wordBreak: 'keep-all',
 });

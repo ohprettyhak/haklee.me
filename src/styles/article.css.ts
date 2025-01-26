@@ -24,22 +24,22 @@ globalStyle(
 );
 
 globalStyle('[data-article] h1', {
-  fontSize: rem(22),
+  fontSize: theme.fontSizes.xl,
   lineHeight: 1.25,
 });
 
 globalStyle('[data-article] h2', {
-  fontSize: rem(18),
+  fontSize: theme.fontSizes.lg,
   lineHeight: 1.2,
 });
 
 globalStyle('[data-article] h3', {
-  fontSize: rem(16),
+  fontSize: theme.fontSizes.md,
   lineHeight: 1.1,
 });
 
 globalStyle('[data-article] h4, [data-article] h5, [data-article] h6', {
-  fontSize: rem(15),
+  fontSize: theme.fontSizes.base,
   lineHeight: 1.3,
 });
 
@@ -67,7 +67,7 @@ globalStyle('[data-article] ul li, [data-article] ol li', {
   paddingLeft: rem(16),
   paddingBottom: rem(8),
   color: theme.colors.text,
-  fontSize: rem(15.5),
+  fontSize: theme.fontSizes.base,
   lineHeight: 1.8,
   listStyle: 'none',
 });
@@ -77,19 +77,19 @@ globalStyle(`[data-article] ol li::before`, {
   counterIncrement: 'basics-ol',
   position: 'absolute',
   left: 0,
-  fontSize: rem(15.5),
+  fontSize: theme.fontSizes.base,
 });
 
 globalStyle(`[data-article] ul li::before`, {
   content: '•',
   position: 'absolute',
   left: 0,
-  fontSize: rem(15.5),
+  fontSize: theme.fontSizes.base,
 });
 
 globalStyle('[data-article] p', {
   color: theme.colors.text,
-  fontSize: rem(15.5),
+  fontSize: theme.fontSizes.base,
   fontWeight: 400,
   lineHeight: '180%',
   paddingBottom: rem(18),
@@ -101,7 +101,7 @@ globalStyle('[data-article] strong', {
 
 globalStyle('[data-article] small', {
   color: theme.colors.textSecondary,
-  fontSize: rem(12.5),
+  fontSize: theme.fontSizes.xs,
 });
 
 globalStyle('[data-article] small > code', {
@@ -109,7 +109,7 @@ globalStyle('[data-article] small > code', {
   paddingInline: rem(3),
   color: theme.colors.textSecondary,
   fontFamily: theme.fonts.mono,
-  fontSize: rem(11),
+  fontSize: theme.fontSizes.xs,
   backgroundColor: theme.colors.cardBackgroundHover,
   borderRadius: rem(4),
 });
@@ -132,7 +132,7 @@ globalStyle('[data-article] p > code', {
   paddingBlock: rem(2),
   paddingInline: rem(4),
   fontFamily: theme.fonts.mono,
-  fontSize: rem(14.5),
+  fontSize: theme.fontSizes.sm,
   lineHeight: 1.3,
   backgroundColor: theme.colors.cardBackgroundHover,
   borderRadius: rem(4),
