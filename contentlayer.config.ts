@@ -12,7 +12,8 @@ import remarkAlerts from 'remark-blockquote-alerts';
 const computedFields: ComputedFields = {
   slug: {
     type: 'string',
-    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ''),
+    resolve: (doc) =>
+      doc._raw.sourceFileDir.split('/')[1] ?? doc._raw.sourceFileName.replace(/\.mdx$/, ''),
   },
   toc: {
     type: 'json',
