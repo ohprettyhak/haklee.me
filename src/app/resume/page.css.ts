@@ -6,7 +6,7 @@ import { breakpoint } from '@/styles/responsive.css';
 export const introduce = style({
   paddingInline: theme.sizes.appSpace,
   color: theme.colors.text,
-  fontSize: rem(15.5),
+  fontSize: theme.fontSizes.base,
 });
 
 export const section = style({
@@ -16,7 +16,7 @@ export const section = style({
 
 globalStyle(`${section} h2`, {
   color: theme.colors.text,
-  fontSize: rem(18),
+  fontSize: theme.fontSizes.lg,
   fontWeight: 600,
   wordBreak: 'keep-all',
   marginBottom: rem(16),
@@ -32,7 +32,7 @@ export const grid = style({
 });
 
 export const duration = style({
-  fontSize: rem(16),
+  fontSize: theme.fontSizes.md,
   fontWeight: 500,
 });
 
@@ -52,19 +52,19 @@ globalStyle(`${grid} > ${card}`, {
 
 globalStyle(`${grid} > ${card} h3`, {
   color: theme.colors.text,
-  fontSize: rem(13),
+  fontSize: theme.fontSizes.xs,
   fontWeight: 500,
 });
 
 globalStyle(`${grid} > ${card} p`, {
   color: theme.colors.textSecondary,
-  fontSize: rem(14),
+  fontSize: theme.fontSizes.sm,
   wordBreak: 'keep-all',
 });
 
 globalStyle(`${grid} > ${card} a`, {
   color: theme.colors.textSecondary,
-  fontSize: rem(14),
+  fontSize: theme.fontSizes.sm,
   wordBreak: 'keep-all',
   textDecoration: 'underline',
   opacity: 1,
@@ -86,7 +86,7 @@ globalStyle(`${card} h4`, {
 
 globalStyle(`${card} p`, {
   color: theme.colors.textSecondary,
-  fontSize: rem(14),
+  fontSize: theme.fontSizes.sm,
   marginTop: rem(4),
   lineHeight: 1.6,
   wordBreak: 'keep-all',
@@ -102,7 +102,7 @@ globalStyle(`${card} ul > li`, {
   marginTop: rem(4),
   paddingLeft: rem(16),
   color: theme.colors.textSecondary,
-  fontSize: rem(14),
+  fontSize: theme.fontSizes.sm,
   wordBreak: 'keep-all',
 });
 
@@ -110,5 +110,5 @@ globalStyle(`${card} ul > li::before`, {
   content: '•',
   position: 'absolute',
   left: 0,
-  fontSize: rem(14),
+  fontSize: theme.fontSizes.sm,
 });

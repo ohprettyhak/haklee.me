@@ -36,7 +36,7 @@ globalStyle('[data-rehype-pretty-code-figure] > pre > code', {
   width: 'fit-content',
   padding: rem(8),
   fontFamily: theme.fonts.mono,
-  fontSize: rem(14),
+  fontSize: theme.fontSizes.sm,
 });
 
 globalStyle('[data-line-numbers]', {

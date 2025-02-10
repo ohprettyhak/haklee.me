@@ -12,7 +12,7 @@ export const year = style({
 });
 
 export const heading = style({
-  fontSize: rem(18),
+  fontSize: theme.fontSizes.lg,
   fontWeight: 600,
   marginBottom: rem(16),
 });
@@ -51,14 +51,14 @@ globalStyle(`${card}:hover`, {
 
 globalStyle(`${card} h3`, {
   color: theme.colors.text,
-  fontSize: rem(16),
+  fontSize: theme.fontSizes.md,
   fontWeight: 600,
   marginBottom: rem(3),
 });
 
 globalStyle(`${card} p, ${card} time`, {
   color: theme.colors.textSecondary,
-  fontSize: rem(14),
+  fontSize: theme.fontSizes.sm,
   lineHeight: '160%',
 });
 

@@ -15,7 +15,7 @@ const Resume: FC = (): ReactElement => {
   return (
     <Fragment>
       <p className={styles.introduce}>
-        무엇인가 만들고 고민하는 과정이 즐겁습니다. 현재는 성장에 진심인 회사를 찾고 있습니다.
+        시각적인 페이지를 디자인하고 개발하는 과정이 너무 즐거워 웹 프론트엔드 개발을 하고 있습니다.
       </p>
 
       <section className={styles.section}>

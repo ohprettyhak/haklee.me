@@ -8,7 +8,7 @@ export const item = style({
 });
 
 export const heading = style({
-  fontSize: rem(18),
+  fontSize: theme.fontSizes.lg,
   fontWeight: 600,
   marginBottom: rem(16),
 });
@@ -63,7 +63,7 @@ globalStyle(`${cover} > img`, {
 
 export const metadata = style({
   color: theme.colors.textSecondary,
-  fontSize: rem(12),
+  fontSize: theme.fontSizes.xs,
   fontWeight: 500,
   wordBreak: 'keep-all',
 });
@@ -71,7 +71,7 @@ export const metadata = style({
 export const description = style({
   marginTop: rem(2),
   color: theme.colors.textSecondary,
-  fontSize: rem(14),
+  fontSize: theme.fontSizes.sm,
   lineHeight: 1.6,
   wordBreak: 'keep-all',
 });

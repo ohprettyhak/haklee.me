@@ -67,6 +67,7 @@ const fontSizes = {
   xl: rem(20),
   lg: rem(18),
   md: rem(16),
+  base: rem(15),
   sm: rem(14),
   xs: rem(12),
   xxs: rem(10),
@@ -111,6 +112,27 @@ const modeColors = createThemeContract({
 
 const colors = {
   white: '#FFFFFF',
+  whiteAlpha05: 'rgba(255, 255, 255, 0.05)',
+  whiteAlpha10: 'rgba(255, 255, 255, 0.1)',
+  whiteAlpha20: 'rgba(255, 255, 255, 0.2)',
+  whiteAlpha30: 'rgba(255, 255, 255, 0.3)',
+  whiteAlpha40: 'rgba(255, 255, 255, 0.4)',
+  whiteAlpha50: 'rgba(255, 255, 255, 0.5)',
+  whiteAlpha60: 'rgba(255, 255, 255, 0.6)',
+  whiteAlpha70: 'rgba(255, 255, 255, 0.7)',
+  whiteAlpha80: 'rgba(255, 255, 255, 0.8)',
+  whiteAlpha90: 'rgba(255, 255, 255, 0.9)',
+
+  blackAlpha05: 'rgba(32, 35, 37, 0.05)',
+  blackAlpha10: 'rgba(32, 35, 37, 0.1)',
+  blackAlpha20: 'rgba(32, 35, 37, 0.2)',
+  blackAlpha30: 'rgba(32, 35, 37, 0.3)',
+  blackAlpha40: 'rgba(32, 35, 37, 0.4)',
+  blackAlpha50: 'rgba(32, 35, 37, 0.5)',
+  blackAlpha60: 'rgba(32, 35, 37, 0.6)',
+  blackAlpha70: 'rgba(32, 35, 37, 0.7)',
+  blackAlpha80: 'rgba(32, 35, 37, 0.8)',
+  blackAlpha90: 'rgba(32, 35, 37, 0.9)',
 
   gray50: '#F6F6F6',
   gray100: '#E7E7E7',
@@ -123,18 +145,6 @@ const colors = {
   gray800: '#454545',
   gray900: '#3D3D3D',
   gray950: '#1A1A1A',
-
-  blue50: '#F2F9FD',
-  blue100: '#E4F1FA',
-  blue200: '#C4E2F3',
-  blue300: '#90CBE9',
-  blue400: '#55B1DC',
-  blue500: '#2E97C9',
-  blue600: '#1F79AA',
-  blue700: '#1A618A',
-  blue800: '#195273',
-  blue900: '#1A4560',
-  blue950: '#122C3F',
 
   ...modeColors,
 };
@@ -161,7 +171,7 @@ export const lightModeColors = createTheme(modeColors, {
   hufs: '#002B49',
 
   selection: 'rgba(0, 0, 0, 0.15)',
-  toc: colors.gray300,
+  toc: colors.blackAlpha40,
 
   commandTriggerBackground: colors.white,
   commandTriggerBorder: colors.gray50,
@@ -197,7 +207,7 @@ export const darkModeColors = createTheme(modeColors, {
   hufs: colors.white,
 
   selection: 'rgba(255, 255, 255, 0.15)',
-  toc: colors.gray600,
+  toc: colors.whiteAlpha40,
 
   commandTriggerBackground: 'rgba(16, 16, 16)',
   commandTriggerBorder: 'rgba(61, 61, 61, 0.5)',

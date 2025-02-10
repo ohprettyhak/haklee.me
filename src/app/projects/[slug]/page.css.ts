@@ -10,7 +10,7 @@ export const root = style({
 export const metadata = style({
   marginTop: rem(16),
   color: theme.colors.textSecondary,
-  fontSize: rem(12),
+  fontSize: theme.fontSizes.xs,
   fontWeight: 500,
   wordBreak: 'keep-all',
 });
@@ -18,7 +18,7 @@ export const metadata = style({
 export const team = style({
   marginTop: rem(5),
   color: theme.colors.textSecondary,
-  fontSize: rem(12),
+  fontSize: theme.fontSizes.xs,
   fontWeight: 500,
   wordBreak: 'keep-all',
 });
@@ -41,7 +41,7 @@ globalStyle(`${cover} > img`, {
 export const title = style({
   marginTop: rem(10),
   color: theme.colors.text,
-  fontSize: rem(18),
+  fontSize: theme.fontSizes.lg,
   fontWeight: 500,
   lineHeight: 1.6,
   wordBreak: 'keep-all',
@@ -50,7 +50,7 @@ export const title = style({
 export const description = style({
   marginTop: rem(2),
   color: theme.colors.textSecondary,
-  fontSize: rem(14),
+  fontSize: theme.fontSizes.sm,
   lineHeight: 1.6,
   wordBreak: 'keep-all',
 });
@@ -66,7 +66,7 @@ globalStyle(`${link} a`, {
   paddingBlock: rem(4),
   paddingInline: rem(8),
   color: theme.colors.text,
-  fontSize: rem(13),
+  fontSize: theme.fontSizes.xs,
   fontWeight: 500,
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,
   borderRadius: rem(6),

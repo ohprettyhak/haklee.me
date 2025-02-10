@@ -50,6 +50,26 @@ globalStyle('a[rel="noreferrer noopener"][target=_blank]:after', {
   maskSize: 'cover',
 });
 
+globalStyle('.gradient, [data-article-content] a:not([rel="noreferrer noopener"][target=_blank])', {
+  width: 'fit-content',
+  color: theme.colors.textTertiary,
+  borderBottom: `${rem(1)} solid ${theme.colors.border}`,
+  boxDecorationBreak: 'clone',
+  background: `linear-gradient(90deg, #833ab4 0%, #fd1d1d 25%, #C06C84 50%, ${theme.colors.textTertiary} 50%, ${theme.colors.textTertiary} 100%)`,
+  backgroundClip: 'text',
+  backgroundSize: '200% 100%',
+  backgroundPosition: '100%',
+  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+});
+
+globalStyle(
+  '.gradient:hover, [data-article-content] a:not([rel="noreferrer noopener"][target=_blank]):hover',
+  {
+    color: 'transparent',
+    backgroundPosition: '0',
+  },
+);
+
 globalStyle('::selection', {
   backgroundColor: theme.colors.selection,
 });

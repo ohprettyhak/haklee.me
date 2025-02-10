@@ -30,7 +30,7 @@ globalStyle(`${list} > li`, {
   position: 'relative',
   paddingLeft: rem(16),
   color: theme.colors.text,
-  fontSize: rem(15.5),
+  fontSize: theme.fontSizes.base,
   lineHeight: 1.8,
   wordBreak: 'keep-all',
 });
@@ -39,7 +39,7 @@ globalStyle(`${list} > li::before`, {
   content: '•',
   position: 'absolute',
   left: 0,
-  fontSize: rem(15.5),
+  fontSize: theme.fontSizes.base,
 });
 
 export const social = style({
@@ -54,6 +54,6 @@ export const content = style({
   marginTop: `calc(${theme.sizes.appSpace} * 2)`,
   marginBottom: rem(8),
   color: theme.colors.text,
-  fontSize: rem(16),
+  fontSize: theme.fontSizes.md,
   fontWeight: 500,
 });
