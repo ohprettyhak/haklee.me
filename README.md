@@ -1,6 +1,6 @@
 # haklee.me
 
-A website featuring Hak Lee's resume and portfolio.
+Personal website build with [Next.js](https://nextjs.org/).
 
 #### inspired by
 
