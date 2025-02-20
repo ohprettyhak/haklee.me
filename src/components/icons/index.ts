@@ -1,7 +1,7 @@
 /** brand */
 export * from './components/logo/BrandLogo';
 export * from './components/logo/HUFSLogo';
-export * from './components/logo/HUFStoryLogo';
+export * from './components/logo/ThymedeskLogo';
 export * from './components/logo/GDGLogo';
 export * from './components/logo/NylonBricksLogo';
 export * from './components/logo/SemanticLogo';

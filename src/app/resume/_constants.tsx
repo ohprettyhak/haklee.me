@@ -3,11 +3,11 @@ import {
   GDGLogo,
   GovernmentLogo,
   HUFSLogo,
-  HUFStoryLogo,
   KDataLogo,
   KNTOLogo,
   MDNLogo,
   NylonBricksLogo,
+  ThymedeskLogo,
   TossLogo,
   VercelLogo,
 } from '@/components/icons';
@@ -161,8 +161,8 @@ export const RESUME = [
   },
 
   {
-    id: 'activities',
-    title: 'Activities.',
+    id: 'experience',
+    title: 'Experience.',
     items: [
       {
         id: 'GDGoc HUFS 24-25',
@@ -184,18 +184,29 @@ export const RESUME = [
         ],
       },
       {
-        id: 'HUFStory',
-        duration: '2023.03. - 2023.12.',
-        logo: <HUFStoryLogo size={20} fill={theme.colors.background} />,
-        title: '한국외국어대학교 학생 IT자치기구 훕스토리',
-        description: `대학생 매칭 서비스 ‘외출’ 웹 프론트엔드 개발 (<a href="https://oechul.com" target="_blank" rel="noreferrer noopener">Link</a>)`,
+        id: 'thymedesk',
+        duration: '2023.01. - now',
+        logo: <ThymedeskLogo size={20} fill={theme.colors.text} />,
+        title: '타임데스크(Thymedesk)',
+        description: `타임데스크 사내 프로젝트 개발 참여 및 외주 용역 수행`,
+        subItems: [
+          {
+            id: 'sfom',
+            title:
+              '마인크래프트 컨텐츠 공유 커뮤니티 스폼(SFOM) 웹 개발 및 운영 (<a href="https://storeforminecraft.com/" target="_blank" rel="noreferrer noopener">Link</a>)',
+          },
+          {
+            id: 'outsourcing',
+            title: '아웃소싱 개발 용역 (TypeScript, React를 이용한 관리자 콘솔 페이지 개발)',
+          },
+        ],
       },
     ],
   },
 
   {
     id: 'awards',
-    title: 'Awards.',
+    title: 'Award.',
     items: [
       {
         id: '2024-22th-topcit',
@@ -250,6 +261,7 @@ export const RESUME = [
         logo: <KDataLogo width={20} height={15.5} />,
         title: 'SQL 개발자(SQLD)',
         description: '한국데이터산업진흥원장, SQLD-053003462',
+        subItems: [],
       },
       {
         id: '2022-historyexam',
@@ -257,6 +269,7 @@ export const RESUME = [
         logo: <GovernmentLogo size={20} />,
         title: '한국사능력검정시험 1급',
         description: '국사편찬위원회, 59-104890',
+        subItems: [],
       },
     ],
   },
