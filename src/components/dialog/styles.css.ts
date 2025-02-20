@@ -12,6 +12,28 @@ const fadeOut = keyframes({
   '100%': { opacity: 0 },
 });
 
+const slideUpAndFade = keyframes({
+  from: {
+    opacity: 0,
+    transform: 'translate(-50%, -50%) translateY(4px)',
+  },
+  to: {
+    opacity: 1,
+    transform: 'translate(-50%, -50%)',
+  },
+});
+
+const slideDownAndFade = keyframes({
+  from: {
+    opacity: 1,
+    transform: 'translate(-50%, -50%)',
+  },
+  to: {
+    opacity: 0,
+    transform: 'translate(-50%, -50%) translateY(4px)',
+  },
+});
+
 export const overlay = style({
   position: 'fixed',
   top: 0,
@@ -27,7 +49,7 @@ export const overlay = style({
       animation: `${fadeIn} 300ms ease-out`,
     },
     '&[data-state="closed"]': {
-      animation: `${fadeOut} 200ms ease-out`,
+      animation: `${fadeOut} 300ms ease-out`,
     },
   },
 });
@@ -49,10 +71,10 @@ export const content = style({
 
   selectors: {
     '&[data-state="open"]': {
-      animation: `${fadeIn} 200ms ease-out`,
+      animation: `${slideUpAndFade} 300ms ease-out`,
     },
     '&[data-state="closed"]': {
-      animation: `${fadeOut} 200ms ease-out`,
+      animation: `${slideDownAndFade} 300ms ease-out`,
     },
   },
 });

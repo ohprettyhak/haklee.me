@@ -9,9 +9,13 @@ export * from './components/logo/KNTOLogo';
 export * from './components/logo/KDataLogo';
 export * from './components/logo/GovernmentLogo';
 export * from './components/logo/MDNLogo';
+export * from './components/logo/TossLogo';
+export * from './components/logo/ContentlayerLogo';
+export * from './components/logo/VercelLogo';
 
 /** custom */
 export * from './components/custom/SunglassesIcon';
+export * from './components/custom/MergedIcon';
 
 /** social */
 export * from './components/social/GithubIcon';
