@@ -32,6 +32,7 @@ export const grid = style({
 });
 
 export const duration = style({
+  marginBottom: rem(12),
   fontSize: theme.fontSizes.md,
   fontWeight: 500,
 });
@@ -39,7 +40,6 @@ export const duration = style({
 export const card = style({
   paddingBlock: rem(12),
   paddingInline: rem(16),
-  marginTop: rem(12),
   border: `${rem(1)} solid ${theme.colors.cardBorder}`,
   borderRadius: rem(8),
   backgroundColor: theme.colors.cardBackground,

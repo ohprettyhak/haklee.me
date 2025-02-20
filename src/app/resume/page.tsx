@@ -40,9 +40,11 @@ const Resume: FC = (): ReactElement => {
                   <li>
                     <TimelineLine />
                     <TimelineDot />
-                    <TimelineHeading className={styles.duration} asChild>
-                      <h3>{item.duration}</h3>
-                    </TimelineHeading>
+                    {item.duration && (
+                      <TimelineHeading className={styles.duration} asChild>
+                        <h3>{item.duration}</h3>
+                      </TimelineHeading>
+                    )}
 
                     <div className={styles.card}>
                       <h4>
