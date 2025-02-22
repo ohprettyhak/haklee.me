@@ -4,18 +4,18 @@ import { FC, PropsWithChildren, ReactNode } from 'react';
 import { BASE_URL, PATH, PROFILE } from '@/constants';
 
 export const metadata: Metadata = {
-  title: `소개 — ${PROFILE.TITLE}`,
+  title: `이력 — ${PROFILE.TITLE}`,
   openGraph: {
-    title: `소개 — ${PROFILE.TITLE}`,
+    title: `이력 — ${PROFILE.TITLE}`,
     url: `${BASE_URL}${PATH.RESUME}`,
   },
   twitter: {
-    title: `소개 — ${PROFILE.TITLE}`,
+    title: `이력 — ${PROFILE.TITLE}`,
   },
 };
 
-const AboutLayout: FC<PropsWithChildren> = ({ children }): ReactNode => {
+const ResumeLayout: FC<PropsWithChildren> = ({ children }): ReactNode => {
   return children;
 };
 
-export default AboutLayout;
+export default ResumeLayout;

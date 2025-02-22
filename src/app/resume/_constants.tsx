@@ -68,6 +68,20 @@ export const RESUME = [
     title: 'Open Source Contribution.',
     items: [
       {
+        id: 'asdf-vm',
+        duration: '',
+        logo: <span style={{ width: 20, textAlign: 'center' }}>📦</span>,
+        title: 'asdf-vm',
+        description: 'asdf version manager 가이드 문서 수정',
+        subItems: [
+          {
+            id: 'asdf-vm',
+            title:
+              'Merged <a href="https://github.com/asdf-vm/asdf/pull/1938" target="_blank" rel="noreferrer noopener">asdf-vm/asdf#1938</a> fix: correct typo in `Upgrading to 0.16.0` documentation',
+          },
+        ],
+      },
+      {
         id: 'toss',
         duration: '',
         logo: <TossLogo height={16} width={20} />,
