@@ -15,11 +15,11 @@ const SignatureCraft: FC = (): ReactElement => {
   };
 
   return (
-    <section className={styles.root} data-animate={true}>
+    <section className="craft-section" data-animate={true}>
       <BackButton />
 
-      <h1 className={styles.title}>Signature</h1>
-      <p className={styles.description}>
+      <h1>Signature</h1>
+      <p>
         Signature component created using <code>motion.dev</code> and <code>CSS</code>.
       </p>
 

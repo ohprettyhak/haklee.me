@@ -20,6 +20,11 @@ const content = {
       cover: 'https://hstatic.haklee.me/content/crafts/2025-01-signature/preview.webp',
       title: 'Signature',
     },
+    {
+      id: '2025-02-southkorea-d3map',
+      cover: 'https://hstatic.haklee.me/content/crafts/2025-01-signature/preview.webp',
+      title: 'South Korea D3 Map',
+    },
   ],
 };
 
@@ -36,7 +41,7 @@ const Craft: FC = (): ReactElement => {
             <TimelineDot />
 
             <div className={styles.grid}>
-              {crafts.map((craft) => {
+              {crafts.reverse().map((craft) => {
                 const path: string = `${PATH.CRAFT}/${craft.id}`;
 
                 return (
