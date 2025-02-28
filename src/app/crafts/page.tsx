@@ -22,7 +22,7 @@ const content = {
     },
     {
       id: '2025-02-southkorea-d3map',
-      cover: 'https://hstatic.haklee.me/content/crafts/2025-01-signature/preview.webp',
+      cover: 'https://hstatic.haklee.me/content/crafts/2025-02-southkorea-d3map/preview.webp',
       title: 'South Korea D3 Map',
     },
   ],
