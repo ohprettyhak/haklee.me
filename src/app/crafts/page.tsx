@@ -41,7 +41,7 @@ const Craft: FC = (): ReactElement => {
             <TimelineDot />
 
             <div className={styles.grid}>
-              {crafts.reverse().map((craft) => {
+              {[...crafts].reverse().map((craft) => {
                 const path: string = `${PATH.CRAFT}/${craft.id}`;
 
                 return (
