@@ -1,4 +1,4 @@
-import '@/app/crafts/craft.css';
+import './craft.css';
 
 import type { Metadata } from 'next';
 import { FC, PropsWithChildren, ReactNode } from 'react';
