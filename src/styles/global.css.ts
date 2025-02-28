@@ -1,7 +1,5 @@
 import './reset.css';
 import './animation.css';
-import './article.css';
-import './code-highlight.css';
 
 import { globalStyle } from '@vanilla-extract/css';
 

@@ -15,7 +15,7 @@ globalStyle('[data-animate] > *', {
   },
   '@media': {
     '(prefers-reduced-motion: no-preference)': {
-      animation: `${enter} .5s both`,
+      animation: `${enter} 500ms both`,
       animationDelay: 'calc(var(--stagger) * var(--delay) + var(--start))',
     },
   },

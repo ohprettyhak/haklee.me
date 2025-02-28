@@ -159,7 +159,7 @@ export const lightModeColors = createTheme(modeColors, {
 
   cardBorder: 'rgba(28, 27, 31, 0.04)',
   cardBackground: 'rgba(28, 27, 31, 0.01)',
-  cardBorderHover: 'rgba(28, 27, 31, 0.15 )',
+  cardBorderHover: 'rgba(28, 27, 31, 0.15)',
   cardBackgroundHover: 'rgba(28, 27, 31, 0.03)',
 
   text: colors.gray950,
