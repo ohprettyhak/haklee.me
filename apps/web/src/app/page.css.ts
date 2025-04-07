@@ -21,8 +21,11 @@ export const blur = style({
 });
 
 export const block = style({
+  ...theme.layout.column,
   paddingInline: theme.size.appSpace,
   marginTop: `calc(${theme.size.appSpace} * 2)`,
+  gap: rem(4),
+
   ':first-of-type': { marginTop: 0 },
 });
 
@@ -65,5 +68,6 @@ export const social = style({
   color: theme.color.textTertiary,
   textDecoration: 'none !important',
   borderBottom: `${rem(1)} solid ${theme.color.border}`,
-  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  transition:
+    'color 300ms cubic-bezier(0.4, 0, 0.2, 1), border-color 300ms cubic-bezier(0.4, 0, 0.2, 1)',
 });

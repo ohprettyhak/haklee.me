@@ -12,37 +12,37 @@ globalStyle('article hr', {
   backgroundColor: theme.color.line,
 });
 
-globalStyle('[data-article-content]', {
+globalStyle('[data-article]', {
   ...theme.layout.column,
   gap: rem(18),
 });
 
-globalStyle('[data-article-content] :is(h2)', {
+globalStyle('[data-article] :is(h2)', {
   fontSize: theme.fontSize.lg,
   paddingTop: rem(48),
 });
 
-globalStyle('[data-article-content] :is(h3)', {
+globalStyle('[data-article] :is(h3)', {
   fontSize: theme.fontSize.md,
   paddingTop: rem(36),
 });
 
-globalStyle('[data-article-content] :is(h4, h5, h6)', {
+globalStyle('[data-article] :is(h4, h5, h6)', {
   fontSize: theme.fontSize.base,
   paddingTop: rem(24),
 });
 
-globalStyle('[data-article-content] :is(h2, h3, h4, h5, h6)', {
+globalStyle('[data-article] :is(h2, h3, h4, h5, h6)', {
   color: theme.color.text,
   fontWeight: 600,
   scrollMarginTop: rem(64),
 });
 
-globalStyle('[data-article-content] ol', {
+globalStyle('[data-article] ol', {
   counterReset: 'basics-ol',
 });
 
-globalStyle('[data-article-content] :is(ul, ol) li', {
+globalStyle('[data-article] :is(ul, ol) li', {
   position: 'relative',
   paddingLeft: rem(16),
   paddingBottom: rem(8),
@@ -52,7 +52,7 @@ globalStyle('[data-article-content] :is(ul, ol) li', {
   listStyle: 'none',
 });
 
-globalStyle('[data-article-content] ol li::before', {
+globalStyle('[data-article] ol li::before', {
   content: `counter(basics-ol) ". "`,
   counterIncrement: 'basics-ol',
   position: 'absolute',
@@ -60,30 +60,30 @@ globalStyle('[data-article-content] ol li::before', {
   fontSize: theme.fontSize.base,
 });
 
-globalStyle('[data-article-content] ul li::before', {
+globalStyle('[data-article] ul li::before', {
   content: '•',
   position: 'absolute',
   left: 0,
   fontSize: theme.fontSize.base,
 });
 
-globalStyle('[data-article-content] p', {
+globalStyle('[data-article] p', {
   color: theme.color.text,
   fontSize: theme.fontSize.base,
   fontWeight: 400,
   lineHeight: '180%',
 });
 
-globalStyle('[data-article-content] strong', {
+globalStyle('[data-article] strong', {
   fontWeight: 600,
 });
 
-globalStyle('[data-article-content] small', {
+globalStyle('[data-article] small', {
   color: theme.color.textSecondary,
   fontSize: theme.fontSize.xs,
 });
 
-globalStyle('[data-article-content] small > code', {
+globalStyle('[data-article] small > code', {
   paddingBlock: rem(1.5),
   paddingInline: rem(3),
   color: theme.color.textSecondary,
@@ -93,17 +93,17 @@ globalStyle('[data-article-content] small > code', {
   borderRadius: rem(4),
 });
 
-globalStyle('[data-article-content] [class^=blockquote-]', {
+globalStyle('[data-article] [class^=blockquote-]', {
   marginBlock: rem(16),
   marginInline: 0,
 });
 
-globalStyle('[data-article-content] [class^=blockquote-] > p', {
+globalStyle('[data-article] [class^=blockquote-] > p', {
   padding: 0,
   margin: 0,
 });
 
-globalStyle('[data-article-content] p > code', {
+globalStyle('[data-article] p > code', {
   paddingBlock: rem(2),
   paddingInline: rem(4),
   fontFamily: theme.fontFamily.mono,
@@ -113,7 +113,7 @@ globalStyle('[data-article-content] p > code', {
   borderRadius: rem(4),
 });
 
-globalStyle('[data-article-content] img, [data-article-content] video', {
+globalStyle('[data-article] img, [data-article] video', {
   maxWidth: '100%',
   border: `${rem(1)} solid ${theme.color.cardBorder}`,
   borderRadius: rem(10),
@@ -122,11 +122,11 @@ globalStyle('[data-article-content] img, [data-article-content] video', {
   userSelect: 'none',
 });
 
-globalStyle('[data-article-content] p > img, [data-article-content] video', {
+globalStyle('[data-article] p > img, [data-article] video', {
   marginBlock: rem(16),
 });
 
-globalStyle('[data-article-content] .image-wrapper', {
+globalStyle('[data-article] .image-wrapper', {
   display: 'grid',
   gridTemplateColumns: '1fr',
   paddingBlock: rem(16),
@@ -134,7 +134,7 @@ globalStyle('[data-article-content] .image-wrapper', {
   gap: rem(16),
 });
 
-globalStyle('[data-article-content] .image-wrapper.expand', {
+globalStyle('[data-article] .image-wrapper.expand', {
   position: 'static',
   transform: 'initial',
 
@@ -148,10 +148,10 @@ globalStyle('[data-article-content] .image-wrapper.expand', {
   }),
 });
 
-globalStyle('[data-article-content] .image-wrapper:has(:nth-child(2))', {
+globalStyle('[data-article] .image-wrapper:has(:nth-child(2))', {
   ...breakpoint({ tablet: { gridTemplateColumns: 'repeat(2, 1fr)' } }),
 });
 
-globalStyle('[data-article-content] .image-wrapper:has(:nth-child(3))', {
+globalStyle('[data-article] .image-wrapper:has(:nth-child(3))', {
   ...breakpoint({ tablet: { gridTemplateColumns: 'repeat(3, 1fr)' } }),
 });

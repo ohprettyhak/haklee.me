@@ -6,13 +6,14 @@ import { theme } from './theme.css';
 globalStyle('body', {
   backgroundColor: theme.color.background,
   scrollbarGutter: 'stable',
+  transition: 'background-color 300ms cubic-bezier(0.4, 0, 0.2, 1)',
 });
 
 globalStyle('a[rel="noreferrer noopener"][target=_blank]', {
   textDecoration: 'underline',
   wordBreak: 'keep-all',
   opacity: 1,
-  transition: 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  transition: 'opacity 300ms cubic-bezier(0.4, 0, 0.2, 1)',
 });
 
 globalStyle('a[rel="noreferrer noopener"][target=_blank]:hover', {
@@ -31,20 +32,23 @@ globalStyle('a[rel="noreferrer noopener"][target=_blank]:after', {
   maskSize: 'cover',
 });
 
-globalStyle('.gradient, [data-article-content] a:not([rel="noreferrer noopener"][target=_blank])', {
-  width: 'fit-content',
-  color: theme.color.textTertiary,
-  borderBottom: `${rem(1)} solid ${theme.color.border}`,
-  boxDecorationBreak: 'clone',
-  background: `linear-gradient(90deg, #833ab4 0%, #fd1d1d 25%, #C06C84 50%, ${theme.color.textTertiary} 50%, ${theme.color.textTertiary} 100%)`,
-  backgroundClip: 'text',
-  backgroundSize: '200% 100%',
-  backgroundPosition: '100%',
-  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-});
+globalStyle(
+  ':is(.gradient, [data-article] a):not([rel="noreferrer noopener"]):not([target=_blank])',
+  {
+    width: 'fit-content',
+    color: theme.color.textTertiary,
+    borderBottom: `${rem(1)} solid ${theme.color.border}`,
+    boxDecorationBreak: 'clone',
+    background: `linear-gradient(90deg, #833ab4 0%, #fd1d1d 25%, #C06C84 50%, ${theme.color.textTertiary} 50%, ${theme.color.textTertiary} 100%)`,
+    backgroundClip: 'text',
+    backgroundSize: '200% 100%',
+    backgroundPosition: '100%',
+    transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
+  },
+);
 
 globalStyle(
-  '.gradient:hover, [data-article-content] a:not([rel="noreferrer noopener"][target=_blank]):hover',
+  ':is(.gradient, [data-article] a):not([rel="noreferrer noopener"]):not([target=_blank]):hover',
   {
     color: 'transparent',
     backgroundPosition: '0',
