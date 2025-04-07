@@ -9,6 +9,10 @@
     "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
     "check-types": "tsc --noEmit"
   },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json,css,md}": "prettier --write",
+    "**/*.{ts,tsx}": "eslint --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",

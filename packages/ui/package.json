@@ -10,7 +10,7 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,json,css,md}": "prettier --write",
-    "**/*.{ts,tsx}": "eslint --fix --max-warnings 0"
+    "**/*.{ts,tsx}": "eslint --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0"
   },
   "dependencies": {
     "react": "^19.1.0",
