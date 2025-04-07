@@ -295,7 +295,7 @@ export const RESUME = [
         duration: '2024.06.21.',
         logo: <KDataLogo width={20} height={15.5} />,
         title: 'SQL 개발자(SQLD)',
-        description: '한국데이터산업진흥원장, SQLD-053003462',
+        description: '한국데이터산업진흥원, SQLD-053003462',
         subItems: [],
       },
       {
