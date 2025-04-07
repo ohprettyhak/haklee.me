@@ -6,7 +6,7 @@ node_modules/
 
 .cache/
 
-src/gatsby-types.d.ts
+apps/web/src/gatsby-types.d.ts
 
 ### macOS ###
 # General
@@ -74,7 +74,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+apps/web/next-env.d.ts
 
 ### Node ###
 # Logs
@@ -384,5 +384,8 @@ $RECYCLE.BIN/
 
 # contentlayer
 .contentlayer
+
+# turborepo
+.turbo
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,visualstudiocode,webstorm,node,react,nextjs,gatsby
