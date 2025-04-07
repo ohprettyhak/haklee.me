@@ -1,6 +1,5 @@
 import dayjs from 'dayjs';
 import Link from 'next/link';
-import { FC, ReactElement } from 'react';
 
 import { type Article, allArticles } from 'contentlayer/generated';
 
@@ -14,7 +13,7 @@ import {
 
 import * as styles from './page.css';
 
-const Article: FC = (): ReactElement => {
+const ArticlePage = () => {
   const list = getSortedArticleByYears(allArticles);
 
   return (
@@ -50,7 +49,7 @@ const Article: FC = (): ReactElement => {
   );
 };
 
-export default Article;
+export default ArticlePage;
 
 const getSortedArticleByYears = (articles: Article[]) => {
   const grouped = articles.reduce(

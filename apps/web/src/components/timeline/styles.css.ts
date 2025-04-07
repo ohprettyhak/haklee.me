@@ -1,6 +1,7 @@
+import { rem } from '@haklee/style';
 import { globalStyle, style } from '@vanilla-extract/css';
 
-import { rem, theme } from '@/styles';
+import {  theme } from '@/styles';
 
 export const list = style({
   listStyle: 'none',
@@ -22,7 +23,7 @@ globalStyle(`${item} img`, {
 });
 
 export const heading = style({
-  color: theme.colors.text,
+  color: theme.color.text,
   wordBreak: 'keep-all',
 });
 
@@ -31,7 +32,7 @@ export const line = style({
   top: rem(16),
   left: rem(6),
   bottom: 0,
-  borderLeft: `${rem(2)} dashed ${theme.colors.line}`,
+  borderLeft: `${rem(2)} dashed ${theme.color.line}`,
   transition: 'border-color 0.3s',
 });
 
@@ -42,7 +43,7 @@ export const dot = style({
   width: rem(8),
   height: rem(8),
   borderRadius: '50%',
-  backgroundColor: theme.colors.border,
+  backgroundColor: theme.color.border,
   transition: 'background-color 0.3s',
 });
 

@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import { ComponentProps, ReactNode } from 'react';
 
-import Header from './Header';
+import Header from './header';
 import * as styles from './styles.css';
 
 type LayoutProps = ComponentProps<'div'> & {
@@ -9,7 +9,7 @@ type LayoutProps = ComponentProps<'div'> & {
   children: ReactNode;
 };
 
-const Layout = ({ className, children, ...props }: LayoutProps) => {
+export const RootLayout = ({ className, children, ...props }: LayoutProps) => {
   return (
     <div className={styles.root}>
       <Header />
@@ -19,5 +19,3 @@ const Layout = ({ className, children, ...props }: LayoutProps) => {
     </div>
   );
 };
-
-export default Layout;

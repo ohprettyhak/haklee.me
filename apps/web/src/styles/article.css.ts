@@ -1,6 +1,7 @@
+import { breakpoint, rem } from '@haklee/style';
 import { globalStyle } from '@vanilla-extract/css';
 
-import { theme, rem, breakpoint } from '@/styles/index';
+import { theme } from './theme.css';
 
 globalStyle('article hr', {
   width: '100%',
@@ -8,70 +9,67 @@ globalStyle('article hr', {
   marginBlock: rem(32),
   border: 0,
   borderRadius: rem(2),
-  backgroundColor: theme.colors.line,
+  backgroundColor: theme.color.line,
 });
 
 globalStyle('[data-article-content]', {
-  ...theme.layouts.column,
+  ...theme.layout.column,
   gap: rem(18),
 });
 
-globalStyle('[data-article-content] h2', {
-  fontSize: theme.fontSizes.lg,
+globalStyle('[data-article-content] :is(h2)', {
+  fontSize: theme.fontSize.lg,
   paddingTop: rem(48),
 });
 
-globalStyle('[data-article-content] h3', {
-  fontSize: theme.fontSizes.md,
+globalStyle('[data-article-content] :is(h3)', {
+  fontSize: theme.fontSize.md,
   paddingTop: rem(36),
 });
 
-globalStyle('[data-article-content] h4, [data-article-content] h5, [data-article-content] h6', {
-  fontSize: theme.fontSizes.base,
+globalStyle('[data-article-content] :is(h4, h5, h6)', {
+  fontSize: theme.fontSize.base,
   paddingTop: rem(24),
 });
 
-globalStyle(
-  '[data-article-content] h2, [data-article-content] h3, [data-article-content] h4, [data-article-content] h5, [data-article-content] h6',
-  {
-    color: theme.colors.text,
-    fontWeight: 600,
-    scrollMarginTop: rem(64),
-  },
-);
+globalStyle('[data-article-content] :is(h2, h3, h4, h5, h6)', {
+  color: theme.color.text,
+  fontWeight: 600,
+  scrollMarginTop: rem(64),
+});
 
-globalStyle(`[data-article-content] ol`, {
+globalStyle('[data-article-content] ol', {
   counterReset: 'basics-ol',
 });
 
-globalStyle('[data-article-content] ul li, [data-article-content] ol li', {
+globalStyle('[data-article-content] :is(ul, ol) li', {
   position: 'relative',
   paddingLeft: rem(16),
   paddingBottom: rem(8),
-  color: theme.colors.text,
-  fontSize: theme.fontSizes.base,
+  color: theme.color.text,
+  fontSize: theme.fontSize.base,
   lineHeight: 1.8,
   listStyle: 'none',
 });
 
-globalStyle(`[data-article-content] ol li::before`, {
+globalStyle('[data-article-content] ol li::before', {
   content: `counter(basics-ol) ". "`,
   counterIncrement: 'basics-ol',
   position: 'absolute',
   left: 0,
-  fontSize: theme.fontSizes.base,
+  fontSize: theme.fontSize.base,
 });
 
-globalStyle(`[data-article-content] ul li::before`, {
+globalStyle('[data-article-content] ul li::before', {
   content: '•',
   position: 'absolute',
   left: 0,
-  fontSize: theme.fontSizes.base,
+  fontSize: theme.fontSize.base,
 });
 
 globalStyle('[data-article-content] p', {
-  color: theme.colors.text,
-  fontSize: theme.fontSizes.base,
+  color: theme.color.text,
+  fontSize: theme.fontSize.base,
   fontWeight: 400,
   lineHeight: '180%',
 });
@@ -81,17 +79,17 @@ globalStyle('[data-article-content] strong', {
 });
 
 globalStyle('[data-article-content] small', {
-  color: theme.colors.textSecondary,
-  fontSize: theme.fontSizes.xs,
+  color: theme.color.textSecondary,
+  fontSize: theme.fontSize.xs,
 });
 
 globalStyle('[data-article-content] small > code', {
   paddingBlock: rem(1.5),
   paddingInline: rem(3),
-  color: theme.colors.textSecondary,
-  fontFamily: theme.fonts.mono,
-  fontSize: theme.fontSizes.xs,
-  backgroundColor: theme.colors.cardBackgroundHover,
+  color: theme.color.textSecondary,
+  fontFamily: theme.fontFamily.mono,
+  fontSize: theme.fontSize.xs,
+  backgroundColor: theme.color.cardBackgroundHover,
   borderRadius: rem(4),
 });
 
@@ -108,16 +106,16 @@ globalStyle('[data-article-content] [class^=blockquote-] > p', {
 globalStyle('[data-article-content] p > code', {
   paddingBlock: rem(2),
   paddingInline: rem(4),
-  fontFamily: theme.fonts.mono,
-  fontSize: theme.fontSizes.sm,
+  fontFamily: theme.fontFamily.mono,
+  fontSize: theme.fontSize.sm,
   lineHeight: 1.3,
-  backgroundColor: theme.colors.cardBackgroundHover,
+  backgroundColor: theme.color.cardBackgroundHover,
   borderRadius: rem(4),
 });
 
 globalStyle('[data-article-content] img, [data-article-content] video', {
   maxWidth: '100%',
-  border: `${rem(1)} solid ${theme.colors.cardBorder}`,
+  border: `${rem(1)} solid ${theme.color.cardBorder}`,
   borderRadius: rem(10),
   objectFit: 'cover',
   overflow: 'hidden',

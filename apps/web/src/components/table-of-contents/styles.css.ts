@@ -1,6 +1,7 @@
+import { breakpoint, rem } from '@haklee/style';
 import { style } from '@vanilla-extract/css';
 
-import { rem, theme, breakpoint } from '@/styles';
+import { theme } from '@/styles';
 
 export const list = style({
   display: 'none',
@@ -9,12 +10,12 @@ export const list = style({
   listStyle: 'none',
   gap: rem(4),
 
-  ...breakpoint({ tablet: { ...theme.layouts.column } }),
+  ...breakpoint({ tablet: { ...theme.layout.column } }),
 });
 
 export const item = style({
-  color: theme.colors.toc,
-  fontSize: theme.fontSizes.sm,
+  color: theme.color.toc,
+  fontSize: theme.fontSize.sm,
   fontWeight: 400,
   textAlign: 'left',
   wordBreak: 'keep-all',
@@ -22,12 +23,12 @@ export const item = style({
   transition: 'color 0.2s, font-weight 0.2s',
 
   ':hover': {
-    color: theme.colors.text,
+    color: theme.color.text,
     fontWeight: 500,
   },
 });
 
 export const active = style({
-  color: theme.colors.text,
+  color: theme.color.text,
   fontWeight: 500,
 });

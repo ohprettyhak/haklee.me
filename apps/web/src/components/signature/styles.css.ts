@@ -1,6 +1,7 @@
+import { rem } from '@haklee/style';
 import { globalStyle, keyframes, style } from '@vanilla-extract/css';
 
-import { rem, theme } from '@/styles';
+import { theme } from '@/styles';
 
 const draw = keyframes({
   '0%': { opacity: 0 },
@@ -8,14 +9,14 @@ const draw = keyframes({
 });
 
 export const root = style({
-  ...theme.layouts.center,
+  ...theme.layout.center,
 });
 
 export const signature = style({
   width: rem(96),
   height: 'fit-content',
   maxHeight: '100%',
-  color: theme.colors.text,
+  color: theme.color.text,
   pointerEvents: 'none',
   strokeDashoffset: 1,
   strokeDasharray: 1,

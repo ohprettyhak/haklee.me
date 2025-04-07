@@ -1,19 +1,19 @@
+import { rem } from '@haklee/style';
 import { style } from '@vanilla-extract/css';
 
-import { rem } from '@/styles';
 import { theme } from '@/styles/theme.css';
 
 export const root = style({
-  ...theme.layouts.column,
+  ...theme.layout.column,
   width: '100%',
-  maxWidth: theme.sizes.app,
+  maxWidth: theme.size.app,
   height: '100%',
   marginInline: 'auto',
 });
 
 export const main = style({
-  ...theme.layouts.column,
+  ...theme.layout.column,
   flex: 1,
-  paddingTop: `calc(${theme.sizes.appSpace} * 2)`,
+  paddingTop: `calc(${theme.size.appSpace} * 2)`,
   paddingBottom: rem(96),
 });

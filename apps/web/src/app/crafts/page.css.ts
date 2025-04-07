@@ -1,9 +1,10 @@
+import { breakpoint, rem } from '@haklee/style';
 import { globalStyle, style } from '@vanilla-extract/css';
 
-import { rem, theme, breakpoint } from '@/styles';
+import { theme } from '@/styles';
 
 export const root = style({
-  paddingInline: theme.sizes.appSpace,
+  paddingInline: theme.size.appSpace,
 });
 
 export const year = style({
@@ -11,7 +12,7 @@ export const year = style({
 });
 
 export const heading = style({
-  fontSize: theme.fontSizes.lg,
+  fontSize: theme.fontSize.lg,
   fontWeight: 600,
   marginBottom: rem(16),
 });
@@ -36,7 +37,7 @@ export const cover = style({
   position: 'relative',
   width: '100%',
   aspectRatio: '1200 / 630',
-  border: `${rem(1)} solid ${theme.colors.cardBorder}`,
+  border: `${rem(1)} solid ${theme.color.cardBorder}`,
   borderRadius: rem(8),
   overflow: 'hidden',
 });
@@ -49,9 +50,9 @@ globalStyle(`${cover} > img`, {
 export const title = style({
   width: '100%',
   marginTop: rem(12),
-  color: theme.colors.text,
-  fontSize: theme.fontSizes.sm,
-  fontFamily: theme.fonts.mono,
+  color: theme.color.text,
+  fontSize: theme.fontSize.sm,
+  fontFamily: theme.fontFamily.mono,
   fontWeight: 500,
   lineHeight: '160%',
   wordBreak: 'keep-all',

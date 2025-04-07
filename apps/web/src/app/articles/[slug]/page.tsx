@@ -1,7 +1,6 @@
 import dayjs from 'dayjs';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { FC, Fragment, ReactElement } from 'react';
 
 import { type Article, allArticles } from 'contentlayer/generated';
 
@@ -18,7 +17,7 @@ type ArticleProps = {
   params: Promise<{ slug: string }>;
 };
 
-const Article: FC<ArticleProps> = async ({ params }): Promise<ReactElement> => {
+const Article = async ({ params }: ArticleProps) => {
   const { slug } = await params;
   const article: Article | undefined = getArticleBySlug(slug);
   if (!article) notFound();
@@ -26,7 +25,7 @@ const Article: FC<ArticleProps> = async ({ params }): Promise<ReactElement> => {
   const toc: TOCType[] = article.toc;
 
   return (
-    <Fragment>
+    <>
       <BackButton className={styles.backButton} />
 
       <article className={styles.root} data-animate={true}>
@@ -57,7 +56,7 @@ const Article: FC<ArticleProps> = async ({ params }): Promise<ReactElement> => {
       <Signature className={styles.signature} />
 
       <Giscus className={styles.giscus} />
-    </Fragment>
+    </>
   );
 };
 

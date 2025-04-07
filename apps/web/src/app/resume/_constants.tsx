@@ -45,7 +45,7 @@ export const RESUME = [
       {
         id: 'HUFS GLOBAL',
         duration: '2019.03. - 2025.02. (수료)',
-        logo: <HUFSLogo size={20} fill={theme.colors.hufs} />,
+        logo: <HUFSLogo size={20} fill={theme.color.brand.hufs} />,
         title: '한국외국어대학교 글로벌캠퍼스',
         description: '컴퓨터.전자시스템공학부 학부과정 수료 (GPA 4.05/4.5)',
         subItems: [
@@ -200,7 +200,7 @@ export const RESUME = [
       {
         id: 'thymedesk',
         duration: '2023.01. - now',
-        logo: <ThymedeskLogo size={20} fill={theme.colors.text} />,
+        logo: <ThymedeskLogo size={20} fill={theme.color.text} />,
         title: '타임데스크(Thymedesk)',
         description: `타임데스크 사내 프로젝트 개발 참여 및 외주 용역 수행`,
         subItems: [
@@ -225,7 +225,7 @@ export const RESUME = [
       {
         id: '2024-22th-topcit',
         duration: '2024.11.18.',
-        logo: <HUFSLogo size={20} fill={theme.colors.hufs} />,
+        logo: <HUFSLogo size={20} fill={theme.color.brand.hufs} />,
         title: '제22회 TOPCIT 정기평가 성적우수자',
         description: `한국외국어대학교 AI교육원`,
         subItems: [
@@ -238,7 +238,7 @@ export const RESUME = [
       {
         id: '2023-winter-hufstudy',
         duration: '2024.02.14.',
-        logo: <HUFSLogo size={20} fill={theme.colors.hufs} />,
+        logo: <HUFSLogo size={20} fill={theme.color.brand.hufs} />,
         title: '2023 겨울방학 HUFStudy 최우수상',
         description: '한국외국어대학교 교육혁신원',
         subItems: [

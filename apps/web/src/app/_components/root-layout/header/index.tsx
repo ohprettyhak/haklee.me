@@ -28,8 +28,8 @@ const Header = () => {
             <BrandLogo
               height={36}
               width={30}
-              fill={theme.colors.gray950}
-              stroke={theme.colors.gray950}
+              fill={theme.color.gray950}
+              stroke={theme.color.gray950}
             />
           </motion.div>
 
@@ -44,8 +44,8 @@ const Header = () => {
             <SunglassesIcon
               height={10}
               width={24}
-              fill={theme.colors.gray950}
-              stroke={theme.colors.gray950}
+              fill={theme.color.gray950}
+              stroke={theme.color.gray950}
             />
           </motion.div>
         </motion.div>
@@ -61,11 +61,11 @@ const Header = () => {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
             {!useIsClient() ? (
-              <CircleDashIcon height={22} width={22} stroke={theme.colors.text} />
+              <CircleDashIcon height={22} width={22} stroke={theme.color.text} />
             ) : currentTheme === 'light' ? (
-              <MoonIcon height={22} width={22} stroke={theme.colors.text} />
+              <MoonIcon height={22} width={22} stroke={theme.color.text} />
             ) : (
-              <SunIcon height={22} width={22} stroke={theme.colors.text} />
+              <SunIcon height={22} width={22} stroke={theme.color.text} />
             )}
           </motion.div>
         </button>

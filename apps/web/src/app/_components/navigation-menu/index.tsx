@@ -1,8 +1,9 @@
 'use client';
+
 import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { FC, ReactElement, useMemo } from 'react';
+import { ReactElement, useMemo } from 'react';
 
 import { PickaxeIcon, SparkleIcon, StorageIcon, ToiletIcon } from '@/components/icons';
 import { PATH } from '@/constants';
@@ -17,7 +18,7 @@ const MENU = [
   { key: 'article', title: '글', path: PATH.ARTICLE, icon: SparkleIcon },
 ];
 
-const NavigationMenu: FC = (): ReactElement => {
+export const NavigationMenu = () => {
   const _pathname: string = usePathname();
   const pathname: string = '/' + _pathname.split('/')[1];
 
@@ -31,23 +32,23 @@ const NavigationMenu: FC = (): ReactElement => {
             key={pathname}
             className={styles.menuItem}
             initial={{
-              backgroundColor: theme.colors.menuBackground,
-              color: theme.colors.background,
+              backgroundColor: theme.color.menuBackground,
+              color: theme.color.background,
             }}
             animate={{
               backgroundColor: isActive
-                ? theme.colors.menuActiveBackground
-                : theme.colors.menuBackground,
-              color: isActive ? theme.colors.text : theme.colors.background,
+                ? theme.color.menuActiveBackground
+                : theme.color.menuBackground,
+              color: isActive ? theme.color.text : theme.color.background,
             }}
             exit={{
-              backgroundColor: theme.colors.menuBackground,
-              color: theme.colors.background,
+              backgroundColor: theme.color.menuBackground,
+              color: theme.color.background,
             }}
             transition={{ duration: 0.5 }}
           >
             <Link href={path} className={styles.menuLink}>
-              <Icon size={18} stroke={theme.colors.text} />
+              <Icon size={18} stroke={theme.color.text} />
               {isActive && (
                 <motion.span
                   key={pathname}
@@ -75,5 +76,3 @@ const NavigationMenu: FC = (): ReactElement => {
     </div>
   );
 };
-
-export default NavigationMenu;

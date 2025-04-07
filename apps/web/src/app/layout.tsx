@@ -1,3 +1,5 @@
+import '@haklee/style/global';
+import '@haklee/style/animation';
 import '@/styles/global.css';
 import 'remark-blockquote-alerts/styles/blockquote.min.css';
 
@@ -6,14 +8,14 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import Script from 'next/script';
-import { FC, PropsWithChildren, ReactElement } from 'react';
+import { PropsWithChildren } from 'react';
 
 import { BASE_URL, GA_ID, PROFILE } from '@/constants';
 import { ThemeProvider } from '@/states/ThemeProvider';
-import { darkModeColors, lightModeColors } from '@/styles';
+import { darkMode, lightMode } from '@/styles';
 
-import Layout from './_components/Layout';
-import NavigationMenu from './_components/NavigationMenu';
+import { NavigationMenu } from './_components/navigation-menu';
+import { RootLayout as Layout } from './_components/root-layout';
 import * as styles from './page.css';
 
 const pretendard = localFont({
@@ -33,7 +35,7 @@ const colorThemeScript = `
       window.__theme = newTheme;
       preferredTheme = newTheme;
       document.documentElement.setAttribute('data-theme', newTheme);
-      document.documentElement.className = newTheme === 'dark' ? '${darkModeColors}' : '${lightModeColors}';
+      document.documentElement.className = newTheme === 'dark' ? '${darkMode}' : '${lightMode}';
       document.documentElement.classList.add('${pretendard.variable}');
       
       window.__onThemeChange(newTheme);
@@ -89,7 +91,7 @@ export const metadata: Metadata = {
   robots: 'index, follow',
 };
 
-const RootLayout: FC<PropsWithChildren> = ({ children }): ReactElement => {
+const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <html lang="ko" suppressHydrationWarning>
       <head>

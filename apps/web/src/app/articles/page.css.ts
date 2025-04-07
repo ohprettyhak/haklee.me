@@ -1,9 +1,10 @@
+import { breakpoint, rem } from '@haklee/style';
 import { globalStyle, style } from '@vanilla-extract/css';
 
-import { rem, theme, breakpoint } from '@/styles';
+import { theme } from '@/styles';
 
 export const root = style({
-  paddingInline: theme.sizes.appSpace,
+  paddingInline: theme.size.appSpace,
 });
 
 export const year = style({
@@ -11,7 +12,7 @@ export const year = style({
 });
 
 export const heading = style({
-  fontSize: theme.fontSizes.lg,
+  fontSize: theme.fontSize.lg,
   fontWeight: 600,
   marginBottom: rem(16),
 });
@@ -22,9 +23,9 @@ export const list = style({
 
 export const card = style({
   marginBottom: rem(16),
-  border: `${rem(1)} solid ${theme.colors.cardBorder}`,
+  border: `${rem(1)} solid ${theme.color.cardBorder}`,
   borderRadius: rem(8),
-  backgroundColor: theme.colors.cardBackground,
+  backgroundColor: theme.color.cardBackground,
   opacity: 1,
   transition: 'border-color 0.3s, background-color 0.3s, opacity 0.3s',
 });
@@ -34,30 +35,30 @@ globalStyle(`${list} > ${card}:last-child`, {
 });
 
 globalStyle(`${card} a`, {
-  ...theme.layouts.column,
+  ...theme.layout.column,
   paddingBlock: rem(12),
   paddingInline: rem(16),
   flex: 1,
   gap: rem(6),
 
-  ...breakpoint({ mobile: { ...theme.layouts.rowBetween, flexDirection: 'row' } }),
+  ...breakpoint({ mobile: { ...theme.layout.rowBetween, flexDirection: 'row' } }),
 });
 
 globalStyle(`${card}:hover`, {
-  borderColor: theme.colors.cardBorderHover,
-  backgroundColor: theme.colors.cardBackgroundHover,
+  borderColor: theme.color.cardBorderHover,
+  backgroundColor: theme.color.cardBackgroundHover,
 });
 
 globalStyle(`${card} h3`, {
-  color: theme.colors.text,
-  fontSize: theme.fontSizes.md,
+  color: theme.color.text,
+  fontSize: theme.fontSize.md,
   fontWeight: 600,
   marginBottom: rem(3),
 });
 
 globalStyle(`${card} p, ${card} time`, {
-  color: theme.colors.textSecondary,
-  fontSize: theme.fontSizes.sm,
+  color: theme.color.textSecondary,
+  fontSize: theme.fontSize.sm,
   lineHeight: '160%',
 });
 

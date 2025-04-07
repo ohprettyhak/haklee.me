@@ -7,7 +7,7 @@ import { PATH, PROFILE } from '@/constants';
 
 import * as styles from './page.css';
 
-const Home = () => {
+const HomePage = () => {
   const articles: Article[] = getSortedArticles(allArticles);
 
   return (
@@ -55,7 +55,7 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
 
 const getSortedArticles = (articles: Article[]): Article[] => {
   return articles.sort((a, b) => (dayjs(a.createdAt).isAfter(dayjs(b.createdAt)) ? -1 : 1));

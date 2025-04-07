@@ -1,5 +1,5 @@
 'use client';
-import { createContext, FC, PropsWithChildren, useContext, useEffect, useState } from 'react';
+import { createContext, PropsWithChildren, useContext, useEffect, useState } from 'react';
 
 declare global {
   interface Window {
@@ -18,7 +18,7 @@ type ThemeContextProps = {
 
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
-export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
+export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const [theme, setTheme] = useState<Theme>(
     typeof window !== 'undefined' && window.__theme ? window.__theme : 'light',
   );

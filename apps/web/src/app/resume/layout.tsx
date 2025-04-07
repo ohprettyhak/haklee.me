@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { FC, PropsWithChildren, ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
 import { BASE_URL, PATH, PROFILE } from '@/constants';
 
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-const ResumeLayout: FC<PropsWithChildren> = ({ children }): ReactNode => {
+const ResumeLayout = ({ children }: PropsWithChildren) => {
   return children;
 };
 

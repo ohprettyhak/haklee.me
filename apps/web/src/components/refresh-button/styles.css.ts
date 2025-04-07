@@ -1,18 +1,19 @@
+import { rem } from '@haklee/style';
 import { style } from '@vanilla-extract/css';
 
-import { rem, theme } from '@/styles';
+import { theme } from '@/styles';
 
 export const button = style({
-  ...theme.layouts.center,
+  ...theme.layout.center,
   width: rem(48),
   height: rem(48),
   alignSelf: 'center',
-  border: `${rem(1)} solid ${theme.colors.menuBorder}`,
+  border: `${rem(1)} solid ${theme.color.menuBorder}`,
   borderRadius: '50%',
-  backgroundColor: theme.colors.menuBackground,
+  backgroundColor: theme.color.menuBackground,
   transition: 'background-color 0.2s',
 
   ':hover': {
-    backgroundColor: theme.colors.menuActiveBackground,
+    backgroundColor: theme.color.menuActiveBackground,
   },
 });

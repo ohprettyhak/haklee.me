@@ -1,9 +1,9 @@
 import '@/styles/article.css';
 import '@/styles/code-highlight.css';
 
-import { FC, PropsWithChildren, ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
-const ArticleLayout: FC<PropsWithChildren> = ({ children }): ReactNode => {
+const ArticleLayout = ({ children }: PropsWithChildren) => {
   return children;
 };
 

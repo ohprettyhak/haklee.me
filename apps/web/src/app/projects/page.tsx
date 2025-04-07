@@ -1,6 +1,6 @@
-import { HackathonGrid } from './_components/HackathonGrid';
-import { ProjectGrid } from './_components/ProjectGrid';
-import { ProjectTab } from './_components/ProjectTab';
+import { HackathonGrid } from './_components/hackathon-grid';
+import { ProjectGrid } from './_components/project-grid';
+import { ProjectTab } from './_components/project-tab';
 import * as styles from './page.css';
 
 type ProjectProps = {

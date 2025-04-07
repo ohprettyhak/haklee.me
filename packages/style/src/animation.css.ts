@@ -1,6 +1,6 @@
 import { globalStyle, keyframes } from '@vanilla-extract/css';
 
-import { rem } from '@/styles/pxto';
+import { rem } from './pxto';
 
 const enter = keyframes({
   '0%': { opacity: '0', transform: `translateY(${rem(4)})` },

@@ -3,10 +3,10 @@ import { style } from '@vanilla-extract/css';
 import { theme } from '@/styles';
 
 export const root = style({
-  paddingInline: theme.sizes.appSpace,
+  paddingInline: theme.size.appSpace,
 });
 
 export const tab = style({
-  paddingInline: theme.sizes.appSpace,
-  marginBottom: `calc(${theme.sizes.appSpace} * 2)`,
+  paddingInline: theme.size.appSpace,
+  marginBottom: `calc(${theme.size.appSpace} * 2)`,
 });

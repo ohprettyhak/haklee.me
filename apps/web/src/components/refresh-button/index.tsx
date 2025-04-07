@@ -13,7 +13,7 @@ type RefreshButtonProps = ComponentProps<'button'> & {
 export const RefreshButton = ({ className, ...props }: RefreshButtonProps) => {
   return (
     <button className={clsx(className, styles.button)} {...props}>
-      <RotateCWIcon stroke={theme.colors.text} size={20} />
+      <RotateCWIcon stroke={theme.color.text} size={20} />
     </button>
   );
 };

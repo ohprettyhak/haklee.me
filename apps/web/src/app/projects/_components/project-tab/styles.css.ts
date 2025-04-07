@@ -1,15 +1,16 @@
+import { rem } from '@haklee/style';
 import { style } from '@vanilla-extract/css';
 
-import { rem, theme } from '@/styles';
+import { theme } from '@/styles';
 
 export const root = style({
-  ...theme.layouts.center,
+  ...theme.layout.center,
   width: 'fit-content',
   marginLeft: rem(-10),
 });
 
 export const wrapper = style({
-  ...theme.layouts.centerY,
+  ...theme.layout.centerY,
   position: 'relative',
   justifyContent: 'space-between',
 });
@@ -17,7 +18,7 @@ export const wrapper = style({
 export const tab = style({
   paddingBlock: rem(6),
   paddingInline: rem(10),
-  color: theme.colors.textSecondary,
+  color: theme.color.textSecondary,
   fontWeight: 500,
   textAlign: 'center',
   textDecoration: 'none',
@@ -25,7 +26,7 @@ export const tab = style({
 });
 
 export const active = style({
-  color: theme.colors.text,
+  color: theme.color.text,
 });
 
 export const behind = style({
@@ -33,6 +34,6 @@ export const behind = style({
   bottom: 0,
   height: '100%',
   borderRadius: rem(8),
-  backgroundColor: theme.colors.tabBehind,
-  zIndex: theme.zIndices.behind,
+  backgroundColor: theme.color.tabBehind,
+  zIndex: theme.zIndex.behind,
 });

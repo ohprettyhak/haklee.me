@@ -1,24 +1,25 @@
+import { breakpoint, rem } from '@haklee/style';
 import { globalStyle, style } from '@vanilla-extract/css';
 
-import { rem, theme, breakpoint } from '@/styles';
+import { theme } from '@/styles';
 
 export const introduce = style({
-  ...theme.layouts.column,
-  paddingInline: theme.sizes.appSpace,
-  color: theme.colors.text,
-  fontSize: theme.fontSizes.base,
+  ...theme.layout.column,
+  paddingInline: theme.size.appSpace,
+  color: theme.color.text,
+  fontSize: theme.fontSize.base,
   lineHeight: '180%',
   gap: rem(8),
 });
 
 export const section = style({
-  marginTop: `calc(${theme.sizes.appSpace} * 2)`,
-  paddingInline: theme.sizes.appSpace,
+  marginTop: `calc(${theme.size.appSpace} * 2)`,
+  paddingInline: theme.size.appSpace,
 });
 
 globalStyle(`${section} h2`, {
-  color: theme.colors.text,
-  fontSize: theme.fontSizes.lg,
+  color: theme.color.text,
+  fontSize: theme.fontSize.lg,
   fontWeight: 600,
   wordBreak: 'keep-all',
   marginBottom: rem(16),
@@ -35,16 +36,16 @@ export const grid = style({
 
 export const duration = style({
   marginBottom: rem(12),
-  fontSize: theme.fontSizes.md,
+  fontSize: theme.fontSize.md,
   fontWeight: 500,
 });
 
 export const card = style({
   paddingBlock: rem(12),
   paddingInline: rem(16),
-  border: `${rem(1)} solid ${theme.colors.cardBorder}`,
+  border: `${rem(1)} solid ${theme.color.cardBorder}`,
   borderRadius: rem(8),
-  backgroundColor: theme.colors.cardBackground,
+  backgroundColor: theme.color.cardBackground,
   transition: 'background-color 0.3s, border-color 0.3s',
 });
 
@@ -53,20 +54,20 @@ globalStyle(`${grid} > ${card}`, {
 });
 
 globalStyle(`${grid} > ${card} h3`, {
-  color: theme.colors.text,
-  fontSize: theme.fontSizes.xs,
+  color: theme.color.text,
+  fontSize: theme.fontSize.xs,
   fontWeight: 500,
 });
 
 globalStyle(`${grid} > ${card} p`, {
-  color: theme.colors.textSecondary,
-  fontSize: theme.fontSizes.sm,
+  color: theme.color.textSecondary,
+  fontSize: theme.fontSize.sm,
   wordBreak: 'keep-all',
 });
 
 globalStyle(`${grid} > ${card} a`, {
-  color: theme.colors.textSecondary,
-  fontSize: theme.fontSizes.sm,
+  color: theme.color.textSecondary,
+  fontSize: theme.fontSize.sm,
   wordBreak: 'keep-all',
   textDecoration: 'underline',
   opacity: 1,
@@ -78,8 +79,8 @@ globalStyle(`${grid} > ${card} a:hover`, {
 });
 
 globalStyle(`${card} h4`, {
-  ...theme.layouts.centerY,
-  color: theme.colors.text,
+  ...theme.layout.centerY,
+  color: theme.color.text,
   fontSize: rem(16),
   fontWeight: 500,
   wordBreak: 'keep-all',
@@ -87,8 +88,8 @@ globalStyle(`${card} h4`, {
 });
 
 globalStyle(`${card} p`, {
-  color: theme.colors.textSecondary,
-  fontSize: theme.fontSizes.sm,
+  color: theme.color.textSecondary,
+  fontSize: theme.fontSize.sm,
   marginTop: rem(4),
   lineHeight: 1.6,
   wordBreak: 'keep-all',
@@ -103,8 +104,8 @@ globalStyle(`${card} ul > li`, {
   position: 'relative',
   marginTop: rem(4),
   paddingLeft: rem(16),
-  color: theme.colors.textSecondary,
-  fontSize: theme.fontSizes.sm,
+  color: theme.color.textSecondary,
+  fontSize: theme.fontSize.sm,
   wordBreak: 'keep-all',
 });
 
@@ -112,5 +113,5 @@ globalStyle(`${card} ul > li::before`, {
   content: '•',
   position: 'absolute',
   left: 0,
-  fontSize: theme.fontSizes.sm,
+  fontSize: theme.fontSize.sm,
 });

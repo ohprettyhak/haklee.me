@@ -1,11 +1,13 @@
 import { StyleRule } from '@vanilla-extract/css';
 
+import { rem } from './pxto';
+
 type BP = 'mobile' | 'tablet' | 'desktop' | string;
 
 const breakpoints = {
-  mobile: '640px',
-  tablet: '960px',
-  desktop: '1280px',
+  mobile: rem(640),
+  tablet: rem(960),
+  desktop: rem(1280),
 };
 
 export const breakpoint = (rules: Partial<Record<BP, StyleRule>>) => {

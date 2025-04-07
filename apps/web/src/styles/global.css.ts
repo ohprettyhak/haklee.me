@@ -1,27 +1,11 @@
-import './reset.css';
-import './animation.css';
-
+import { rem } from '@haklee/style';
 import { globalStyle } from '@vanilla-extract/css';
 
-import { rem } from './pxto';
 import { theme } from './theme.css';
 
 globalStyle('body', {
-  paddingBottom: 'env(safe-area-inset-bottom)',
-  fontFamily: theme.fonts.sans,
-  backgroundColor: theme.colors.background,
-  transition: 'background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-  overflowX: 'hidden',
-  overflowY: 'scroll',
+  backgroundColor: theme.color.background,
   scrollbarGutter: 'stable',
-});
-
-globalStyle('[data-theme="light"]', {
-  colorScheme: 'light',
-});
-
-globalStyle('[data-theme="dark"]', {
-  colorScheme: 'dark',
 });
 
 globalStyle('a[rel="noreferrer noopener"][target=_blank]', {
@@ -49,10 +33,10 @@ globalStyle('a[rel="noreferrer noopener"][target=_blank]:after', {
 
 globalStyle('.gradient, [data-article-content] a:not([rel="noreferrer noopener"][target=_blank])', {
   width: 'fit-content',
-  color: theme.colors.textTertiary,
-  borderBottom: `${rem(1)} solid ${theme.colors.border}`,
+  color: theme.color.textTertiary,
+  borderBottom: `${rem(1)} solid ${theme.color.border}`,
   boxDecorationBreak: 'clone',
-  background: `linear-gradient(90deg, #833ab4 0%, #fd1d1d 25%, #C06C84 50%, ${theme.colors.textTertiary} 50%, ${theme.colors.textTertiary} 100%)`,
+  background: `linear-gradient(90deg, #833ab4 0%, #fd1d1d 25%, #C06C84 50%, ${theme.color.textTertiary} 50%, ${theme.color.textTertiary} 100%)`,
   backgroundClip: 'text',
   backgroundSize: '200% 100%',
   backgroundPosition: '100%',
@@ -68,5 +52,5 @@ globalStyle(
 );
 
 globalStyle('::selection', {
-  backgroundColor: theme.colors.selection,
+  backgroundColor: theme.color.selection,
 });

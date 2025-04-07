@@ -1,0 +1,28 @@
+{
+  "name": "@haklee/ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint . --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+    "lint:fix": "eslint . --fix --cache --cache-location 'node_modules/.cache/.eslintcache' --max-warnings 0",
+    "check-types": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json,css,md}": "prettier --write",
+    "**/*.{ts,tsx}": "eslint --fix --max-warnings 0"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@haklee/eslint-config": "workspace:*",
+    "@haklee/typescript-config": "workspace:*",
+    "@types/node": "^22.14.0",
+    "@types/react": "19.0.12",
+    "@types/react-dom": "19.0.4",
+    "eslint": "^9.24.0",
+    "typescript": "5.8.2"
+  }
+}

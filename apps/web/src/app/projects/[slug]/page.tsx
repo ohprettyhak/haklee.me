@@ -15,9 +15,9 @@ import * as styles from './page.css';
 const getIconByType = (type: string): ReactElement => {
   switch (type) {
     case 'GitHub':
-      return <GithubIcon stroke={theme.colors.text} />;
+      return <GithubIcon stroke={theme.color.text} />;
     case 'Demo':
-      return <GlobeIcon stroke={theme.colors.text} />;
+      return <GlobeIcon stroke={theme.color.text} />;
     default:
       return <></>;
   }
