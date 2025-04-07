@@ -1,3 +1,3 @@
-# `@bricks/eslint-config`
+# `@haklee/eslint-config`
 
 Collection of internal eslint configurations.

@@ -9,12 +9,11 @@
     "prettier-check": "prettier --check .",
     "prettier-fix": "prettier --write .",
     "check-types": "turbo run check-types",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19",
-    "@commitlint/config-conventional": "^19",
-    "eslint": "^9.24.0",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",

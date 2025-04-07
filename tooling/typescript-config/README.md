@@ -1,3 +1,3 @@
-# `@bricks/typescript-config`
+# `@haklee/typescript-config`
 
 Collection of internal TypeScript configurations.
