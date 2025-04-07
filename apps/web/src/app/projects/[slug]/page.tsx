@@ -1,3 +1,4 @@
+import { GithubIcon, GlobeIcon } from '@haklee/icon';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -6,18 +7,16 @@ import { ReactElement } from 'react';
 import { type Project, allProjects } from 'contentlayer/generated';
 
 import { BackButton } from '@/components/back-button';
-import { GithubIcon, GlobeIcon } from '@/components/icons';
 import { MdxComponent } from '@/components/mdx-component';
-import { theme } from '@/styles';
 
 import * as styles from './page.css';
 
 const getIconByType = (type: string): ReactElement => {
   switch (type) {
     case 'GitHub':
-      return <GithubIcon stroke={theme.color.text} />;
+      return <GithubIcon />;
     case 'Demo':
-      return <GlobeIcon stroke={theme.color.text} />;
+      return <GlobeIcon />;
     default:
       return <></>;
   }

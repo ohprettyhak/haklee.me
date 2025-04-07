@@ -1,9 +1,9 @@
 'use client';
 
+import { BrandLogo, CircleDashIcon, MoonIcon, SunglassesIcon, SunIcon } from '@haklee/icon';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 
-import { BrandLogo, SunglassesIcon, MoonIcon, SunIcon, CircleDashIcon } from '@/components/icons';
 import { PATH } from '@/constants';
 import { useIsClient } from '@/hooks/useIsClient';
 import { useTheme } from '@/states/ThemeProvider';
@@ -41,12 +41,7 @@ const Header = () => {
             }}
             transition={{ type: 'spring', stiffness: 100, damping: 16 }}
           >
-            <SunglassesIcon
-              height={10}
-              width={24}
-              fill={theme.color.gray950}
-              stroke={theme.color.gray950}
-            />
+            <SunglassesIcon height={10} width={24} />
           </motion.div>
         </motion.div>
       </Link>
@@ -61,11 +56,11 @@ const Header = () => {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
             {!useIsClient() ? (
-              <CircleDashIcon height={22} width={22} stroke={theme.color.text} />
+              <CircleDashIcon height={22} width={22} />
             ) : currentTheme === 'light' ? (
-              <MoonIcon height={22} width={22} stroke={theme.color.text} />
+              <MoonIcon height={22} width={22} />
             ) : (
-              <SunIcon height={22} width={22} stroke={theme.color.text} />
+              <SunIcon height={22} width={22} />
             )}
           </motion.div>
         </button>

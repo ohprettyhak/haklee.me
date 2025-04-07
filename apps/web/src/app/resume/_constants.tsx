@@ -10,7 +10,8 @@ import {
   ThymedeskLogo,
   TossLogo,
   VercelLogo,
-} from '@/components/icons';
+} from '@haklee/icon';
+
 import { theme } from '@/styles';
 
 export const REACH = {
@@ -45,7 +46,7 @@ export const RESUME = [
       {
         id: 'HUFS GLOBAL',
         duration: '2019.03. - 2025.02. (수료)',
-        logo: <HUFSLogo size={20} fill={theme.color.brand.hufs} />,
+        logo: <HUFSLogo size={20} style={{ color: theme.color.brand.hufs }} />,
         title: '한국외국어대학교 글로벌캠퍼스',
         description: '컴퓨터.전자시스템공학부 학부과정 수료 (GPA 4.05/4.5)',
         subItems: [
@@ -68,16 +69,21 @@ export const RESUME = [
     title: 'Open Source Contribution.',
     items: [
       {
-        id: 'asdf-vm',
+        id: 'vercel',
         duration: '',
-        logo: <span style={{ width: 20, textAlign: 'center' }}>📦</span>,
-        title: 'asdf-vm',
-        description: 'asdf version manager 가이드 문서 수정',
+        logo: <VercelLogo height={17} width={20} />,
+        title: 'Vercel',
+        description: '코드 개선 및 문서 불일치 문제 해결',
         subItems: [
           {
-            id: 'asdf-vm',
+            id: 'vercel-2',
             title:
-              'Merged <a href="https://github.com/asdf-vm/asdf/pull/1938" target="_blank" rel="noreferrer noopener">asdf-vm/asdf#1938</a> fix: correct typo in `Upgrading to 0.16.0` documentation',
+              'Merged <a href="https://github.com/vercel/turborepo/pull/10297" target="_blank" rel="noreferrer noopener">vercel/turborepo#10297</a> fix(docs): fix SVG attribute casing to remove React warnings',
+          },
+          {
+            id: 'vercel-1',
+            title:
+              'Issue Closed <a href="https://github.com/vercel/analytics/issues/150" target="_blank" rel="noreferrer noopener">vercel/analytics#150</a> Add Usage Guide for `@vercel/analytics` Exports in next and server Environments',
           },
         ],
       },
@@ -86,17 +92,36 @@ export const RESUME = [
         duration: '',
         logo: <TossLogo height={16} width={20} />,
         title: 'Toss',
-        description: '공개 오픈소스 문서 수정 및 코드 개선',
+        description: '코드 개선 및 문서 수정',
         subItems: [
           {
-            id: 'toss-1',
+            id: 'toss-3',
             title:
-              'Merged <a href="https://github.com/toss/frontend-fundamentals/pull/87" target="_blank" rel="noreferrer noopener">toss/frontend-fundamentals#87</a> typo: standardize \'한눈에\' phrasing for clarity',
+              'Merged <a href="https://github.com/toss/es-toolkit/pull/1106" target="_blank" rel="noreferrer noopener">toss/es-toolkit#1106</a> fix(docs): update dark theme `color-scheme` for `Sandpack`',
           },
           {
             id: 'toss-2',
             title:
               'Merged <a href="https://github.com/toss/frontend-fundamentals/pull/124" target="_blank" rel="noreferrer noopener">toss/frontend-fundamentals#124</a> fix: update giscus theme to change dynamically based on page theme',
+          },
+          {
+            id: 'toss-1',
+            title:
+              'Merged <a href="https://github.com/toss/frontend-fundamentals/pull/87" target="_blank" rel="noreferrer noopener">toss/frontend-fundamentals#87</a> typo: standardize \'한눈에\' phrasing for clarity',
+          },
+        ],
+      },
+      {
+        id: 'asdf-vm',
+        duration: '',
+        logo: <span style={{ width: 20, textAlign: 'center' }}>📦</span>,
+        title: 'asdf-vm',
+        description: 'asdf version manager 가이드 문서 수정',
+        subItems: [
+          {
+            id: 'asdf-vm-1',
+            title:
+              'Merged <a href="https://github.com/asdf-vm/asdf/pull/1938" target="_blank" rel="noreferrer noopener">asdf-vm/asdf#1938</a> fix: correct typo in `Upgrading to 0.16.0` documentation',
           },
         ],
       },
@@ -115,20 +140,6 @@ export const RESUME = [
         ],
       },
       {
-        id: 'vercel',
-        duration: '',
-        logo: <VercelLogo height={17} width={20} />,
-        title: 'Vercel',
-        description: '실제 데이터와 문서의 불일치 문제 해결',
-        subItems: [
-          {
-            id: 'vercel-1',
-            title:
-              'Issue Closed <a href="https://github.com/vercel/analytics/issues/150" target="_blank" rel="noreferrer noopener">vercel/analytics#150</a> Add Usage Guide for `@vercel/analytics` Exports in next and server Environments',
-          },
-        ],
-      },
-      {
         id: 'mdn',
         duration: '',
         logo: <MDNLogo height={15.5} width={20} />,
@@ -136,19 +147,29 @@ export const RESUME = [
         description: 'Web 기술 문서 번역 및 기여',
         subItems: [
           {
-            id: 'mdn-1',
+            id: 'mdn-5',
             title:
-              'Merged <a href="https://github.com/mdn/translated-content/pull/24616" target="_blank" rel="noreferrer noopener">mdn/translated-content#24616</a> [ko] update web/api/web_share_api',
+              'Merged <a href="https://github.com/mdn/translated-content/pull/26141" target="_blank" rel="noreferrer noopener">mdn/translated-content#26141</a> [ko] update web/css/color_value/oklab',
           },
           {
-            id: 'mdn-2',
+            id: 'mdn-4',
             title:
-              'Merged <a href="https://github.com/mdn/yari/pull/12183" target="_blank" rel="noreferrer noopener">mdn/yari#12183</a> fix(i10n): localize secureContext header and inline text in ko',
+              'Merged <a href="https://github.com/mdn/translated-content/pull/26130" target="_blank" rel="noreferrer noopener">mdn/translated-content#26130</a> [ko] update web/api/mediastream_recording_api',
           },
           {
             id: 'mdn-3',
             title:
+              'Merged <a href="https://github.com/mdn/yari/pull/12183" target="_blank" rel="noreferrer noopener">mdn/yari#12183</a> fix(i10n): localize secureContext header and inline text in ko',
+          },
+          {
+            id: 'mdn-2',
+            title:
               'Merged <a href="https://github.com/mdn/content/pull/37111" target="_blank" rel="noreferrer noopener">mdn/content#37111</a> fix(i10n): add Korean localization for secure_context text',
+          },
+          {
+            id: 'mdn-1',
+            title:
+              'Merged <a href="https://github.com/mdn/translated-content/pull/24616" target="_blank" rel="noreferrer noopener">mdn/translated-content#24616</a> [ko] update web/api/web_share_api',
           },
         ],
       },
@@ -200,7 +221,7 @@ export const RESUME = [
       {
         id: 'thymedesk',
         duration: '2023.01. - now',
-        logo: <ThymedeskLogo size={20} fill={theme.color.text} />,
+        logo: <ThymedeskLogo size={20} style={{ color: theme.color.text }} />,
         title: '타임데스크(Thymedesk)',
         description: `타임데스크 사내 프로젝트 개발 참여 및 외주 용역 수행`,
         subItems: [
@@ -225,7 +246,7 @@ export const RESUME = [
       {
         id: '2024-22th-topcit',
         duration: '2024.11.18.',
-        logo: <HUFSLogo size={20} fill={theme.color.brand.hufs} />,
+        logo: <HUFSLogo size={20} style={{ color: theme.color.brand.hufs }} />,
         title: '제22회 TOPCIT 정기평가 성적우수자',
         description: `한국외국어대학교 AI교육원`,
         subItems: [
@@ -238,7 +259,7 @@ export const RESUME = [
       {
         id: '2023-winter-hufstudy',
         duration: '2024.02.14.',
-        logo: <HUFSLogo size={20} fill={theme.color.brand.hufs} />,
+        logo: <HUFSLogo size={20} style={{ color: theme.color.brand.hufs }} />,
         title: '2023 겨울방학 HUFStudy 최우수상',
         description: '한국외국어대학교 교육혁신원',
         subItems: [

@@ -8,6 +8,7 @@ export const button = style({
   width: rem(48),
   height: rem(48),
   alignSelf: 'center',
+  color: theme.color.text,
   border: `${rem(1)} solid ${theme.color.menuBorder}`,
   borderRadius: '50%',
   backgroundColor: theme.color.menuBackground,

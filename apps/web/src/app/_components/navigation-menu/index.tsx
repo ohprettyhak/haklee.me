@@ -1,11 +1,11 @@
 'use client';
 
+import { PickaxeIcon, SparkleIcon, StorageIcon, ToiletIcon } from '@haklee/icon';
 import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ReactElement, useMemo } from 'react';
 
-import { PickaxeIcon, SparkleIcon, StorageIcon, ToiletIcon } from '@/components/icons';
 import { PATH } from '@/constants';
 import { theme } from '@/styles';
 
@@ -48,7 +48,7 @@ export const NavigationMenu = () => {
             transition={{ duration: 0.5 }}
           >
             <Link href={path} className={styles.menuLink}>
-              <Icon size={18} stroke={theme.color.text} />
+              <Icon size={18}  />
               {isActive && (
                 <motion.span
                   key={pathname}

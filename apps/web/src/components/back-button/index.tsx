@@ -1,11 +1,9 @@
 'use client';
 
+import { MoveLeftIcon } from '@haklee/icon';
 import { clsx } from 'clsx';
 import { usePathname, useRouter } from 'next/navigation';
 import { ComponentProps } from 'react';
-
-import { MoveLeftIcon } from '@/components/icons';
-import { theme } from '@/styles';
 
 import * as styles from './styles.css';
 
@@ -34,7 +32,7 @@ export const BackButton = ({ className, ...props }: BackButtonProps) => {
 
   return (
     <button className={clsx(className, styles.button)} onClick={handleBack} {...props}>
-      <MoveLeftIcon stroke={theme.color.text} />
+      <MoveLeftIcon />
       이전으로
     </button>
   );

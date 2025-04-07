@@ -36,10 +36,9 @@ export const menuItem = style({
 });
 
 export const menuLink = style({
-  alignItems: 'center',
-  display: 'flex',
-  justifyContent: 'center',
+  ...theme.layout.center,
   padding: rem(12),
+  color: theme.color.text,
 });
 
 export const menuName = style({

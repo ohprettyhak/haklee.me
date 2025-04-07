@@ -26,9 +26,11 @@ export const sunglasses = style({
   position: 'absolute',
   top: 0,
   left: rem(10),
+  color: theme.color.gray950,
 });
 
 export const menu = style({
   ...theme.layout.centerY,
   gap: rem(16),
+  color: theme.color.text,
 });
