@@ -7,10 +7,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import Script from 'next/script';
+import { ThemeProvider } from 'next-themes';
 import { PropsWithChildren } from 'react';
 
 import { BASE_URL, GA_ID, PROFILE } from '@/constants';
-import { ThemeProvider } from '@/states/ThemeProvider';
 import { darkMode, lightMode } from '@/styles';
 
 import { NavigationMenu } from './_components/navigation-menu';
@@ -24,48 +24,6 @@ const pretendard = localFont({
   preload: true,
   variable: '--font-pretendard',
 });
-
-const colorThemeScript = `
-  (function() {
-    let preferredTheme;
-    window.__onThemeChange = function() {};
-
-    function setTheme(newTheme) {
-      window.__theme = newTheme;
-      preferredTheme = newTheme;
-      document.documentElement.setAttribute('data-theme', newTheme);
-      document.documentElement.className = newTheme === 'dark' ? '${darkMode}' : '${lightMode}';
-      document.documentElement.classList.add('${pretendard.variable}');
-      
-      window.__onThemeChange(newTheme);
-    }
-
-    try {
-      preferredTheme = localStorage.getItem('theme');
-    } catch (err) {}
-
-    window.__setPreferredTheme = function(newTheme) {
-      setTheme(newTheme);
-      try {
-        localStorage.setItem('theme', newTheme);
-      } catch (err) {}
-    };
-
-    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-    if (typeof darkQuery.addEventListener === 'function') {
-      darkQuery.addEventListener('change', function(e) {
-        window.__setPreferredTheme(e.matches ? 'dark' : 'light');
-      });
-    } else if (typeof darkQuery.addListener === 'function') {
-      darkQuery.addListener(function(e) {
-        window.__setPreferredTheme(e.matches ? 'dark' : 'light');
-      });
-    }
-
-    setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
-  })();
-`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -93,11 +51,16 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <html lang="ko" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: colorThemeScript }} />
-      </head>
-      <body>
-        <ThemeProvider>
+      <body className={pretendard.className}>
+        <ThemeProvider
+          attribute="class"
+          enableSystem={false}
+          value={{
+            light: lightMode,
+            dark: darkMode,
+          }}
+          storageKey="haklee-theme"
+        >
           <div className={styles.blur} aria-hidden={true} />
           <Layout>{children}</Layout>
           <NavigationMenu />
