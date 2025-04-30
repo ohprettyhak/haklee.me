@@ -10,6 +10,7 @@ globalStyle('article hr', {
   border: 0,
   borderRadius: rem(2),
   backgroundColor: theme.color.line,
+  transition: 'background-color 300ms',
 });
 
 globalStyle('[data-article]', {

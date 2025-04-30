@@ -1,9 +1,9 @@
 'use client';
 
+import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
 
 import { BackButton } from '@/components/back-button';
-import { useTheme } from '@/states/ThemeProvider';
 
 import * as styles from './page.css';
 

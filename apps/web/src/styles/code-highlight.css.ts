@@ -1,7 +1,7 @@
 import { rem } from '@haklee/style';
 import { globalStyle } from '@vanilla-extract/css';
 
-import { theme } from '@/styles/theme.css';
+import { darkMode, lightMode, theme } from '@/styles/theme.css';
 
 globalStyle('[data-rehype-pretty-code-figure]', {
   marginBottom: rem(18),
@@ -10,21 +10,21 @@ globalStyle('[data-rehype-pretty-code-figure]', {
   overflow: 'hidden',
 });
 
-globalStyle('[data-theme="light"] [data-rehype-pretty-code-figure] > pre', {
+globalStyle(`${lightMode} [data-rehype-pretty-code-figure] > pre`, {
   color: `${theme.color.gray950} !important`,
   backgroundColor: 'rgba(250, 250, 250) !important',
 });
 
-globalStyle('[data-theme="light"] [data-rehype-pretty-code-figure] > pre.github-dark-dimmed', {
+globalStyle(`${lightMode} [data-rehype-pretty-code-figure] > pre.github-dark-dimmed`, {
   display: 'none',
 });
 
-globalStyle('[data-theme="dark"] [data-rehype-pretty-code-figure] > pre', {
+globalStyle(`${darkMode} [data-rehype-pretty-code-figure] > pre`, {
   color: `${theme.color.white} !important`,
   backgroundColor: `${theme.color.gray950} !important`,
 });
 
-globalStyle('[data-theme="dark"] [data-rehype-pretty-code-figure] > pre.github-light', {
+globalStyle(`${darkMode} [data-rehype-pretty-code-figure] > pre.github-light`, {
   display: 'none',
 });
 
@@ -78,7 +78,7 @@ globalStyle('[data-rehype-pretty-code-figure], code[data-theme*=" "], code[data-
 });
 
 globalStyle(
-  '[data-theme="dark"] [data-rehype-pretty-code-figure], [data-theme="dark"] code[data-theme*=" "], [data-theme="dark"] code[data-theme*=" "] span',
+  `${darkMode} [data-rehype-pretty-code-figure], ${darkMode} code[data-theme*=" "], ${darkMode} code[data-theme*=" "] span`,
   {
     color: 'var(--shiki-dark)',
     backgroundColor: 'var(--shiki-dark-bg)',
