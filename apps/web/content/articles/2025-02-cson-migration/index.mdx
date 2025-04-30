@@ -1,8 +1,8 @@
 ---
-title: 'CSON 리액트 프로젝트 마이그레이션'
+title: 'CSON 프로젝트 마이그레이션 하기'
 description: 'JavaScript 기반의 리액트 프로젝트를 마이그레이션 하다. 😎'
 createdAt: 2025-02-25T18:00:00+0900
-modifiedAt: 2025-04-07T23:58:00+0900
+modifiedAt: 2025-04-30T15:41:00+0900
 ---
 
 > [!NOTE]
@@ -19,17 +19,72 @@ modifiedAt: 2025-04-07T23:58:00+0900
 
 여기에서 ①, ② 문제는 `TypeScript` 도입, ③ 문제는 `Next.js`의 `Middleware`를 통해 해결할 수 있다고 생각했고, 앱 라우터 환경에서의 컴포넌트 `Colocation`, 서버 컴포넌트를 활용한 데이터 패칭 등의 이점이 크다고 생각했습니다.
 
-클라이언트 측에서는 출시일만 맞춰달라고 요청하셔서, 마이그레이션과 기존 코드 개선, 새로운 페이지 추가 작업을 동시에 진행하게 되었습니다.
+회사 측에서는 출시일만 맞춰달라고 요청하셔서, 마이그레이션과 기존 코드 개선, 새로운 페이지 추가 작업을 동시에 진행하게 되었습니다.
 
 
 ## 전개
 
-처음에는 정리된 요구 사항을 구현하기 위해, 기존 코드에 `TypeScript` 의존성을 설치하고 `.tsx` 컴포넌트를 만들어 사용했습니다. `JSX` 내에서 타입스크립트 파일을 가져와 사용할 수 있었기 때문이었는데요, 첫 일주일 정도는 <u>기존 코드를 유지하되, 새롭게 만드는 컴포넌트에 타입스크립트를 적용</u>하는 방식으로 이어갔습니다.
-
-
+처음에는 기존 구조를 크게 건드리지 않고, 새로운 기능이나 페이지를 작성할 때만 `.tsx` 확장자의 `TypeScript` 컴포넌트를 사용하는 방식으로 점진적인 마이그레이션을 시도했습니다. 기존 `JavaScript` 코드와 혼용이 가능하다는 점을 활용해, 일단 되는 데까지 해보자는 접근이었죠.
 
 ## 위기
 
+개발을 계속하다 보니, 코드 구조 자체에 대한 고민이 생기기 시작했습니다. 당시 프로젝트의 구조는 아래와 같은데요,
+
+```terminaloutput
+cson
+└── src
+    ├── api
+    ├── assets
+    ├── auth
+    ├── common
+    │   ├── components
+    │   └── constants
+    ├── components
+    ├── hooks
+    ├── manage
+    │   ├── components
+    │   ├── constants
+    │   └── pages
+    ├── recoil
+    ├── service
+    │   ├── components
+    │   ├── constants
+    │   └── pages
+    ├── styles
+    └── utils
+```
+
+`service`는 사용자용 웹, `manage`는 관리자용 웹 도메인을 담당하는 구조였지만, 모든 컴포넌트를 공통 `components` 폴더에 몰아넣다 보니, **어떤 컴포넌트가 어떤 페이지에서 사용되는지 파악하기 어려운 문제**가 있었습니다.
+
+더 큰 문제는 이 프로젝트가 `SPA(Single Page Application)`로 동작하다 보니, **일반 사용자조차도 관리자 페이지의 스크립트를 함께 로드해야 한다는 점**이었습니다. 페이지가 늘어날수록 이 문제는 더 심각해졌고, 번들 용량은 계속 커지고 있었습니다.
+
+게다가 제약사와 딜러용 웹도 곧 추가될 예정이었기 때문에, 이대로는 도저히 확장성을 유지할 수 없다고 판단했습니다. 결국, **도메인별로 앱을 나누고, 각 앱이 독립적으로 동작하는 구조**로 전환하기로 했고, 새로운 리포지터리를 구성하면서 프로젝트 구조를 전면적으로 다시 설계하게 되었습니다.
+
 ## 절정
+<a href="/articles/2024-10-gdgoc-presentation" target="_blank" rel="noreferrer noopener">GDGoC HUFS
+  Monthly: 패키지 매니저와 모노레포 전략</a> 글을 작성할 만큼 저는 `pnpm`과 `Turborepo`를 이용한 모노레포 구조를 좋아합니다. 빌드 파이프라인 작성도 쉽고, 속도도 빠르며, 도메인 단위로 앱을 분리하기에 아주 적합하죠.
+
+CSON 프로젝트도 이 구조를 적용했고, 최종적으로 아래와 같이 재구성했습니다.
+
+```terminaloutput
+cson
+├── apps
+│   ├── service
+│   ├── manager
+│   ├── pharmacist
+│   └── dealer
+├── packages
+│   ├── api
+│   ├── style
+│   ├── ui
+│   └── icon
+└── tools
+    ├── config-eslint
+    └── config-typescript
+```
+
+공통으로 사용하는 패키지는 `packages`에 작성하고, 각 앱에서 의존성을 추가해 사용합니다. 또한, 각 앱은 `Next.js`의 App Router를 사용하고, <a href="https://frontend-fundamentals.com/code-quality/code/examples/code-directory.html" target="_blank" rel="noreferrer noopener">함께 수정되는 파일을 같은 디렉토리에 두기</a> 원칙을 지켜 조금 더 관리하기 쉽게 만들려고 했습니다.
+
+
 
 ## 결말
