@@ -13,9 +13,9 @@ import * as styles from './styles.css';
 
 const MENU = [
   { key: 'home', title: '홈', path: PATH.INDEX, icon: ToiletIcon },
-  { key: 'craft', title: '크래프트', path: PATH.CRAFT, icon: PickaxeIcon },
+  { key: 'crafts', title: '크래프트', path: PATH.CRAFT, icon: PickaxeIcon },
   { key: 'projects', title: '프로젝트', path: PATH.PROJECT, icon: StorageIcon },
-  { key: 'article', title: '글', path: PATH.ARTICLE, icon: SparkleIcon },
+  { key: 'articles', title: '글', path: PATH.ARTICLE, icon: SparkleIcon },
 ];
 
 export const NavigationMenu = () => {
@@ -48,7 +48,7 @@ export const NavigationMenu = () => {
             transition={{ duration: 0.5 }}
           >
             <Link href={path} className={styles.menuLink}>
-              <Icon size={18}  />
+              <Icon size={18} />
               {isActive && (
                 <motion.span
                   key={pathname}
