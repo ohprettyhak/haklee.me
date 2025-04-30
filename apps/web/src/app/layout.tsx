@@ -79,8 +79,9 @@ const RootLayout = ({ children }: PropsWithChildren) => {
 
           gtag('config', '${GA_ID}')`,
         }}
+        async
       />
-      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+      <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} async />
     </html>
   );
 };

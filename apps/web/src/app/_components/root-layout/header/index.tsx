@@ -3,16 +3,16 @@
 import { BrandLogo, CircleDashIcon, MoonIcon, SunglassesIcon, SunIcon } from '@haklee/icon';
 import { motion } from 'motion/react';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
 
 import { PATH } from '@/constants';
 import { useIsClient } from '@/hooks/useIsClient';
-import { useTheme } from '@/states/ThemeProvider';
 import { theme } from '@/styles';
 
 import * as styles from './styles.css';
 
 const Header = () => {
-  const { theme: currentTheme, toggleTheme } = useTheme();
+  const { theme: currentTheme, setTheme } = useTheme();
 
   return (
     <div className={styles.root}>
@@ -47,7 +47,7 @@ const Header = () => {
       </Link>
 
       <div className={styles.menu}>
-        <button onClick={toggleTheme}>
+        <button onClick={() => setTheme(currentTheme === 'light' ? 'dark' : 'light')}>
           <motion.div
             key={currentTheme}
             initial={{ opacity: 0, scale: 0.8, rotate: -45 }}

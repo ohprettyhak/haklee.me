@@ -1,8 +1,7 @@
 'use client';
 
+import { useTheme } from 'next-themes';
 import { ComponentProps, useEffect, useRef } from 'react';
-
-import { useTheme } from '@/states/ThemeProvider';
 
 type GiscusProps = ComponentProps<'section'>;
 
