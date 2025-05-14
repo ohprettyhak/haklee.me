@@ -1,8 +1,9 @@
 import { cloneElement } from 'react';
 
 import Child from './child';
-import { DEFAULT_ICON_SIZE } from './constants';
 import { IconProps } from './types';
+
+const DEFAULT_ICON_SIZE: number = 16;
 
 const Icon = ({ children, width, height, size = DEFAULT_ICON_SIZE, ...props }: IconProps) => {
   return cloneElement(<Child>{children}</Child>, {
