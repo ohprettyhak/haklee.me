@@ -19,7 +19,7 @@ const HomePage = () => {
           <a href="https://github.com/bricks-team" target="_blank" rel="noreferrer noopener">
             @bricks-team
           </a>
-          , working as a Design Engineer
+          , working as a Design Engineer.
         </p>
       </div>
 
