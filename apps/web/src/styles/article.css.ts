@@ -43,19 +43,29 @@ globalStyle('[data-article] ol', {
   counterReset: 'basics-ol',
 });
 
+globalStyle('[data-article] ol > li', {
+  counterIncrement: 'basics-ol',
+});
+
 globalStyle('[data-article] :is(ul, ol) li', {
+  ...theme.layout.column,
   position: 'relative',
   paddingLeft: rem(16),
   paddingBottom: rem(8),
-  color: theme.color.text,
+  color: theme.color.gray700,
   fontSize: theme.fontSize.base,
+  fontWeight: 400,
   lineHeight: 1.8,
   listStyle: 'none',
+  gap: rem(8),
+});
+
+globalStyle('[data-article] :is(ul, ol) li:last-child', {
+  paddingBottom: 0,
 });
 
 globalStyle('[data-article] ol li::before', {
   content: `counter(basics-ol) ". "`,
-  counterIncrement: 'basics-ol',
   position: 'absolute',
   left: 0,
   fontSize: theme.fontSize.base,
