@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import { allProjects, type Project } from 'contentlayer/generated';
 
-import { TimelineDot, TimelineHeading, TimelineItem, TimelineLine } from '@/components/timeline';
+import { TimelineDot, TimelineHeading, TimelineItem, TimelineLine } from '@/components/ui';
 
 import * as styles from './styles.css';
 

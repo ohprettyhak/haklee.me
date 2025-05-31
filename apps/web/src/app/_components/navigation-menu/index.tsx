@@ -1,11 +1,11 @@
 'use client';
 
-import { PickaxeIcon, SparkleIcon, StorageIcon, ToiletIcon } from '@haklee/icon';
 import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ReactElement, useMemo } from 'react';
 
+import { PickaxeIcon, SparkleIcon, StorageIcon, ToiletIcon } from '@/components/icon';
 import { PATH } from '@/constants';
 import { theme } from '@/styles';
 

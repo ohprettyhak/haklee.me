@@ -1,10 +1,10 @@
 'use client';
 
-import { BrandLogo, CircleDashIcon, MoonIcon, SunglassesIcon, SunIcon } from '@haklee/icon';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 
+import { BrandLogo, CircleDashIcon, MoonIcon, SunglassesIcon, SunIcon } from '@/components/icon';
 import { PATH } from '@/constants';
 import { useIsClient } from '@/hooks/useIsClient';
 import { theme } from '@/styles';

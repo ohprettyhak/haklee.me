@@ -4,7 +4,7 @@ import {
   TimelineItem,
   TimelineLine,
   TimelineList,
-} from '@/components/timeline';
+} from '@/components/ui';
 
 import { REACH, RESUME } from './_constants';
 import * as styles from './page.css';
@@ -15,8 +15,8 @@ const Resume = () => {
       <div className={styles.introduce}>
         <p>안녕하세요, 웹 프론트엔드 개발자 이학입니다.</p>
         <p>
-          사이버 지식 정보방에서 우연히 웹 개발을 접하게 되었고, 그 즐거움으로 지금까지
-          계속해오고 있습니다.
+          사이버 지식 정보방에서 우연히 웹 개발을 접하게 되었고, 그 즐거움으로 지금까지 계속해오고
+          있습니다.
         </p>
         <p>
           시각적인 요소와 아름다운 디자인에 관심이 많으며, 컴포넌트와 적절한 애니메이션을 통해

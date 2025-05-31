@@ -1,6 +1,7 @@
-import { RotateCWIcon } from '@haklee/icon';
 import { clsx } from 'clsx';
 import { ComponentProps } from 'react';
+
+import { RotateCWIcon } from '@/components/icon';
 
 import * as styles from './styles.css';
 

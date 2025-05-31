@@ -15,7 +15,6 @@ export * from './components/logo/VercelLogo';
 
 /** custom */
 export * from './components/custom/SunglassesIcon';
-export * from './components/custom/MergedIcon';
 
 /** social */
 export * from './components/social/GithubIcon';

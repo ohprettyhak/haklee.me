@@ -3,7 +3,7 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
 
-import { BackButton } from '@/components/back-button';
+import { BackButton } from '@/components/ui';
 
 import * as styles from './page.css';
 

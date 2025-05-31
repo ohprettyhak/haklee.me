@@ -1,7 +1,7 @@
 import { rem } from '@haklee/style';
 import { globalStyle, style } from '@vanilla-extract/css';
 
-import {  theme } from '@/styles';
+import { theme } from '@/styles';
 
 export const list = style({
   listStyle: 'none',

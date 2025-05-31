@@ -1,4 +1,3 @@
-import { GithubIcon, GlobeIcon } from '@haklee/icon';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -6,8 +5,10 @@ import { ReactElement } from 'react';
 
 import { type Project, allProjects } from 'contentlayer/generated';
 
-import { BackButton } from '@/components/back-button';
-import { MdxComponent } from '@/components/mdx-component';
+import { GithubIcon, GlobeIcon } from '@/components/icon';
+import { MdxComponent } from '@/components/mdx';
+import { BackButton } from '@/components/ui';
+import { PROFILE } from '@/constants';
 
 import * as styles from './page.css';
 
@@ -85,16 +86,16 @@ export const generateMetadata = async ({ params }: ProjectProps): Promise<Metada
   if (!project) return {};
 
   return {
-    title: `${project.title} — haklee`,
+    title: `${project.title} — ${PROFILE.TITLE}`,
     description: project.description,
     openGraph: {
-      title: `${project.title} — haklee`,
+      title: `${project.title} — ${PROFILE.TITLE}`,
       description: project.description,
       url: `https://www.haklee.me/projects/${slug}`,
       images: [{ url: project.cover }],
     },
     twitter: {
-      title: `${project.title} — haklee`,
+      title: `${project.title} — ${PROFILE.TITLE}`,
       description: project.description,
       images: [{ url: project.cover }],
     },

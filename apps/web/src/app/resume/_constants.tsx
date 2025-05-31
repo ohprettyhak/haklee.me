@@ -10,8 +10,7 @@ import {
   ThymedeskLogo,
   TossLogo,
   VercelLogo,
-} from '@haklee/icon';
-
+} from '@/components/icon';
 import { theme } from '@/styles';
 
 export const REACH = {

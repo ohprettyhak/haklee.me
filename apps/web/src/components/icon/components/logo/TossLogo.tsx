@@ -2,7 +2,7 @@ import Icon from '../../icon';
 import { IconProps } from '../../types';
 
 export const TossLogo = (props: IconProps) => (
-  <Icon  {...props}>
+  <Icon {...props}>
     <svg
       width="223"
       height="207"

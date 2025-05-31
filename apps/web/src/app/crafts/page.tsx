@@ -7,7 +7,7 @@ import {
   TimelineItem,
   TimelineLine,
   TimelineList,
-} from '@/components/timeline';
+} from '@/components/ui';
 import { PATH } from '@/constants';
 
 import * as styles from './page.css';

@@ -1,9 +1,10 @@
 'use client';
 
-import { MoveLeftIcon } from '@haklee/icon';
 import { clsx } from 'clsx';
 import { usePathname, useRouter } from 'next/navigation';
 import { ComponentProps } from 'react';
+
+import { MoveLeftIcon } from '@/components/icon';
 
 import * as styles from './styles.css';
 

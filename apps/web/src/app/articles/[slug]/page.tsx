@@ -4,11 +4,8 @@ import { notFound } from 'next/navigation';
 
 import { type Article, allArticles } from 'contentlayer/generated';
 
-import { BackButton } from '@/components/back-button';
-import { Giscus } from '@/components/giscus';
-import { MdxComponent } from '@/components/mdx-component';
-import { Signature } from '@/components/signature';
-import { type TOCType, TableOfContents } from '@/components/table-of-contents';
+import { Giscus, MdxComponent, TableOfContents, type TOCType } from '@/components/mdx';
+import { BackButton, Signature } from '@/components/ui';
 import { PROFILE } from '@/constants';
 
 import * as styles from './page.css';
@@ -72,11 +69,11 @@ export const generateMetadata = async ({ params }: ArticleProps): Promise<Metada
   if (!article) return {};
 
   const metadata: Metadata = {
-    title: `${article.title} — haklee`,
+    title: `${article.title} — ${PROFILE.TITLE}`,
     description: article.description,
     publisher: 'haklee',
     openGraph: {
-      title: `${article.title} — haklee`,
+      title: `${article.title} — ${PROFILE.TITLE}`,
       description: article.description,
       url: `https://www.haklee.me/articles/${slug}`,
       type: 'article',
@@ -85,7 +82,7 @@ export const generateMetadata = async ({ params }: ArticleProps): Promise<Metada
       modifiedTime: article.modifiedAt,
     },
     twitter: {
-      title: `${article.title} — haklee`,
+      title: `${article.title} — ${PROFILE.TITLE}`,
       description: article.description,
       card: article.preview ? 'summary_large_image' : 'summary',
       images: [{ url: PROFILE.PREVIEW_IMAGE, alt: PROFILE.PREVIEW_IMAGE_ALT }],
@@ -93,9 +90,12 @@ export const generateMetadata = async ({ params }: ArticleProps): Promise<Metada
   };
 
   if (article.preview) {
-    if (metadata.openGraph)
+    if (metadata.openGraph) {
       metadata.openGraph.images = [{ url: article.preview, alt: article.title }];
-    if (metadata.twitter) metadata.twitter.images = [{ url: article.preview, alt: article.title }];
+    }
+    if (metadata.twitter) {
+      metadata.twitter.images = [{ url: article.preview, alt: article.title }];
+    }
   }
 
   return metadata;

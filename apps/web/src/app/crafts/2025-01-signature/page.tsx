@@ -2,9 +2,7 @@
 
 import { useState } from 'react';
 
-import { BackButton } from '@/components/back-button';
-import { RefreshButton } from '@/components/refresh-button';
-import { Signature } from '@/components/signature';
+import { BackButton, RefreshButton, Signature } from '@/components/ui';
 
 import * as styles from './page.css';
 

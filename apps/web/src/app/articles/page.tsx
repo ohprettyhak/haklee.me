@@ -9,7 +9,7 @@ import {
   TimelineItem,
   TimelineLine,
   TimelineList,
-} from '@/components/timeline';
+} from '@/components/ui';
 
 import * as styles from './page.css';
 
