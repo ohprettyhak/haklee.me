@@ -28,65 +28,11 @@ globalStyle('[data-article] :is(h3)', {
   paddingTop: rem(36),
 });
 
-globalStyle('[data-article] :is(h4, h5, h6)', {
-  fontSize: theme.fontSize.base,
-  paddingTop: rem(24),
-});
-
-globalStyle('[data-article] :is(h2, h3, h4, h5, h6)', {
-  color: theme.color.text,
-  fontWeight: 600,
-  scrollMarginTop: rem(64),
-});
-
-globalStyle('[data-article] ol', {
-  counterReset: 'basics-ol',
-});
-
-globalStyle('[data-article] ol > li', {
-  counterIncrement: 'basics-ol',
-});
-
-globalStyle('[data-article] :is(ul, ol) li', {
-  ...theme.layout.column,
-  position: 'relative',
-  paddingLeft: rem(16),
-  paddingBottom: rem(8),
-  color: theme.color.gray700,
-  fontSize: theme.fontSize.base,
-  fontWeight: 400,
-  lineHeight: 1.8,
-  listStyle: 'none',
-  gap: rem(8),
-});
-
-globalStyle('[data-article] :is(ul, ol) li:last-child', {
-  paddingBottom: 0,
-});
-
-globalStyle('[data-article] ol li::before', {
-  content: `counter(basics-ol) ". "`,
-  position: 'absolute',
-  left: 0,
-  fontSize: theme.fontSize.base,
-});
-
-globalStyle('[data-article] ul li::before', {
-  content: '•',
-  position: 'absolute',
-  left: 0,
-  fontSize: theme.fontSize.base,
-});
-
 globalStyle('[data-article] p', {
   color: theme.color.text,
   fontSize: theme.fontSize.base,
   fontWeight: 400,
   lineHeight: '180%',
-});
-
-globalStyle('[data-article] strong', {
-  fontWeight: 600,
 });
 
 globalStyle('[data-article] small', {
@@ -112,16 +58,6 @@ globalStyle('[data-article] [class^=blockquote-]', {
 globalStyle('[data-article] [class^=blockquote-] > p', {
   padding: 0,
   margin: 0,
-});
-
-globalStyle('[data-article] p > code', {
-  paddingBlock: rem(2),
-  paddingInline: rem(4),
-  fontFamily: theme.fontFamily.mono,
-  fontSize: theme.fontSize.sm,
-  lineHeight: 1.3,
-  backgroundColor: theme.color.cardBackgroundHover,
-  borderRadius: rem(4),
 });
 
 globalStyle('[data-article] img, [data-article] video', {

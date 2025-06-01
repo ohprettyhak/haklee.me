@@ -1,6 +1,4 @@
-import '@haklee/style/global';
-import '@haklee/style/animation';
-import '@/styles/global.css';
+import '@/styles/globals.css';
 
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
@@ -10,11 +8,9 @@ import { ThemeProvider } from 'next-themes';
 import { PropsWithChildren } from 'react';
 
 import { BASE_URL, GA_ID, PROFILE } from '@/constants';
-import { darkMode, lightMode } from '@/styles';
 
 import { NavigationMenu } from './_components/navigation-menu';
 import { RootLayout as Layout } from './_components/root-layout';
-import * as styles from './page.css';
 
 const pretendard = localFont({
   src: './_fonts/PretendardVariable.woff2',
@@ -51,16 +47,8 @@ const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <html lang="ko" suppressHydrationWarning>
       <body className={pretendard.className}>
-        <ThemeProvider
-          attribute="class"
-          enableSystem={false}
-          value={{
-            light: lightMode,
-            dark: darkMode,
-          }}
-          storageKey="haklee-theme"
-        >
-          <div className={styles.blur} aria-hidden={true} />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div className="fixed top-0" aria-hidden={true} />
           <Layout>{children}</Layout>
           <NavigationMenu />
         </ThemeProvider>
