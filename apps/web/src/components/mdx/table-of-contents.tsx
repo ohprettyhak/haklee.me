@@ -3,8 +3,6 @@
 import { clsx } from 'clsx';
 import { useEffect, useRef, useState } from 'react';
 
-import * as styles from './styles.css';
-
 export type TOCType = {
   id: string;
   level: number;
@@ -42,12 +40,15 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
   }, [toc, activeId]);
 
   return (
-    <ul className={styles.list}>
+    <ul className="hidden w-full h-fit list-none gap-[0.25rem] tablet:flex tablet:flex-col">
       {toc.map(({ id, level, text }) => (
         <li key={text}>
           <a
             href={`#${id}`}
-            className={clsx(styles.item, { [styles.active]: id === activeId })}
+            className={clsx(
+              'text-[var(--color-toc)] text-sm text-left break-keep cursor-pointer [transition:color_0.2s_cubic-bezier(0.4,0,0.2,1),font-weight_0.2s_cubic-bezier(0.4,0,0.2,1)] hover:text-[var(--color-text)] hover:font-medium',
+              id === activeId && 'text-[var(--color-text)] font-medium',
+            )}
             style={{ marginLeft: `${(level - 2) * 10}px` }}
           >
             {text}
