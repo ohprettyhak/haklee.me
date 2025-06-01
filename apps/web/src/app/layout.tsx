@@ -48,7 +48,10 @@ const RootLayout = ({ children }: PropsWithChildren) => {
     <html lang="ko" suppressHydrationWarning>
       <body className={pretendard.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="fixed top-0" aria-hidden={true} />
+          <div
+            className="fixed top-0 left-0 w-full h-[4rem] select-none pointer-events-none backdrop-blur-[6px] opacity-95 [mask-image:linear-gradient(to_bottom,var(--color-black)_25%,transparent)] translate-z-0 z-[var(--z-overlay)] mobile:h-[6rem]"
+            aria-hidden={true}
+          />
           <Layout>{children}</Layout>
           <NavigationMenu />
         </ThemeProvider>
