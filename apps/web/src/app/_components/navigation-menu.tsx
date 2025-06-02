@@ -7,9 +7,6 @@ import { ReactElement, useMemo } from 'react';
 
 import { PickaxeIcon, SparkleIcon, StorageIcon, ToiletIcon } from '@/components/icon';
 import { PATH } from '@/constants';
-import { theme } from '@/styles';
-
-import * as styles from './styles.css';
 
 const MENU = [
   { key: 'home', title: '홈', path: PATH.INDEX, icon: ToiletIcon },
@@ -30,29 +27,29 @@ export const NavigationMenu = () => {
         <AnimatePresence key={key} mode="wait">
           <motion.li
             key={pathname}
-            className={styles.menuItem}
+            className="flex items-center h-[3rem] text-[var(--color-gray950)] user-select-none transform translate-z-0 border border-[var(--color-menu-border)] rounded-[1rem] bg-[rgba(28,27,31,0.03)] backdrop-blur-[4px] will-change-[backdrop-filter] motion-reduce:transition-none"
             initial={{
-              backgroundColor: theme.color.menuBackground,
-              color: theme.color.background,
+              backgroundColor: 'var(--color-menu-background)',
+              color: 'var(--color-background)',
             }}
             animate={{
               backgroundColor: isActive
-                ? theme.color.menuActiveBackground
-                : theme.color.menuBackground,
-              color: isActive ? theme.color.text : theme.color.background,
+                ? 'var(--color-menu-active-background)'
+                : 'var(--color-menu-background)',
+              color: isActive ? 'var(--color-text)' : 'var(--color-background)',
             }}
             exit={{
-              backgroundColor: theme.color.menuBackground,
-              color: theme.color.background,
+              backgroundColor: 'var(--color-menu-background)',
+              color: 'var(--color-background)',
             }}
             transition={{ duration: 0.5 }}
           >
-            <Link href={path} className={styles.menuLink}>
+            <Link href={path} className="center p-[0.75rem] text-[var(--color-text)]">
               <Icon size={18} />
               {isActive && (
                 <motion.span
                   key={pathname}
-                  className={styles.menuName}
+                  className="center h-fit font-semibold whitespace-nowrap overflow-x-hidden"
                   initial={{ width: 0, opacity: 0, marginLeft: 0 }}
                   animate={{ width: 'auto', opacity: 1, marginLeft: '0.5rem' }}
                   exit={{ width: 0, opacity: 0, marginLeft: 0 }}
@@ -69,9 +66,9 @@ export const NavigationMenu = () => {
   }, [pathname]);
 
   return (
-    <div className={styles.root}>
-      <div className={styles.container}>
-        <ul className={styles.menu}>{menuItems}</ul>
+    <div className="center fixed bottom-[var(--spacing-inline)] w-full">
+      <div className="flex justify-center">
+        <ul className="flex h-fit gap-[0.5rem]">{menuItems}</ul>
       </div>
     </div>
   );

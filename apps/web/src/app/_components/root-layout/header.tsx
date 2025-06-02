@@ -7,34 +7,31 @@ import { useTheme } from 'next-themes';
 import { BrandLogo, CircleDashIcon, MoonIcon, SunglassesIcon, SunIcon } from '@/components/icon';
 import { PATH } from '@/constants';
 import { useIsClient } from '@/hooks/useIsClient';
-import { theme } from '@/styles';
-
-import * as styles from './styles.css';
 
 const Header = () => {
   const { theme: currentTheme, setTheme } = useTheme();
 
   return (
-    <div className={styles.root}>
+    <div className="row-between w-full max-w-[var(--spacing-app)] mt-[var(--spacing-inline)] px-[var(--spacing-inline)] z-[var(--z-header)]">
       <Link href={PATH.INDEX}>
-        <motion.div className={styles.branding} whileHover="hover" initial="initial">
+        <motion.div
+          className="center relative w-[3.25rem] h-[3.25rem] border-[0.0625rem] border-solid border-[var(--color-gray50)] rounded-full bg-[rgba(250,250,250,1)]"
+          whileHover="hover"
+          initial="initial"
+        >
           <motion.div
+            className="text-[var(--color-gray950)]"
             variants={{
               initial: { scale: 1, rotateX: 0, rotateY: 0, z: 0 },
               hover: { scale: 1.2, rotateX: -16, rotateY: -16, z: 20 },
             }}
             transition={{ type: 'spring', stiffness: 100, damping: 16 }}
           >
-            <BrandLogo
-              height={36}
-              width={30}
-              fill={theme.color.gray950}
-              stroke={theme.color.gray950}
-            />
+            <BrandLogo height={36} width={30} />
           </motion.div>
 
           <motion.div
-            className={styles.sunglasses}
+            className="absolute top-0 left-[0.625rem] text-[var(--color-gray950)]"
             variants={{
               initial: { opacity: 0, rotateX: 0, rotateY: 0, translateY: 0 },
               hover: { opacity: 1, rotateX: -16, rotateY: -16, translateY: 12 },
@@ -46,8 +43,11 @@ const Header = () => {
         </motion.div>
       </Link>
 
-      <div className={styles.menu}>
-        <button onClick={() => setTheme(currentTheme === 'light' ? 'dark' : 'light')}>
+      <div className="center-y gap-[1rem] text-[var(--color-text)]">
+        <button
+          className="cursor-pointer"
+          onClick={() => setTheme(currentTheme === 'light' ? 'dark' : 'light')}
+        >
           <motion.div
             key={currentTheme}
             initial={{ opacity: 0, scale: 0.8, rotate: -45 }}
