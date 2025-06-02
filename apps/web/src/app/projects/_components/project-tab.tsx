@@ -7,8 +7,6 @@ import { ComponentProps, useEffect, useState } from 'react';
 
 import { PATH } from '@/constants';
 
-import * as styles from './styles.css';
-
 type ProjectTabProps = ComponentProps<'div'> & {
   current: 'PROJECT' | 'HACKATHON';
 };
@@ -40,11 +38,11 @@ export const ProjectTab = ({ className, current, ...props }: ProjectTabProps) =>
   };
 
   return (
-    <div className={clsx(styles.root, className)} {...props}>
-      <motion.div className={styles.wrapper}>
+    <div className={clsx('center w-fit ml-[-0.625rem]', className)} {...props}>
+      <motion.div className="center-y relative justify-between">
         {behind && (
           <motion.div
-            className={styles.behind}
+            className="absolute bottom-0 h-full rounded-[0.5rem] bg-[var(--color-tab-behind)] z-[var(--z-behind)]"
             animate={behind}
             initial={false}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
@@ -57,7 +55,10 @@ export const ProjectTab = ({ className, current, ...props }: ProjectTabProps) =>
             key={tab.key}
             href={tab.href}
             data-tab={tab.key}
-            className={clsx(styles.tab, { [styles.active]: current === tab.key })}
+            className={clsx(
+              'py-[0.3754rem] px-[0.625rem] text-[var(--color-text-secondary)] text-center font-medium no-underline transition-colors duration-300 ease-in-out',
+              current === tab.key && 'text-[var(--color-text)]',
+            )}
             onMouseEnter={(e) => handleMouseEnter(e.currentTarget)}
             onMouseLeave={handleMouseLeave}
           >

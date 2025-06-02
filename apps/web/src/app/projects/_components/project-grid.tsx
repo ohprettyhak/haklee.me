@@ -7,30 +7,29 @@ import { allProjects, type Project } from 'contentlayer/generated';
 
 import { TimelineDot, TimelineHeading, TimelineItem, TimelineLine } from '@/components/ui';
 
-import * as styles from './styles.css';
-
 export const ProjectGrid = () => {
   const list = getSortedProjectByYears(allProjects);
 
   return (
     <>
       {list.map(({ year, items }) => (
-        <TimelineItem key={year} className={styles.item}>
-          <TimelineHeading className={styles.heading} id={`#${year}`}>
+        <TimelineItem key={year} className="pb-[2rem]">
+          <TimelineHeading className="mb-[1rem] text-lg font-semibold" id={`#${year}`}>
             {year}.
           </TimelineHeading>
           <TimelineLine />
           <TimelineDot />
 
-          <div className={styles.grid}>
+          <div className="grid grid-cols-1 w-full gap-[1rem] mobile:grid-cols-2">
             {items.map(({ slug, cover, title, description, duration, category }) => (
               <Link key={slug} href={`/projects/${slug}`}>
-                <div className={styles.card}>
-                  <p className={styles.metadata}>
+                <div className="column w-full py-[0.75rem] px-[1rem] border-[0.063rem] border-solid border-[var(--color-card-border)] rounded-[0.5rem] bg-[var(--color-card-background)] transition-colors duration-300 ease-in-out hover:border-[var(--color-card-hover)] hover:bg-[var(--color-card-hover-background)]">
+                  <p className="text-[var(--color-text-secondary)] text-xs font-medium break-keep">
                     {duration} &middot; {category}
                   </p>
-                  <div className={styles.cover}>
+                  <div className="relative w-full mt-[0.5rem] aspect-[1200/630] border-[0.063rem] border-solid border-[var(--color-card-border)] rounded-[0.625rem] overflow-hidden">
                     <Image
+                      className="object-cover select-none"
                       src={cover}
                       alt={title}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -40,8 +39,12 @@ export const ProjectGrid = () => {
                       priority
                     />
                   </div>
-                  <h3>{title}</h3>
-                  <p className={styles.description}>{description}</p>
+                  <h3 className="mt-[0.75rem] text-[var(--color-text)] font-medium leading-relaxed break-keep">
+                    {title}
+                  </h3>
+                  <p className="mt-[0.125rem] text-[var(--color-text-secondary)] text-sm leading-relaxed break-keep">
+                    {description}
+                  </p>
                 </div>
               </Link>
             ))}

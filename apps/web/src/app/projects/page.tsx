@@ -1,7 +1,6 @@
 import { HackathonGrid } from './_components/hackathon-grid';
 import { ProjectGrid } from './_components/project-grid';
 import { ProjectTab } from './_components/project-tab';
-import * as styles from './page.css';
 
 type ProjectProps = {
   searchParams: Promise<{ tab: string }>;
@@ -15,8 +14,11 @@ const Project = async ({ searchParams }: ProjectProps) => {
 
   return (
     <>
-      <ProjectTab className={styles.tab} current={tab} />
-      <section className={styles.root} data-animate={true}>
+      <ProjectTab
+        className="px-[var(--spacing-inline)] mb-[calc(var(--spacing-inline)*2)]"
+        current={tab}
+      />
+      <section className="px-[var(--spacing-inline)]" data-animate={true}>
         {tab === 'PROJECT' ? <ProjectGrid /> : <HackathonGrid />}
       </section>
     </>
