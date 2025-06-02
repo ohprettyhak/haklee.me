@@ -47,7 +47,7 @@ const Craft = () => {
                     className="opacity-100 transition-opacity duration-300 ease-in-out hover:opacity-70"
                     href={path}
                   >
-                    <div className="relative w-full aspect-[1200/630] border-[0.063rem] border-solid border-[var(--color-card-border)] rounded-[0.5rem] overflow-hidden">
+                    <div className="relative w-full aspect-[1200/630] border-[0.063rem] border-solid border-[var(--color-card-border)] rounded-[0.625rem] overflow-hidden">
                       <Image
                         className="object-cover select-none"
                         src={craft.cover}
