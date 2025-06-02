@@ -90,6 +90,18 @@
   --z-header: 150;
   --z-modal: 200;
   --z-modal-content: 250;
+
+  --animate-signature-draw: signature-draw 1.2s linear forwards 0.5s;
+
+  @keyframes signature-draw {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+  }
 }
 
 :root {

@@ -33,7 +33,7 @@ const ArticlePage = () => {
                     key={slug}
                   >
                     <Link
-                      className="flex flex-col flex-1 py-[0.75rem] px-[1rem] gap-[0.375rem] mobile:flex-row mobile:justify-between"
+                      className="flex flex-col items-center flex-1 py-[0.75rem] px-[1rem] gap-[0.375rem] mobile:flex-row mobile:justify-between"
                       href={`/articles/${slug}`}
                     >
                       <div>
@@ -44,7 +44,7 @@ const ArticlePage = () => {
                           {description}
                         </p>
                       </div>
-                      <time className="text-[var(--color-text-secondary)] text-sm leading-relaxed">
+                      <time className="h-fit text-[var(--color-text-secondary)] text-sm leading-relaxed">
                         {dayjs(createdAt).format('MM.DD.')}
                       </time>
                     </Link>
