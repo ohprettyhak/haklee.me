@@ -18,7 +18,7 @@ importers:
         specifier: 5.8.3
         version: 5.8.3
 
-  apps/web:
+  site:
     dependencies:
       '@radix-ui/react-slot':
         specifier: ^1.2.3
@@ -53,10 +53,10 @@ importers:
     devDependencies:
       '@haklee/eslint-config':
         specifier: workspace:*
-        version: link:../../tooling/eslint-config
+        version: link:../tooling/eslint-config
       '@haklee/typescript-config':
         specifier: workspace:*
-        version: link:../../tooling/typescript-config
+        version: link:../tooling/typescript-config
       '@tailwindcss/postcss':
         specifier: ^4.1.8
         version: 4.1.8
