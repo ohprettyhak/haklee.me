@@ -1,8 +1,8 @@
 'use client';
 
-import { clsx } from 'clsx';
 import { useInView } from 'motion/react';
 import { ComponentProps, useRef } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 type SignatureProps = ComponentProps<'div'> & {
   className?: string;
@@ -16,7 +16,12 @@ export const Signature = ({ className, ...props }: SignatureProps) => {
   });
 
   return (
-    <div className={clsx('group center', className)} ref={ref} data-animate={isInView} {...props}>
+    <div
+      className={twMerge('group center', className)}
+      ref={ref}
+      data-animate={isInView}
+      {...props}
+    >
       <svg
         className="w-[6rem] h-fit max-h-full text-[var(--color-text)] pointer-events-none [stroke-dashoffset:1] [stroke-dasharray:1]"
         width="739"

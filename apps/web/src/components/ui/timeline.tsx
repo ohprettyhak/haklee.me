@@ -1,6 +1,6 @@
 import { Slot } from '@radix-ui/react-slot';
-import { clsx } from 'clsx';
 import { ComponentProps, JSX, ReactNode } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 type CommonProps<T extends keyof JSX.IntrinsicElements> = ComponentProps<T> & {
   asChild?: boolean;
@@ -14,7 +14,7 @@ type HeadingProps = CommonProps<'h2'>;
 const TimelineList = ({ asChild, className, children, ...props }: DivisionProps) => {
   const Comp = asChild ? Slot : 'div';
   return (
-    <Comp className={clsx('list-none', className)} {...props}>
+    <Comp className={twMerge('list-none', className)} {...props}>
       {children}
     </Comp>
   );
@@ -23,7 +23,7 @@ const TimelineList = ({ asChild, className, children, ...props }: DivisionProps)
 const TimelineItem = ({ asChild, className, children, ...props }: DivisionProps) => {
   const Comp = asChild ? Slot : 'div';
   return (
-    <Comp className={clsx('timeline-item', className)} {...props}>
+    <Comp className={twMerge('timeline-item', className)} {...props}>
       {children}
     </Comp>
   );
@@ -32,7 +32,7 @@ const TimelineItem = ({ asChild, className, children, ...props }: DivisionProps)
 const TimelineHeading = ({ asChild, className, children, ...props }: HeadingProps) => {
   const Comp = asChild ? Slot : 'h2';
   return (
-    <Comp className={clsx('text-[var(--color-text)] break-keep', className)} {...props}>
+    <Comp className={twMerge('text-[var(--color-text)] break-keep', className)} {...props}>
       {children}
     </Comp>
   );

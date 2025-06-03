@@ -1,7 +1,7 @@
 'use client';
 
-import { clsx } from 'clsx';
 import { useEffect, useRef, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 export type TOCType = {
   id: string;
@@ -45,7 +45,7 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
         <li key={text}>
           <a
             href={`#${id}`}
-            className={clsx(
+            className={twMerge(
               'text-[var(--color-toc)] text-sm text-left break-keep cursor-pointer [transition:color_0.2s_cubic-bezier(0.4,0,0.2,1),font-weight_0.2s_cubic-bezier(0.4,0,0.2,1)] hover:text-[var(--color-text)] hover:font-medium',
               id === activeId && 'text-[var(--color-text)] font-medium',
             )}

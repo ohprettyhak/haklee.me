@@ -1,9 +1,9 @@
 'use client';
 
-import { clsx } from 'clsx';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import { ComponentProps, useEffect, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import { PATH } from '@/constants';
 
@@ -38,7 +38,7 @@ export const ProjectTab = ({ className, current, ...props }: ProjectTabProps) =>
   };
 
   return (
-    <div className={clsx('center w-fit ml-[-0.625rem]', className)} {...props}>
+    <div className={twMerge('center w-fit ml-[-0.625rem]', className)} {...props}>
       <motion.div className="center-y relative justify-between">
         {behind && (
           <motion.div
@@ -55,7 +55,7 @@ export const ProjectTab = ({ className, current, ...props }: ProjectTabProps) =>
             key={tab.key}
             href={tab.href}
             data-tab={tab.key}
-            className={clsx(
+            className={twMerge(
               'py-[0.3754rem] px-[0.625rem] text-[var(--color-text-secondary)] text-center font-medium no-underline transition-colors duration-300 ease-in-out',
               current === tab.key && 'text-[var(--color-text)]',
             )}
