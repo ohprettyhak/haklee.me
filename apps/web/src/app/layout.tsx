@@ -40,7 +40,17 @@ export const metadata: Metadata = {
     creator: PROFILE.SOCIAL.TWITTER,
   },
   authors: [{ name: PROFILE.NAME, url: BASE_URL }],
-  robots: 'index, follow',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 const RootLayout = ({ children }: PropsWithChildren) => {
