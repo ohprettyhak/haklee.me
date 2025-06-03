@@ -32,20 +32,19 @@ export const MdxComponent = ({ code, blurDataURLs = {} }: MdxComponentProps) => 
       const blurDataURL = blurDataURLs[src];
 
       return (
-        <span className="relative inline-block w-full border border-[var(--color-border)] rounded-[0.875rem] overflow-hidden">
-          <Image
-            className="w-full h-auto object-contain"
-            src={src}
-            alt={alt || ''}
-            width={0}
-            height={0}
-            quality={100}
-            placeholder={blurDataURL ? 'blur' : 'empty'}
-            blurDataURL={blurDataURL}
-            loading="lazy"
-            {...props}
-          />
-        </span>
+        <Image
+          className="w-full h-auto"
+          src={src}
+          alt={alt || ''}
+          width={0}
+          height={0}
+          quality={100}
+          placeholder={blurDataURL ? 'blur' : 'empty'}
+          blurDataURL={blurDataURL}
+          sizes="100vw"
+          loading="lazy"
+          {...props}
+        />
       );
     },
   };
