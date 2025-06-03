@@ -24,20 +24,24 @@ const Article = async ({ params }: ArticleProps) => {
       <BackButton className="mx-[var(--spacing-inline)]" />
 
       <article className="column relative px-[var(--spacing-inline)] mt-[2rem]" data-animate={true}>
-        <div>
-          <h1 className="text-[var(--color-text)] text-lg font-medium leading-relaxed break-keep">
-            {article.title}
-          </h1>
-          <p className="mt-[0.125rem] mb-[0.25rem] text-[var(--color-text-secondary)] text-sm leading-relaxed break-keep">
-            {article.description}
-          </p>
+        <header>
+          <div className="column mb-[0.25rem] gap-[0.125rem]">
+            <h1 className="text-[var(--color-text)] text-lg font-medium leading-relaxed break-keep">
+              {article.title}
+            </h1>
+            {article.description && (
+              <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed break-keep">
+                {article.description}
+              </p>
+            )}
+          </div>
           <time className="text-[var(--color-text-secondary)] text-xs font-medium break-keep">
             작성: {dayjs(article.createdAt).format('YYYY.MM.DD.')}
             {article.modifiedAt && dayjs(article.modifiedAt).isAfter(article.createdAt) && (
               <> &middot; 최종 수정: {dayjs(article.modifiedAt).format('YYYY.MM.DD.')}</>
             )}
           </time>
-        </div>
+        </header>
 
         <hr tabIndex={-1} aria-hidden={true} />
 

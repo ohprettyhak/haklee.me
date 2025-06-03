@@ -36,13 +36,15 @@ const ArticlePage = () => {
                       className="flex flex-col flex-1 py-[0.75rem] px-[1rem] gap-[0.375rem] mobile:flex-row mobile:justify-between"
                       href={`/articles/${slug}`}
                     >
-                      <div>
-                        <h3 className="mb-[0.188rem] text-[var(--color-text)] text-md font-semibold">
+                      <div className="column gap-[0.188rem]">
+                        <h3 className="text-[var(--color-text)] text-md font-semibold">
                           {title}
                         </h3>
-                        <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed">
-                          {description}
-                        </p>
+                        {description && (
+                          <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed">
+                            {description}
+                          </p>
+                        )}
                       </div>
                       <time className="self-start h-fit text-[var(--color-text-secondary)] text-sm leading-relaxed mobile:self-center">
                         {dayjs(createdAt).format('MM.DD.')}
