@@ -122,10 +122,6 @@
         @apply inline-block w-full border border-[var(--color-card-border)] rounded-[0.625rem] overflow-hidden select-none;
     }
 
-    [data-mdx-article] :is(p > img, video) {
-        @apply my-[1rem];
-    }
-
     [data-mdx-article] ol {
         counter-reset: basics-ol;
     }
@@ -166,11 +162,6 @@
 
     [data-mdx-article] .image-wrapper.expand {
         @apply static transform-none;
-
         @apply desktop:relative desktop:left-[50%] desktop:w-[62.5rem] desktop:transform desktop:-translate-x-1/2
-    }
-
-    [data-mdx-article] .image-wrapper p {
-        @apply p-0 m-0;
     }
 }
