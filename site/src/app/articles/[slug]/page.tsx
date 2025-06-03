@@ -46,7 +46,7 @@ const Article = async ({ params }: ArticleProps) => {
         <hr tabIndex={-1} aria-hidden={true} />
 
         <div>
-          <MdxComponent code={article.body.code} />
+          <MdxComponent code={article.body.code} blurDataURLs={article.blurMap} />
 
           <aside className="fixed hidden top-0 right-0 w-full max-w-1/4 h-full !translate-x-[calc(100%+var(--spacing-inline)*2)] tablet:block">
             <nav className="sticky top-[calc(4rem+var(--spacing-inline))]">

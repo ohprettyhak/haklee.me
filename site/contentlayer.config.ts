@@ -9,6 +9,8 @@ import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkAlerts from 'remark-blockquote-alerts';
 
+import { createImageBlurMap, findMarkdownImagePaths } from './config/contentlayer';
+
 const computedFields: ComputedFields = {
   slug: {
     type: 'string',
@@ -30,6 +32,13 @@ const computedFields: ComputedFields = {
         level: match[1].length,
         text: match[2],
       }));
+    },
+  },
+  blurMap: {
+    type: 'json',
+    resolve: async (doc) => {
+      const images: string[] = findMarkdownImagePaths(doc.body.raw);
+      return createImageBlurMap(doc._raw.sourceFilePath, images);
     },
   },
 };
