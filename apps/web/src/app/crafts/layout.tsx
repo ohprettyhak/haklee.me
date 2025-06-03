@@ -1,5 +1,3 @@
-import './craft.css';
-
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 

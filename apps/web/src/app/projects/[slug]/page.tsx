@@ -1,4 +1,3 @@
-import { GithubIcon, GlobeIcon } from '@haklee/icon';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -6,10 +5,10 @@ import { ReactElement } from 'react';
 
 import { type Project, allProjects } from 'contentlayer/generated';
 
-import { BackButton } from '@/components/back-button';
-import { MdxComponent } from '@/components/mdx-component';
-
-import * as styles from './page.css';
+import { GithubIcon, GlobeIcon } from '@/components/icon';
+import { MdxComponent } from '@/components/mdx';
+import { BackButton } from '@/components/ui';
+import { PROFILE } from '@/constants';
 
 const getIconByType = (type: string): ReactElement => {
   switch (type) {
@@ -32,11 +31,12 @@ const Project = async ({ params }: ProjectProps) => {
   if (!project) notFound();
 
   return (
-    <article className={styles.root} data-animate={true}>
+    <article className="column px-[var(--spacing-inline)]" data-animate={true}>
       <BackButton />
 
-      <div className={styles.cover}>
+      <div className="relative w-full mt-[2rem] aspect-[1200/630] border-[0.063rem] border-solid border-[var(--color-card-border)] rounded-[0.625rem] overflow-hidden">
         <Image
+          className="object-cover select-none"
           src={project.cover}
           alt={project.title}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -47,18 +47,30 @@ const Project = async ({ params }: ProjectProps) => {
         />
       </div>
       <div>
-        <p className={styles.metadata}>
+        <p className="mt-[1rem] text-[var(--color-text-secondary)] text-xs font-medium break-keep">
           {project.duration} &middot; {project.category}
         </p>
-        <p className={styles.team}>{project.team}</p>
+        <p className="mt-[0.313rem] text-[var(--color-text)] text-xs font-medium leading-relaxed break-keep">
+          {project.team}
+        </p>
 
-        <h3 className={styles.title}>{project.title}</h3>
-        <p className={styles.description}>{project.description}</p>
+        <h3 className="mt-[0.625rem] text-[var(--color-text)] text-lg font-medium leading-relaxed break-keep">
+          {project.title}
+        </h3>
+        <p className="mt-[0.125rem] text-[var(--color-text-secondary)] text-sm leading-relaxed break-keep">
+          {project.description}
+        </p>
       </div>
       {project.links && (
-        <div className={styles.link}>
+        <div className="center-y mt-[1rem] gap-[0.5rem]">
           {project.links.map((link) => (
-            <a key={link.link} href={link.link} target="_blank" rel="noopener noreferrer">
+            <a
+              className="center-y py-[0.25rem] px-[0.5rem] text-[var(--color-text)] text-xs font-medium border-[0.063rem] border-solid border-[var(--color-card-border)] rounded-[0.375rem] bg-[var(--color-card-background)] transition-colors duration-300 ease-in-out gap-[0.25rem] hober:bg-[var(--color-card-hover-background)]"
+              key={link.link}
+              href={link.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {getIconByType(link.category)}
               {link.category}
             </a>
@@ -85,16 +97,16 @@ export const generateMetadata = async ({ params }: ProjectProps): Promise<Metada
   if (!project) return {};
 
   return {
-    title: `${project.title} — haklee`,
+    title: `${project.title} — ${PROFILE.TITLE}`,
     description: project.description,
     openGraph: {
-      title: `${project.title} — haklee`,
+      title: `${project.title} — ${PROFILE.TITLE}`,
       description: project.description,
       url: `https://www.haklee.me/projects/${slug}`,
       images: [{ url: project.cover }],
     },
     twitter: {
-      title: `${project.title} — haklee`,
+      title: `${project.title} — ${PROFILE.TITLE}`,
       description: project.description,
       images: [{ url: project.cover }],
     },

@@ -1,8 +1,7 @@
-import { clsx } from 'clsx';
 import { ComponentProps, ReactNode } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import Header from './header';
-import * as styles from './styles.css';
 
 type LayoutProps = ComponentProps<'div'> & {
   className?: string;
@@ -11,9 +10,13 @@ type LayoutProps = ComponentProps<'div'> & {
 
 export const RootLayout = ({ className, children, ...props }: LayoutProps) => {
   return (
-    <div className={styles.root}>
+    <div className="column w-full max-w-[var(--spacing-app)] h-full mx-auto">
       <Header />
-      <main className={clsx(className, styles.main)} data-animate={true} {...props}>
+      <main
+        className={twMerge('column flex-1 pt-[calc(var(--spacing-inline)*2)] pb-[6rem]', className)}
+        data-animate={true}
+        {...props}
+      >
         {children}
       </main>
     </div>

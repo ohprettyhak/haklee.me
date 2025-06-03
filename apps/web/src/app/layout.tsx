@@ -1,9 +1,6 @@
-import '@haklee/style/global';
-import '@haklee/style/animation';
-import '@/styles/global.css';
+import '@/styles/globals.css';
 
 import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import Script from 'next/script';
@@ -11,11 +8,9 @@ import { ThemeProvider } from 'next-themes';
 import { PropsWithChildren } from 'react';
 
 import { BASE_URL, GA_ID, PROFILE } from '@/constants';
-import { darkMode, lightMode } from '@/styles';
 
 import { NavigationMenu } from './_components/navigation-menu';
 import { RootLayout as Layout } from './_components/root-layout';
-import * as styles from './page.css';
 
 const pretendard = localFont({
   src: './_fonts/PretendardVariable.woff2',
@@ -45,28 +40,32 @@ export const metadata: Metadata = {
     creator: PROFILE.SOCIAL.TWITTER,
   },
   authors: [{ name: PROFILE.NAME, url: BASE_URL }],
-  robots: 'index, follow',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <html lang="ko" suppressHydrationWarning>
       <body className={pretendard.className}>
-        <ThemeProvider
-          attribute="class"
-          enableSystem={false}
-          value={{
-            light: lightMode,
-            dark: darkMode,
-          }}
-          storageKey="haklee-theme"
-        >
-          <div className={styles.blur} aria-hidden={true} />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div
+            className="fixed top-0 left-0 w-full h-[4rem] select-none pointer-events-none backdrop-blur-[6px] opacity-95 [mask-image:linear-gradient(to_bottom,var(--color-black)_25%,transparent)] translate-z-0 z-[var(--z-overlay)] mobile:h-[6rem]"
+            aria-hidden={true}
+          />
           <Layout>{children}</Layout>
           <NavigationMenu />
         </ThemeProvider>
         <Analytics />
-        <SpeedInsights />
       </body>
 
       <Script
