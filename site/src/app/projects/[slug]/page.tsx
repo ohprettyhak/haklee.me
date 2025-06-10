@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { ReactElement } from 'react';
 
 import { type Project, allProjects } from 'contentlayer/generated';
 
@@ -10,7 +9,7 @@ import { MdxComponent } from '@/components/mdx';
 import { BackButton } from '@/components/ui';
 import { BASE_URL, PATH, PROFILE } from '@/constants';
 
-const getIconByType = (type: string): ReactElement => {
+const getIconByType = (type: string) => {
   switch (type) {
     case 'GitHub':
       return <GithubIcon />;

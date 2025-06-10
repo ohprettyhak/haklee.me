@@ -3,7 +3,7 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
 
-const IFRAME_URL = 'https://ohprettyhak.github.io/react-southkorea-d3map/';
+const IFRAME_URL = 'https://ohprettyhak.github.io/react-southkorea-d3map';
 
 export const MapIframe = () => {
   const { theme } = useTheme();
