@@ -8,7 +8,7 @@ type GiscusProps = ComponentProps<'section'>;
 export const Giscus = ({ ...props }: GiscusProps) => {
   const ref = useRef<HTMLDivElement | null>(null);
 
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -23,7 +23,7 @@ export const Giscus = ({ ...props }: GiscusProps) => {
     script.setAttribute('data-emit-metadata', '0');
     script.setAttribute('data-input-position', 'bottom');
     script.setAttribute('data-lang', 'ko');
-    script.setAttribute('data-theme', theme === 'dark' ? 'noborder_dark' : 'noborder_light');
+    script.setAttribute('data-theme', resolvedTheme === 'dark' ? 'noborder_dark' : 'noborder_light');
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;
 
@@ -35,7 +35,7 @@ export const Giscus = ({ ...props }: GiscusProps) => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       if (ref.current) ref.current.innerHTML = '';
     };
-  }, [theme]);
+  }, [resolvedTheme]);
 
   return <section ref={ref} {...props} />;
 };

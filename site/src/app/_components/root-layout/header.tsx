@@ -9,7 +9,7 @@ import { PATH } from '@/constants';
 import { useIsClient } from '@/hooks/useIsClient';
 
 const Header = () => {
-  const { theme: currentTheme, setTheme } = useTheme();
+  const { resolvedTheme: currentTheme, setTheme } = useTheme();
 
   return (
     <div className="row-between w-full max-w-[var(--spacing-app)] mt-[var(--spacing-inline)] px-[var(--spacing-inline)] z-[var(--z-header)]">
