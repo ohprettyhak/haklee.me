@@ -1,5 +1,8 @@
+import dayjs from 'dayjs';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { allCrafts, type Craft } from 'contentlayer/generated';
 
 import {
   TimelineDot,
@@ -10,26 +13,13 @@ import {
 } from '@/components/ui';
 import { PATH } from '@/constants';
 
-const content = {
-  '2025': [
-    {
-      id: '2025-01-signature',
-      cover: 'https://hstatic.haklee.me/content/crafts/2025-01-signature/preview.webp',
-      title: 'Signature',
-    },
-    {
-      id: '2025-02-southkorea-d3map',
-      cover: 'https://hstatic.haklee.me/content/crafts/2025-02-southkorea-d3map/preview.webp',
-      title: 'South Korea D3 Map',
-    },
-  ],
-};
-
 const Craft = () => {
+  const list = getSortedCraftByYears(allCrafts);
+
   return (
     <TimelineList className="mx-[var(--spacing-inline)]" asChild>
       <section>
-        {Object.entries(content).map(([year, crafts]) => (
+        {list.map(({ year, items }) => (
           <TimelineItem key={year} className="pb-[2rem]">
             <TimelineHeading className="mb-[1rem] text-lg font-semibold" id={`#${year}`}>
               {year}.
@@ -38,12 +28,12 @@ const Craft = () => {
             <TimelineDot />
 
             <div className="grid grid-cols-1 w-full gap-[1rem] mobile:grid-cols-2">
-              {[...crafts].reverse().map((craft) => {
-                const path: string = `${PATH.CRAFT}/${craft.id}`;
+              {items.map((craft) => {
+                const path: string = `${PATH.CRAFT}/${craft.slug}`;
 
                 return (
                   <Link
-                    key={craft.id}
+                    key={craft.slug}
                     className="opacity-100 transition-opacity duration-300 ease-in-out hover:opacity-70"
                     href={path}
                   >
@@ -74,3 +64,21 @@ const Craft = () => {
 };
 
 export default Craft;
+
+const getSortedCraftByYears = (crafts: Craft[]) => {
+  const grouped = crafts.reduce(
+    (map, craft) => {
+      const year = dayjs(craft.createdAt).year();
+      (map[year] ??= []).push(craft);
+      return map;
+    },
+    {} as Record<number, Craft[]>,
+  );
+
+  return Object.entries(grouped)
+    .map(([year, items]) => ({
+      year: Number(year),
+      items: items.sort((a, b) => dayjs(b.createdAt).diff(dayjs(a.createdAt))),
+    }))
+    .sort((a, b) => b.year - a.year);
+};

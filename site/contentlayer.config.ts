@@ -93,28 +93,30 @@ export const Project = defineDocumentType(() => ({
   computedFields,
 }));
 
+export const Craft = defineDocumentType(() => ({
+  name: 'Craft',
+  contentType: 'mdx',
+  filePathPattern: `crafts/**/*.mdx`,
+  fields: {
+    cover: { type: 'string', required: true },
+    createdAt: { type: 'date', required: true },
+    title: { type: 'string', required: true },
+    description: { type: 'string', required: false },
+    links: { type: 'list', of: Link },
+  },
+  computedFields,
+}));
+
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Article, Hackathon, Project],
+  contentDirExclude: ['*.ts', '*.tsx'],
+  documentTypes: [Article, Hackathon, Project, Craft],
   mdx: {
     remarkPlugins: [remarkAlerts],
     rehypePlugins: [
       rehypeSlug,
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: 'wrap',
-        },
-      ],
-      [
-        rehypePrettyCode,
-        {
-          theme: {
-            dark: 'github-dark-dimmed',
-            light: 'github-light',
-          },
-        },
-      ],
+      [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+      [rehypePrettyCode, { theme: { dark: 'github-dark-dimmed', light: 'github-light' } }],
     ],
   },
 });
