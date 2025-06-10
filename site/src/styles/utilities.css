@@ -131,7 +131,7 @@
     }
 
     [data-mdx-article] :is(ul, ol) li {
-        @apply flex flex-col relative pl-[1rem] pb-[0.5rem] text-[var(--color-gray700)] text-base leading-[180%] list-none gap-[0.5rem];
+        @apply flex flex-col relative pl-[1rem] pb-[0.5rem] text-[var(--color-text-secondary)] text-base leading-[180%] list-none gap-[0.5rem];
     }
 
     [data-mdx-article] :is(ul, ol) li:last-child {
