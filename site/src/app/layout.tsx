@@ -12,12 +12,11 @@ import { BASE_URL, GA_ID, PROFILE } from '@/constants';
 import { NavigationMenu } from './_components/navigation-menu';
 import { RootLayout as Layout } from './_components/root-layout';
 
-const pretendard = localFont({
+const Pretendard = localFont({
   src: './_fonts/PretendardVariable.woff2',
   display: 'swap',
   weight: '45 920',
   preload: true,
-  variable: '--font-pretendard',
 });
 
 export const metadata: Metadata = {
@@ -56,7 +55,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <html lang="ko" suppressHydrationWarning>
-      <body className={pretendard.className}>
+      <body className={Pretendard.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div
             className="fixed top-0 left-0 w-full h-[4rem] select-none pointer-events-none backdrop-blur-[6px] opacity-95 [mask-image:linear-gradient(to_bottom,var(--color-black)_25%,transparent)] translate-z-0 z-[var(--z-overlay)] mobile:h-[6rem]"
