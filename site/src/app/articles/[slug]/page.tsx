@@ -6,7 +6,7 @@ import { type Article, allArticles } from 'contentlayer/generated';
 
 import { Giscus, MdxComponent, TableOfContents, type TOCType } from '@/components/mdx';
 import { BackButton, Signature } from '@/components/ui';
-import { PROFILE } from '@/constants';
+import { BASE_URL, PATH, PROFILE } from '@/constants';
 
 type ArticleProps = {
   params: Promise<{ slug: string }>;
@@ -77,11 +77,11 @@ export const generateMetadata = async ({ params }: ArticleProps): Promise<Metada
   const metadata: Metadata = {
     title: `${article.title} — ${PROFILE.TITLE}`,
     description: article.description,
-    publisher: 'haklee',
+    publisher: PROFILE.NAME,
     openGraph: {
       title: `${article.title} — ${PROFILE.TITLE}`,
       description: article.description,
-      url: `https://www.haklee.me/articles/${slug}`,
+      url: `${BASE_URL}${PATH.ARTICLE}/${slug}`,
       type: 'article',
       images: [{ url: PROFILE.PREVIEW_IMAGE, alt: PROFILE.PREVIEW_IMAGE_ALT }],
       publishedTime: article.createdAt,

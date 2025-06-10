@@ -5,7 +5,7 @@ import { allCrafts, type Craft } from 'contentlayer/generated';
 
 import { MdxComponent } from '@/components/mdx';
 import { BackButton } from '@/components/ui';
-import { PROFILE } from '@/constants';
+import { BASE_URL, PATH, PROFILE } from '@/constants';
 
 type CraftProps = {
   params: Promise<{ slug: string }>;
@@ -48,11 +48,11 @@ export const generateMetadata = async ({ params }: CraftProps): Promise<Metadata
   return {
     title: `${craft.title} — ${PROFILE.TITLE}`,
     description: craft.description,
-    publisher: 'haklee',
+    publisher: PROFILE.NAME,
     openGraph: {
       title: `${craft.title} — ${PROFILE.TITLE}`,
       description: craft.description,
-      url: `https://www.haklee.me/crafts/${slug}`,
+      url: `${BASE_URL}${PATH.CRAFT}/${slug}`,
       type: 'article',
       images: [{ url: craft.cover, alt: craft.title }],
       publishedTime: craft.createdAt,

@@ -8,7 +8,7 @@ import { type Project, allProjects } from 'contentlayer/generated';
 import { GithubIcon, GlobeIcon } from '@/components/icon';
 import { MdxComponent } from '@/components/mdx';
 import { BackButton } from '@/components/ui';
-import { PROFILE } from '@/constants';
+import { BASE_URL, PATH, PROFILE } from '@/constants';
 
 const getIconByType = (type: string): ReactElement => {
   switch (type) {
@@ -99,16 +99,19 @@ export const generateMetadata = async ({ params }: ProjectProps): Promise<Metada
   return {
     title: `${project.title} — ${PROFILE.TITLE}`,
     description: project.description,
+    publisher: PROFILE.NAME,
     openGraph: {
       title: `${project.title} — ${PROFILE.TITLE}`,
       description: project.description,
-      url: `https://www.haklee.me/projects/${slug}`,
-      images: [{ url: project.cover }],
+      url: `${BASE_URL}${PATH.PROJECT}/${slug}`,
+      type: 'article',
+      images: [{ url: project.cover, alt: project.title }],
     },
     twitter: {
       title: `${project.title} — ${PROFILE.TITLE}`,
       description: project.description,
-      images: [{ url: project.cover }],
+      card: project.cover ? 'summary_large_image' : 'summary',
+      images: [{ url: project.cover, alt: project.title }],
     },
   };
 };
