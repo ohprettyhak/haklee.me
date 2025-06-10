@@ -49,7 +49,7 @@ const Project = async ({ params }: ProjectProps) => {
         <p className="mt-[1rem] text-[var(--color-text-secondary)] text-xs font-medium break-keep">
           {project.duration} &middot; {project.category}
         </p>
-        <p className="mt-[0.313rem] text-[var(--color-text)] text-xs font-medium leading-relaxed break-keep">
+        <p className="mt-[0.313rem] text-[var(--color-text-tertiary)] text-xs font-medium leading-relaxed break-keep">
           {project.team}
         </p>
 
