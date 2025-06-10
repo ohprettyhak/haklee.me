@@ -1,19 +1,27 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 
-const IFRAME_URL = 'https://ohprettyhak.github.io/react-southkorea-d3map';
+const IFRAME_URL = 'https://ohprettyhak.github.io/react-southkorea-d3map/';
 
 export const MapIframe = () => {
-  const { theme } = useTheme();
+  const { resolvedTheme: theme } = useTheme();
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  useEffect(() => {
+  const postThemeMessage = useCallback(() => {
     if (iframeRef.current) {
       iframeRef.current.contentWindow?.postMessage({ theme }, IFRAME_URL);
     }
   }, [theme]);
+
+  useEffect(() => {
+    postThemeMessage();
+  }, [theme, postThemeMessage]);
+
+  const handleLoad = () => {
+    postThemeMessage();
+  };
 
   return (
     <iframe
@@ -23,6 +31,7 @@ export const MapIframe = () => {
       width="100%"
       height="560px"
       frameBorder="0"
+      onLoad={handleLoad}
     />
   );
 };
