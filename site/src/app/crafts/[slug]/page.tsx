@@ -57,7 +57,7 @@ const Craft = async ({ params }: CraftProps) => {
 
       <hr tabIndex={-1} aria-hidden={true} />
 
-      <MdxComponent code={craft.body.code} />
+      <MdxComponent code={craft.body.code} blurDataURLs={craft.blurMap} />
     </article>
   );
 };

@@ -79,7 +79,7 @@ const Project = async ({ params }: ProjectProps) => {
 
       <hr tabIndex={-1} aria-hidden={true} />
 
-      <MdxComponent code={project.body.code} />
+      <MdxComponent code={project.body.code} blurDataURLs={project.blurMap} />
     </article>
   );
 };

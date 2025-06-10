@@ -37,9 +37,7 @@ const ArticlePage = () => {
                       href={`/articles/${slug}`}
                     >
                       <div className="column gap-[0.188rem]">
-                        <h3 className="text-[var(--color-text)] text-md font-semibold">
-                          {title}
-                        </h3>
+                        <h3 className="text-[var(--color-text)] text-md font-semibold">{title}</h3>
                         {description && (
                           <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed">
                             {description}
