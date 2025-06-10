@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-import { allArticles, allCrafts } from 'contentlayer/generated';
+import { allArticles, allCrafts, type Article, type Craft } from 'contentlayer/generated';
 
 import { BASE_URL, PATH, PROFILE } from '@/constants';
 
@@ -16,9 +16,9 @@ const generateRssItems = (): {
 }[] => {
   return [...allArticles, ...allCrafts]
     .sort((a, b) => (dayjs(a.createdAt).isAfter(dayjs(b.createdAt)) ? -1 : 1))
-    .map((item) => {
+    .map((item: Article | Craft) => {
       const isArticle = 'modifiedAt' in item;
-      const date = isArticle ? (item as any).modifiedAt ?? item.createdAt : item.createdAt;
+      const date = isArticle ? (item as Article).modifiedAt ?? item.createdAt : item.createdAt;
       const pubDate = dayjs(date).toDate().toUTCString();
       const description =
         item.body.raw
