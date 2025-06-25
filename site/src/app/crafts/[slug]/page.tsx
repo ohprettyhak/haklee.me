@@ -8,6 +8,8 @@ import { MdxComponent } from '@/components/mdx';
 import { BackButton } from '@/components/ui';
 import { BASE_URL, PATH, PROFILE } from '@/constants';
 
+import { Cover } from '../_components/cover';
+
 const getIconByType = (type: string) => {
   switch (type) {
     case 'GitHub':
@@ -32,7 +34,9 @@ const Craft = async ({ params }: CraftProps) => {
     <article className="column px-[var(--spacing-inline)]" data-animate={true}>
       <BackButton />
 
-      <h1 className="mt-[2.25rem] text-[var(--color-text)] text-xl font-mono font-semibold tracking-tight">
+      <Cover key={craft.slug} className="mt-[2rem]" src={craft.cover} alt={craft.title} />
+
+      <h1 className="mt-[1rem] text-[var(--color-text)] text-xl font-mono font-semibold tracking-tight">
         {craft.title}
       </h1>
       <p className="mt-[0.5rem] text-[var(--color-text-secondary)] text-sm font-mono tracking-tight">
@@ -54,8 +58,6 @@ const Craft = async ({ params }: CraftProps) => {
           ))}
         </div>
       )}
-
-      <hr className="!bg-[var(--color-craft-border)]" tabIndex={-1} aria-hidden={true} />
 
       <MdxComponent code={craft.body.code} blurDataURLs={craft.blurMap} />
     </article>

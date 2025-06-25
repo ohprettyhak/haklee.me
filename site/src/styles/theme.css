@@ -91,7 +91,7 @@
   --z-modal: 200;
   --z-modal-content: 250;
 
-  --animate-signature-draw: signature-draw 1.2s linear forwards 0.5s;
+  --animate-signature-draw: signature-draw 1.8s linear forwards 0.5s;
 
   @keyframes signature-draw {
     0% {
