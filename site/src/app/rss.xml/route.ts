@@ -24,7 +24,6 @@ const generateRssItems = (): {
         item.body.raw
           .replace(/^\s*(import|export)\s.*$/gm, '')
           .trim()
-          .substring(0, 200)
           .replace(/\n+/g, ' ') + '…';
 
       return {
