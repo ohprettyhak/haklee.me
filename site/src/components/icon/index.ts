@@ -27,6 +27,7 @@ export * from './components/semantic/StorageIcon';
 export * from './components/semantic/ToiletIcon';
 export * from './components/semantic/SunIcon';
 export * from './components/semantic/MoonIcon';
+export * from './components/semantic/CircleArrowUpIcon';
 export * from './components/semantic/CircleDashIcon';
 export * from './components/semantic/SparkleIcon';
 export * from './components/semantic/BirdIcon';

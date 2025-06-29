@@ -7,6 +7,7 @@ import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } f
 import { twMerge } from 'tailwind-merge';
 
 import { throttle } from '@/hooks';
+import { CircleArrowUpIcon } from '@/components/icon';
 
 export type TOCType = {
   id: string;
@@ -36,14 +37,14 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
                     className={twMerge(
                       'h-[0.35rem] rounded-full overflow-hidden',
                       isActive
-                        ? 'bg-[var(--color-menu-border)]'
+                        ? 'bg-[var(--color-menu-active-background)]'
                         : 'bg-[var(--color-menu-background)]',
                     )}
                     style={{ width: `${LEVEL_WIDTH_MAP[level]}px` }}
                   >
                     {isActive && (
                       <span
-                        className="block h-full rounded-full bg-[var(--color-menu-active-background)] transition-all duration-100 ease-in-out"
+                        className="block h-full rounded-full bg-[var(--color-selection)] transition-all duration-100 ease-in-out"
                         style={{ width: `${sectionProgress * 100}%` }}
                       />
                     )}
@@ -98,9 +99,15 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
         </HoverCard.Portal>
       </HoverCard.Root>
 
-      <div>
-        <div>{Math.round(deferredProgress * 100)}%</div>
-        <button>위로 올리기</button>
+      <div className="mt-[1rem]">
+        <button
+          className="center-y text-[var(--color-text-secondary)] text-xs font-medium cursor-pointer gap-[0.25rem]"
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          <CircleArrowUpIcon width={12} />
+          위로 올리기
+        </button>
       </div>
     </div>
   );
