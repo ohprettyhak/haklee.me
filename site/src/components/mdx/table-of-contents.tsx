@@ -4,6 +4,7 @@ import * as HoverCard from '@radix-ui/react-hover-card';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
+import Link from 'next/link';
 
 export type TOCType = {
   id: string;
@@ -75,7 +76,7 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
                 >
                   {toc.map(({ id, level, text }) => (
                     <li key={text}>
-                      <a
+                      <Link
                         href={`#${id}`}
                         className={twMerge(
                           'row-between py-[0.25rem]',
@@ -83,14 +84,15 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
                           id === activeId && 'text-[var(--color-text)] font-medium',
                         )}
                         style={{ marginLeft: `${(level - 2) * 10}px` }}
+                        replace
                       >
                         <span className="text-xs text-left break-keep cursor-pointer hover:font-medium">
                           {text}
                         </span>
-                        <span className="ml-[1rem] text-xxxs font-medium uppercase opacity-50">
+                        <span className="ml-[1rem] text-xxxs font-medium uppercase opacity-60">
                           h{level}
                         </span>
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </motion.ul>

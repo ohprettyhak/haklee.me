@@ -6,6 +6,10 @@
 @import './code-highlight.css';
 
 @layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         padding-bottom: env(safe-area-inset-bottom);
         font-family: var(--font-sans);
