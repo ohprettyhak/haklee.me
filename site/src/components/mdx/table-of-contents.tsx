@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { throttle } from '@/hooks';
+import { useThrottledCallback } from '@/hooks';
 
 export type TOCType = {
   id: string;
@@ -73,7 +73,7 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
                     )}
                   >
                     {toc.map(({ id, level, text }) => (
-                      <li key={text}>
+                      <li key={id}>
                         <Link
                           href={`#${id}`}
                           className={twMerge(
@@ -214,15 +214,7 @@ const useScrollProgress = (toc: TOCType[]) => {
     }
   }, [calculateTotalProgress, getActiveId, calculateSectionProgress]);
 
-  const throttledScrollRef = useRef(throttle(handleScrollLogic, SCROLL_CONFIG.THROTTLE_DELAY));
-
-  useEffect(() => {
-    throttledScrollRef.current = throttle(handleScrollLogic, SCROLL_CONFIG.THROTTLE_DELAY);
-  }, [handleScrollLogic]);
-
-  const handleScroll = useCallback(() => {
-    throttledScrollRef.current();
-  }, []);
+  const handleScroll = useThrottledCallback(handleScrollLogic, SCROLL_CONFIG.THROTTLE_DELAY);
 
   useEffect(() => {
     elementsRef.current.clear();
