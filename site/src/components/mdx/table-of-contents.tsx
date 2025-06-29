@@ -2,9 +2,9 @@
 
 import * as HoverCard from '@radix-ui/react-hover-card';
 import { AnimatePresence, motion } from 'motion/react';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import Link from 'next/link';
 
 export type TOCType = {
   id: string;
