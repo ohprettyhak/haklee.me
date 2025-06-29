@@ -102,7 +102,7 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
       </HoverCard.Root>
 
       <div className="column mt-[1rem] text-[var(--color-text-secondary)] text-xs font-medium gap-[0.5rem]">
-        <p>{Math.round(totalProgress * 100)}% 진행됨</p>
+        <p>{Math.round(totalProgress * 100)}%</p>
       </div>
     </div>
   );
