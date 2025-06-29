@@ -7,7 +7,6 @@ import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } f
 import { twMerge } from 'tailwind-merge';
 
 import { throttle } from '@/hooks';
-import { CircleArrowUpIcon } from '@/components/icon';
 
 export type TOCType = {
   id: string;
@@ -20,8 +19,8 @@ type TableOfContentsProps = {
 };
 
 export const TableOfContents = ({ toc }: TableOfContentsProps) => {
-  const { activeId, sectionProgress, totalProgress } = useScrollProgress(toc);
-  const deferredProgress = useDeferredValue(totalProgress);
+  const { activeId, sectionProgress, totalProgress: _totalProgress } = useScrollProgress(toc);
+  const totalProgress = useDeferredValue(_totalProgress);
   const [hoverShow, setHoverShow] = useState<boolean>(false);
 
   return (
@@ -31,9 +30,9 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
           <ul className="hidden w-full h-fit list-none tablet:flex tablet:flex-col">
             {toc.map(({ id, level }, index) => {
               const isActive = activeId === id;
-              const activeIndex = toc.findIndex(item => item.id === activeId);
+              const activeIndex = toc.findIndex((item) => item.id === activeId);
               const isPassed = activeIndex > -1 && index < activeIndex;
-              
+
               return (
                 <li key={id} className="relative inline-flex items-center h-[1.5rem]">
                   <div
@@ -102,15 +101,8 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
         </HoverCard.Portal>
       </HoverCard.Root>
 
-      <div className="mt-[1rem]">
-        <button
-          className="center-y text-[var(--color-text-secondary)] text-xs font-medium cursor-pointer gap-[0.25rem]"
-          type="button"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
-          <CircleArrowUpIcon width={12} />
-          Back to top
-        </button>
+      <div className="column mt-[1rem] text-[var(--color-text-secondary)] text-xs font-medium gap-[0.5rem]">
+        <p>{Math.round(totalProgress * 100)}% 진행됨</p>
       </div>
     </div>
   );
