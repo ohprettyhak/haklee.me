@@ -125,7 +125,8 @@
   --color-border: var(--color-gray100);
   --color-line: var(--color-gray50);
 
-  --color-toc: var(--color-black-alpha40);
+  --color-toc: var(--color-gray50);
+  --color-toc-border: var(--color-gray100);
   --color-craft-border: rgba(231, 231, 231, 0.5);
 
   --color-brand-hufs: #002b49;
@@ -152,7 +153,8 @@
   --color-border: var(--color-gray800);
   --color-line: var(--color-gray800);
 
-  --color-toc: var(--color-white-alpha40);
+  --color-toc: var(--color-gray950);
+  --color-toc-border: var(--color-gray900);
   --color-craft-border: var(--color-gray950);
 
   --color-brand-hufs: var(--color-white);
