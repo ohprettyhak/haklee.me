@@ -1,2 +1,2 @@
 export { useIsClient } from './useIsClient';
-export { throttle } from './useThrottle';
+export { throttle, useThrottle, useThrottledCallback } from './useThrottle';
