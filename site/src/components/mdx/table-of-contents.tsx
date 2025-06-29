@@ -29,14 +29,17 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
       <HoverCard.Root openDelay={100} open={hoverShow} onOpenChange={setHoverShow}>
         <HoverCard.Trigger asChild>
           <ul className="hidden w-full h-fit list-none tablet:flex tablet:flex-col">
-            {toc.map(({ id, level }) => {
+            {toc.map(({ id, level }, index) => {
               const isActive = activeId === id;
+              const activeIndex = toc.findIndex(item => item.id === activeId);
+              const isPassed = activeIndex > -1 && index < activeIndex;
+              
               return (
                 <li key={id} className="relative inline-flex items-center h-[1.5rem]">
                   <div
                     className={twMerge(
-                      'h-[0.35rem] rounded-full overflow-hidden',
-                      isActive
+                      'h-[0.35rem] rounded-full overflow-hidden transition-colors duration-150 ease-in-out',
+                      isActive || isPassed
                         ? 'bg-[var(--color-menu-active-background)]'
                         : 'bg-[var(--color-menu-background)]',
                     )}
@@ -44,7 +47,7 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
                   >
                     {isActive && (
                       <span
-                        className="block h-full rounded-full bg-[var(--color-selection)] transition-all duration-100 ease-in-out"
+                        className="block h-full rounded-full bg-[var(--color-selection)] transition-colors duration-150 ease-in-out"
                         style={{ width: `${sectionProgress * 100}%` }}
                       />
                     )}
@@ -106,7 +109,7 @@ export const TableOfContents = ({ toc }: TableOfContentsProps) => {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <CircleArrowUpIcon width={12} />
-          위로 올리기
+          Back to top
         </button>
       </div>
     </div>
