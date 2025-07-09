@@ -4,7 +4,7 @@ export const middleware = (request: NextRequest) => {
   const pathname: string = request.nextUrl.pathname;
   if (pathname.startsWith('/content')) {
     const _pathname: string = pathname.replace('/content', '');
-    return NextResponse.redirect(new URL(`/api/static?path=${_pathname}`, request.url));
+    return NextResponse.rewrite(new URL(`/api/static${_pathname}`, request.url));
   }
   return NextResponse.next();
 };

@@ -2,39 +2,31 @@ import fs from 'fs';
 import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
 
-const ERRORS = {
-  INVALID_STATE: {
-    status: 500,
-    message: 'Invalid server state.',
-  },
-  MISSING_PATH_PARAM: {
-    status: 400,
-    message: 'Path parameter is missing.',
-  },
-  FILE_NOT_FOUND: {
-    status: 404,
-    message: 'File not found.',
-  },
-} as const;
+interface Params {
+  path: string[];
+}
 
-export const GET = async (request: NextRequest) => {
-  const searchParams = request.nextUrl.searchParams;
-  const pathParams: string | null = searchParams.get('path');
+export const GET = async (
+  request: NextRequest,
+  { params }: { params: Promise<Params> }
+) => {
+  const { path: pathSegments } = await params;
 
-  if (!pathParams) {
+  if (!pathSegments || pathSegments.length === 0) {
     return NextResponse.json(
-      { error: ERRORS.MISSING_PATH_PARAM.message },
-      { status: ERRORS.MISSING_PATH_PARAM.status },
+      { error: 'Path parameter is missing.' },
+      { status: 400 },
     );
   }
 
   try {
-    const filePath: string = path.join(process.cwd(), 'content', pathParams);
+    const relativePath = pathSegments.join('/');
+    const filePath: string = path.join(process.cwd(), 'content', relativePath);
 
     if (!fs.existsSync(filePath)) {
       return NextResponse.json(
-        { error: ERRORS.FILE_NOT_FOUND.message },
-        { status: ERRORS.FILE_NOT_FOUND.status },
+        { error: 'File not found.' },
+        { status: 404 },
       );
     }
 
@@ -50,8 +42,8 @@ export const GET = async (request: NextRequest) => {
   } catch (err) {
     console.error(err);
     return NextResponse.json(
-      { error: ERRORS.INVALID_STATE.message },
-      { status: ERRORS.INVALID_STATE.status },
+      { error: 'Invalid server state.' },
+      { status: 500 },
     );
   }
 };
@@ -83,4 +75,4 @@ const mimeTypes: Record<string, string> = {
 const getMimeType = (filePath: string): string => {
   const ext = path.extname(filePath).toLowerCase();
   return mimeTypes[ext] || 'application/octet-stream';
-};
+}; 
